@@ -18,4 +18,4 @@ pickle-mixin
 androguard
 tldextract
 pymongo
-scikit-learn==1.3.2
+scikit-learn
