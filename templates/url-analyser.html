@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Analysis - Cyber Defence Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; background: #0d1117; color: #e2e8f0; }
+    .container { max-width: 600px; margin: auto; background: #161b22; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+    input[type="text"] { width: 100%; padding: 12px; margin-right: 5px; border-radius: 8px; border: 2px solid #374151; background-color: #1f2937; color: white; transition: border-color 0.3s; }
+    input[type="text"]:focus { border-color: #34d399; outline: none; }
+    button { padding: 12px 20px; background: #2ea043; border: none; border-radius: 8px; color: white; cursor: pointer; transition: background-color 0.3s, transform 0.2s; font-weight: 600; }
+    button:hover { background: #238636; transform: translateY(-1px); }
+    pre { background: #111827; padding: 20px; border-radius: 8px; white-space: pre-wrap; margin-top: 20px; overflow-x: auto; font-size: 0.875rem; }
+    .header { text-align: center; margin-bottom: 24px; }
+  </style>
+</head>
+<body class="p-4">
+  <div class="container mt-10">
+    <div class="header">
+        <h2 class="text-3xl font-bold mb-2">🔎 URL Analysis</h2>
+        <p class="text-gray-400">Enter a URL to check for potential threats.</p>
+    </div>
+    <form id="urlForm" class="flex flex-col md:flex-row gap-3">
+      <input type="text" id="urlInput" placeholder="Enter a URL to analyze..." required>
+      <button type="submit">Analyze</button>
+    </form>
+    <pre id="urlResult" class="text-gray-300">Results will be displayed here.</pre>
+  </div>
+
+  <script>
+    document.getElementById("urlForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const url = document.getElementById("urlInput").value;
+      const resultDiv = document.getElementById("urlResult");
+      
+      resultDiv.textContent = "Analyzing...";
+
+      try {
+        const res = await fetch("http://127.0.0.1:5000/api/url-analyser", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ url }),
+        });
+
+        if (!res.ok) {
+          const errorData = await res.json();
+          throw new Error(errorData.error || `HTTP error! status: ${res.status}`);
+        }
+        
+        const data = await res.json();
+        
+        resultDiv.textContent = `
+URL: ${data.url}
+Final Verdict: ${data.final_verdict}
+
+AI Suggestion: ${data.ai_suggestion}
+
+Domain Analysis:
+${JSON.stringify(data.domain_analysis, null, 2)}
+        `.trim();
+      } catch (err) {
+        resultDiv.textContent = `⚠️ Error: ${err.message}`;
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+    "complaint_id": "CYB-0C53A5F6",
+    "user_info": {
+        "name": "Gowdish 2005",
+        "email": "iuyhwuhcyuw@fjgfgeh",
+        "phone": "08489616411",
+        "address": "Pedari Amman Kovil Kadu\r\n1/295"
+    },
+    "attack_type": "deepfake_video",
+    "scenario": "fvfvf",
+    "additional_info": "",
+    "evidence_files": [
+        {
+            "filename": "sample.apk",
+            "file_path": "uploads\\sample.apk"
+        }
+    ],
+    "analysis_results": {},
+    "ai_assistance": "### Real-Time Actionable Advice for Addressing the Deepfake Video Incident\n\n#### Step 1: Immediately Mitigate the Attack\n1. **Disconnect from the Internet:** Immediately disconnect your device from the internet to prevent further exposure or unauthorized access.\n2. **Change Passwords:** Use a secure device (not affected by the incident) to change passwords for all online accounts, specifically those that may have been compromised.\n   - Prioritize accounts that contain sensitive information (e.g., email, banking, social media).\n3. **Enable Two-Factor Authentication (2FA):** Ensure that 2FA is enabled on all accounts that offer it to add an additional layer of security.\n\n#### Step 2: Overcome the Current Problem\n1. **Identify the Deepfake Source:** If the deepfake video is being used to impersonate you or spread misinformation, document the instances (links, timestamps, platforms) and take screenshots.\n2. **Report the Incident:**\n   - Report the deepfake video to the platform hosting it (e.g., social media, video-sharing sites). Most platforms have procedures in place for handling deepfake content.\n   - Consider reporting it to relevant authorities or cybercrime units, especially if the video is causing severe personal harm or fraud.\n3. **Seek Legal Advice:** If the situation escalates or if you feel threatened, consult with a legal professional specializing in cyber law about possible actions you can take.\n\n#### Step 3: Protect Yourself in the Future\n1. **Stay Informed:** Keep up with new developments in deepfake technology and cybersecurity threats.\n2. **Use Antivirus and Anti-Malware Software:** Install and routinely update reputable antivirus and anti-malware software to minimize vulnerabilities.\n3. **Educate Yourself on Verification Techniques:** Learn how to identify deepfake videos and other impersonations. Understand the common signs, such as unnatural facial movements, audio mismatches, and inconsistencies.\n4. **Monitoring:** Consider using services that alert you about unauthorized use of your images or videos online.\n5. **Be Cautious with Personal Data:** Limit the information you share online to reduce the chance of your likeness being misused.\n\n#### Step 4: Close the Case When Comfortable\n1. **Review All Actions Taken:** Once you have implemented the above steps and resolved the immediate threat, take some time to review what actions you've taken to prevent further incidents.\n2. **Keep a Record:** Maintain a detailed record of the incident and any communications",
+    "risk_level": "low",
+    "status": "pending",
+    "created_at": "2025-09-24T16:54:36.853680",
+    "last_updated": "2025-09-24T16:54:36.853680"
+}

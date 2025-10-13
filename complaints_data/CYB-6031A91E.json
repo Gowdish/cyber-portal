@@ -1,0 +1,112 @@
+{
+    "complaint_id": "CYB-6031A91E",
+    "user_info": {
+        "name": "Gowdish S",
+        "email": "gowdish2005@gmail.com",
+        "phone": "8489616411",
+        "address": "1/295 pedari amman street Konappampatti Musiri Trichy"
+    },
+    "attack_type": "phishing",
+    "scenario": "asdasc",
+    "additional_info": "wddw",
+    "evidence_files": [
+        {
+            "filename": "test_gmail.pdf",
+            "file_path": "uploads\\test_gmail.pdf"
+        }
+    ],
+    "analysis_results": {
+        "phishing_document": {
+            "extracted_text": "Nomination of your innovation for The India Pitch\n2 messages\nYUKTI - National Innovation Repository <iic.mhrd@aicte-india.org> Tue, Jul 8, 2025 at 5:22 PM\nTo: gowdish2005@gmail.com\nYUKTI Innovation Repository\nDear Innovator,\nYour institute has nominated your Innovation submitted under YUKTI\nInnovation Repository to participate in the Yukti Innovation Challenge\n2025.\nYou need to login into YUKTI portal at https://yukti.mic.gov.in/login and\nupdate the innovation details if required.\nFor more details, please refer to the link: https://yukti.mic.gov.in/\nYIC2025 .\nThanks and Regards,\nYUKTI Implementation Team\nMinistry of Education's Innovation Cell, Govt. of India\nNote: This is an auto generated email, please don't reply to this\nemail id.\nTo know about YIR, please visit https://yukti.mic.gov.in/.\n\u00a9 2022 Institution's Innovation Council, Ministry of Education's\nInnovation Cell, All rights reserved.\nGowdish 2005 <gowdish2005@gmail.com> Tue, Jul 8, 2025 at 5:27 PM\nTo: HARIHARAN <tm07hariharan2122@gmail.com>\n[Quoted text hidden]",
+            "found_urls": [
+                "https://yukti.mic.gov.in/login",
+                "https://yukti.mic.gov.in/",
+                "https://yukti.mic.gov.in/."
+            ],
+            "url_reports": [
+                {
+                    "url": "https://yukti.mic.gov.in/login",
+                    "domain_analysis": {
+                        "Domain": "yukti.mic.gov.in",
+                        "Uses IP": false,
+                        "Has SSL": true,
+                        "Domain Age (days)": 2528,
+                        "DNS Records": {
+                            "A": [
+                                "20.204.13.165"
+                            ],
+                            "MX": [],
+                            "TXT": []
+                        },
+                        "Page Info": {
+                            "Title": "403 Forbidden",
+                            "Forms": 0,
+                            "iFrames": 0
+                        },
+                        "Pass Domain Check": true
+                    },
+                    "final_verdict": "legitimate",
+                    "confidence": 0.95,
+                    "ml_prediction": "Bypassed ML"
+                },
+                {
+                    "url": "https://yukti.mic.gov.in/",
+                    "domain_analysis": {
+                        "Domain": "yukti.mic.gov.in",
+                        "Uses IP": false,
+                        "Has SSL": true,
+                        "Domain Age (days)": 2528,
+                        "DNS Records": {
+                            "A": [
+                                "20.204.13.165"
+                            ],
+                            "MX": [],
+                            "TXT": []
+                        },
+                        "Page Info": {
+                            "Title": "403 Forbidden",
+                            "Forms": 0,
+                            "iFrames": 0
+                        },
+                        "Pass Domain Check": true
+                    },
+                    "final_verdict": "legitimate",
+                    "confidence": 0.95,
+                    "ml_prediction": "Bypassed ML"
+                },
+                {
+                    "url": "https://yukti.mic.gov.in/.",
+                    "domain_analysis": {
+                        "Domain": "yukti.mic.gov.in",
+                        "Uses IP": false,
+                        "Has SSL": true,
+                        "Domain Age (days)": 2528,
+                        "DNS Records": {
+                            "A": [
+                                "20.204.13.165"
+                            ],
+                            "MX": [],
+                            "TXT": []
+                        },
+                        "Page Info": {
+                            "Title": "403 Forbidden",
+                            "Forms": 0,
+                            "iFrames": 0
+                        },
+                        "Pass Domain Check": true
+                    },
+                    "final_verdict": "legitimate",
+                    "confidence": 0.95,
+                    "ml_prediction": "Bypassed ML"
+                }
+            ],
+            "risk_level": "low"
+        }
+    },
+    "ai_assistance": "### Immediate Action Plan to Mitigate the Phishing Incident\n\n#### Step 1: Disconnect from the Internet\n- **Disconnect your device from the Internet** to prevent any unauthorized access. This can be done by turning off Wi-Fi or unplugging your Ethernet cable.\n\n#### Step 2: Change Passwords\n- **Change your passwords immediately** for any accounts that may be associated with the email mentioned in the phishing attempt (e.g., gowdish2005@gmail.com). \n- Use a strong, unique password for each account. If you suspect that the phishing attempt may have given an attacker your password, ensure you use a different device to change it.\n\n#### Step 3: Check for Unauthorized Activity\n- **Review your email and other accounts** for any unauthorized activity. Look for logins you don't recognize or strange messages sent from your accounts.\n\n### Overcoming Current Issues\n\n#### Step 4: Report the Phishing Attempt\n- **Report the phishing email to your email provider** (e.g., Gmail) using their reporting tools. This helps them improve their filters and protects other users from similar scams.\n- Additionally, consider forwarding the email to the Government of India\u2019s cybercrime reporting email at: cybercrime@nic.in, or check official government websites for reporting phishing attempts.\n\n#### Step 5: Scan Your Device\n- **Run a full antivirus and anti-malware scan** on your device using trusted software. Ensure the software is updated to the latest version to effectively identify and remove any potential threats.\n\n### Protecting Yourself in the Future\n\n#### Step 6: Educate Yourself on Phishing Scams\n- **Familiarize yourself with common traits of phishing emails**:\n  - Check for spelling or grammatical errors.\n  - Be cautious of unsolicited emails that create a sense of urgency or require immediate action.\n  - Verify the sender's email address by checking for slight variations such as misspellings.\n\n#### Step 7: Use Two-Factor Authentication (2FA)\n- **Enable Two-Factor Authentication** on your email and other important accounts. This adds an extra layer of security, making it harder for unauthorized users to gain access.\n\n#### Step 8: Regularly Monitor Accounts\n- **Regularly check your financial and online accounts** for any unusual activity. Set up alerts for transactions or changes to accounts where possible.\n\n#### Step 9: Use a Password Manager\n- **Consider using a password manager** to help you create and manage strong, unique",
+    "risk_level": "low",
+    "status": "in-progress",
+    "created_at": "2025-09-23T17:35:54.933150",
+    "last_updated": "2025-10-06T19:33:49.281970",
+    "admin_notes": ""
+}

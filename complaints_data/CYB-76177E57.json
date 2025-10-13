@@ -1,0 +1,51 @@
+{
+    "complaint_id": "CYB-76177E57",
+    "user_info": {
+        "name": "Gowdish S",
+        "email": "gowdish2005@gmail.com",
+        "phone": "8489616411",
+        "address": "bn"
+    },
+    "attack_type": "phishing",
+    "scenario": "jhhj",
+    "additional_info": "",
+    "evidence_files": [],
+    "analysis_results": {
+        "url_analysis": {
+            "url": "https://kongu.ac.in/",
+            "domain_analysis": {
+                "Domain": "kongu.ac.in",
+                "Uses IP": false,
+                "Has SSL": true,
+                "Domain Age (days)": 7915,
+                "DNS Records": {
+                    "A": [
+                        "118.139.181.22"
+                    ],
+                    "MX": [
+                        "kongu-ac-in.mail.protection.outlook.com."
+                    ],
+                    "TXT": [
+                        "\"MS=ms67735956\"",
+                        "\"v=spf1 a:kongu.ac.in include:spf.protection.outlook.com -all\"",
+                        "\"google-site-verification=YS9-toCiuW7B9FKDvW471j4YFVTmGNycuA4LLi8Ro6Q\""
+                    ]
+                },
+                "Page Info": {
+                    "Title": "KEC | KONGU ENGINEERING COLLEGE",
+                    "Forms": 0,
+                    "iFrames": 0
+                },
+                "Pass Domain Check": true
+            },
+            "ml_prediction_raw": "legitimate",
+            "final_verdict": "legitimate",
+            "confidence": 0.460735313093332
+        }
+    },
+    "ai_assistance": "It's great to hear that the analysis of the submitted URL or document didn't reveal any clear malicious activity\u2014this is certainly a positive sign! However, it's essential to remain vigilant and proactive to ensure your online safety. Here are some reassuring reminders and pieces of advice:\n\n- **Be cautious** with links from unknown sources, even if they pass automated checks. Scammers often use deceptive tactics to make their content appear legitimate, so it's always better to err on the side of caution.\n\n- **Verify the authenticity** of documents and their senders. If you receive a message or file that raises any questions, don\u2019t hesitate to contact the company or individual directly using a known number or official communication channels to confirm its validity.\n\n- Use **strong, unique passwords** for each of your accounts, and consider enabling **Two-Factor Authentication (2FA)** wherever possible. This adds an extra layer of security, making it harder for unauthorized users to gain access to your information.\n\n- Remember that **ongoing vigilance** is crucial in today\u2019s digital landscape. Regularly monitor your accounts for any unusual activity, keep your software updated, and stay informed about the latest security threats.\n\nBy taking these proactive steps, you can significantly reduce your risk and help protect yourself from potential security threats. Stay safe!",
+    "risk_level": "low",
+    "status": "pending",
+    "created_at": "2025-10-02T17:14:43.059061",
+    "last_updated": "2025-10-02T17:14:43.059061"
+}

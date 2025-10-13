@@ -1,0 +1,151 @@
+{
+    "complaint_id": "CYB-AB705209",
+    "user_info": {
+        "name": "Free Fire",
+        "email": "abubakkarsiddiq123as@gmail.com",
+        "phone": "+918489843737",
+        "address": "ponnamaravathy\r\nponnamaravathy"
+    },
+    "attack_type": "phishing",
+    "scenario": "mnmn",
+    "additional_info": "",
+    "evidence_files": [],
+    "analysis_results": {
+        "url_analysis": {
+            "url": "https://nexonlogistics.com/",
+            "domain": "nexonlogistics.com",
+            "final_verdict": "legitimate",
+            "verdict_detailed": "SAFE",
+            "risk_score": 0.15,
+            "confidence": "HIGH",
+            "ml_prediction": {
+                "verdict": "phishing",
+                "probability": 0.5773807447057447
+            },
+            "layers": {
+                "url_structure": {
+                    "score": 0.0,
+                    "is_suspicious": false,
+                    "reasons": [],
+                    "details": {
+                        "length_suspicious": 0,
+                        "special_chars": 0,
+                        "subdomain_count": 0,
+                        "path_depth": 0,
+                        "has_port": 0,
+                        "encoded_chars": 0,
+                        "suspicious_keywords": 0
+                    }
+                },
+                "domain_reputation": {
+                    "age_days": 1214,
+                    "registrar": "HOSTINGER operations, UAB",
+                    "creation_date": "2022-06-11 04:20:23",
+                    "expiry_date": "2026-06-11 04:20:23",
+                    "dns_records": {
+                        "A": [
+                            "172.67.194.193",
+                            "104.21.20.233"
+                        ],
+                        "MX": [
+                            "10 mx2.hostinger.com.",
+                            "5 mx1.hostinger.com."
+                        ],
+                        "TXT": [
+                            "\"google-site-verification=8Przl4yBO-qZ6lads3vjLg6ca9QCnd1AV1zXw3MTXkM\"",
+                            "\"google-site-verification=kdXFyFre7h1e0jinkqpDrDqY8SBBLrffG4nrbJ1CHnE\"",
+                            "\"v=spf1 include:spf.mailjet.com include:_spf.mail.hostinger.com ~all\""
+                        ],
+                        "NS": [
+                            "lex.ns.cloudflare.com.",
+                            "maria.ns.cloudflare.com."
+                        ]
+                    },
+                    "is_suspicious": false,
+                    "reasons": []
+                },
+                "ssl_certificate": {
+                    "has_ssl": true,
+                    "issuer": {
+                        "countryName": "US",
+                        "organizationName": "Google Trust Services",
+                        "commonName": "WE1"
+                    },
+                    "subject": {
+                        "commonName": "nexonlogistics.com"
+                    },
+                    "valid_from": "Sep 28 02:26:24 2025 GMT",
+                    "valid_until": "Dec 27 03:24:58 2025 GMT",
+                    "is_suspicious": true,
+                    "reasons": [
+                        "Very new SSL certificate (9 days)"
+                    ]
+                },
+                "page_content": {
+                    "title": "Nexon Logistics - Professional Virtual Trucking Company",
+                    "forms_count": 0,
+                    "iframes_count": 0,
+                    "external_links": 0,
+                    "suspicious_forms": false,
+                    "hidden_elements": 0,
+                    "is_suspicious": false,
+                    "reasons": []
+                },
+                "typosquatting": {
+                    "is_typosquatting": false,
+                    "similar_to": null,
+                    "technique": null,
+                    "confidence": 0.0,
+                    "reasons": []
+                },
+                "ip_analysis": {
+                    "ip_address": "172.67.194.193",
+                    "is_ip_url": false,
+                    "is_private": false,
+                    "is_suspicious": false,
+                    "reasons": []
+                },
+                "malware_indicators": {
+                    "has_malware_extension": false,
+                    "has_suspicious_params": false,
+                    "file_extension": null,
+                    "is_suspicious": false,
+                    "reasons": []
+                }
+            },
+            "all_reasons": [
+                "Very new SSL certificate (9 days)"
+            ],
+            "domain_analysis": {
+                "Domain": "nexonlogistics.com",
+                "Has SSL": true,
+                "Domain Age (days)": 1214,
+                "DNS Records": {
+                    "A": [
+                        "172.67.194.193",
+                        "104.21.20.233"
+                    ],
+                    "MX": [
+                        "10 mx2.hostinger.com.",
+                        "5 mx1.hostinger.com."
+                    ],
+                    "TXT": [
+                        "\"google-site-verification=8Przl4yBO-qZ6lads3vjLg6ca9QCnd1AV1zXw3MTXkM\"",
+                        "\"google-site-verification=kdXFyFre7h1e0jinkqpDrDqY8SBBLrffG4nrbJ1CHnE\"",
+                        "\"v=spf1 include:spf.mailjet.com include:_spf.mail.hostinger.com ~all\""
+                    ],
+                    "NS": [
+                        "lex.ns.cloudflare.com.",
+                        "maria.ns.cloudflare.com."
+                    ]
+                },
+                "Pass Domain Check": true
+            }
+        }
+    },
+    "ai_assistance": "Thank you for your inquiry! While the analysis of the submitted URL or document did not detect any clear malicious activity, it's always wise to remain vigilant when it comes to online safety. Here are some reassuring reminders and proactive steps you can take to protect yourself:\n\n- **Be cautious**: Always exercise caution with links or attachments from unknown sources, even if they pass automated security checks. Malicious content can sometimes bypass these systems.\n\n- **Verify the authenticity**: When dealing with documents or communications that raise any suspicion, it's a good practice to verify their authenticity. If the document comes from a company or individual, consider reaching out directly using a phone number or contact method you know to be legitimate.\n\n- **Use strong, unique passwords**: Strengthen your online security by using strong and unique passwords for different accounts. This minimizes the risk if one of your accounts is compromised.\n\n- **Enable Two-Factor Authentication (2FA)**: Adding an extra layer of protection with 2FA can significantly enhance your security. This way, even if someone obtains your password, they won't be able to access your accounts without the second form of verification.\n\nOngoing vigilance is crucial in today's digital landscape. Regularly monitor your accounts for any unusual activity, keep your software and security programs updated, and stay informed about the latest cybersecurity threats.\n\nBy taking these proactive measures, you can help protect yourself and your sensitive information. Stay safe!",
+    "risk_level": "low",
+    "status": "pending",
+    "created_at": "2025-10-07T16:01:57.997119",
+    "last_updated": "2025-10-07T16:01:57.997119"
+}

@@ -1,0 +1,47 @@
+{
+    "complaint_id": "CYB-3BE8332F",
+    "user_info": {
+        "name": "Gowdish S",
+        "email": "gowdish2005@gmail.com",
+        "phone": "08489616411",
+        "address": "1/297 Pedari amman street Konnappampatti Musiri Trichy"
+    },
+    "attack_type": "phishing",
+    "scenario": "sfv",
+    "additional_info": "",
+    "evidence_files": [],
+    "analysis_results": {
+        "url_analysis": {
+            "url": "https://kongunadu.ac.in/center-of-excellence/",
+            "domain_analysis": {
+                "Domain": "kongunadu.ac.in",
+                "Uses IP": false,
+                "Has SSL": true,
+                "Domain Age (days)": 3797,
+                "DNS Records": {
+                    "A": [
+                        "104.21.73.165",
+                        "172.67.146.71"
+                    ],
+                    "MX": [],
+                    "TXT": []
+                },
+                "Page Info": {
+                    "Title": "Center of Excellence - KONGUNADU COLLEGE OF ENGINEERING AND TECHNOLOGY",
+                    "Forms": 0,
+                    "iFrames": 0
+                },
+                "Pass Domain Check": true
+            },
+            "ml_prediction_raw": "phishing",
+            "final_verdict": "phishing",
+            "confidence": 0.5505375878625878
+        }
+    },
+    "ai_assistance": "If you've received a notification about malicious or high-risk phishing links, it\u2019s crucial to take immediate and careful action. Follow this step-by-step guide:\n\n### 1. **DO NOT Click on the Detected URLs**\n   - **Stay Calm**: First and foremost, refrain from clicking on any links.\n   - **Close the Document/Email**: If you\u2019re viewing it in a browser or email client, close it immediately without interacting with any elements.\n\n### 2. **Change Passwords for Accessed Accounts**\n   - **Identify Accounts**: Think about any accounts you may have accessed after clicking the link, including email, banking, or online shopping accounts.\n   - **Use Strong Passwords**: Change each password by using a unique and complex combination of letters, numbers, and symbols.\n   - **Enable Two-Factor Authentication (2FA)**: If available, enable this feature for an extra layer of security on your accounts.\n\n### 3. **Run a Full Security Scan on Your Device**\n   - **Update Your Antivirus Software**: Ensure your security software is up to date.\n   - **Launch a Full Scan**: Use the antivirus software to perform a complete scan of your device to detect any potential malware or viruses that may have been downloaded.\n   - **Follow Recommendations**: If any threats are detected, follow the software\u2019s guidance to remove them.\n\n### 4. **How to Identify Phishing Links in the Future**\n   - **Check the Domain Name**: Look closely at the URL. Phishing attempts often use misspelled or slightly altered domains (e.g., \"g00gle.com\" instead of \"google.com\").\n   - **Look for HTTPS**: Legitimate websites should use HTTPS. If the site is not secure, think twice before entering any information.\n   - **Generic Messages**: Be wary of messages that are generic and lack personalization (e.g., \"Dear Customer\" instead of your name).\n   - **Suspicious Requests**: Emails or messages asking for urgent action, verification information, or personal details are red flags.\n   - **Too Good to Be True Offers**: If an offer seems too good to be true, it probably is. Approaching these offers with skepticism can help you avoid scams.\n\n### 5. **Reporting the Phishing Attempt**\n   - **To Service Providers**: Report phishing attempts to the relevant service provider (e.g., your email service, Google, etc.):",
+    "risk_level": "high",
+    "status": "pending",
+    "admin_notes": "",
+    "created_at": "2025-10-05T08:58:41.555538",
+    "last_updated": "2025-10-05T08:58:41.555538"
+}

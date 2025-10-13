@@ -1,0 +1,30 @@
+{
+    "complaint_id": "CYB-1DA4829D",
+    "user_info": {
+        "name": "Gowdish 2005",
+        "email": "siddiq492004@gmail.com",
+        "phone": "08489616411",
+        "address": "Pedari Amman Kovil Kadu\r\n1/295"
+    },
+    "attack_type": "deepfake_image",
+    "scenario": "morphed my image",
+    "additional_info": "how to overcome from it",
+    "evidence_files": [
+        {
+            "filename": "R.jpg",
+            "file_path": "uploads\\R.jpg"
+        }
+    ],
+    "analysis_results": {
+        "deepfake_image": {
+            "prediction": "Fake",
+            "confidence": 0.9781403541564941,
+            "is_deepfake": true
+        }
+    },
+    "ai_assistance": "AI assistance temporarily unavailable.",
+    "risk_level": "medium",
+    "status": "pending",
+    "created_at": "2025-09-23T17:31:24.402917",
+    "last_updated": "2025-09-23T17:31:24.402917"
+}

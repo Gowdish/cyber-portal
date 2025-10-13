@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Volunteer Program - Government of India</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/styles/volunteer.css"> </head>
+<body>
+    <div class="govt-bar">
+        <div class="govt-bar-container">
+            <div class="govt-info">
+                <span class="govt-text">Government of India</span>
+                <span class="divider">|</span>
+                <span class="ministry-text">Ministry of Home Affairs</span>
+            </div>
+            <div class="accessibility-links">
+                <a href="#" class="acc-link">हिंदी</a>
+                <a href="#" class="acc-link">A+</a>
+                <a href="#" class="acc-link">A-</a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-adjust"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-left">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="Emblem of India" class="emblem" style="height: 70px;" onerror="this.style.display='none'">
+                <div class="header-titles">
+                    <h1 class="portal-title">Cyber Volunteer Program</h1>
+                    <p class="portal-subtitle">Contribute to National Cyber Security</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="emergency-number">
+                    <i class="fas fa-handshake"></i>
+                    <div class="emergency-info">
+                        <span class="helpline-label">Secure Volunteering</span>
+                        <span class="helpline-number">JOIN US</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="report.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="report.html"><i class="fas fa-file-alt"></i> Report & Check</a></li>
+                <li><a href="#"><i class="fas fa-book"></i> Learning</a></li>
+                <li><a href="#"><i class="fas fa-phone-alt"></i> Contact</a></li>
+                <li><a href="#" class="active"><i class="fas fa-users"></i> Volunteers</a></li>
+                <li><a href="#"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="main-content">
+        <div class="content-wrapper">
+            
+            <section class="volunteer-banner-section">
+                <div class="hero-content">
+                    <h1 class="hero-title">Join Our Cyber Volunteer Program</h1>
+                    <p class="hero-description">Contribute to a safer digital world. Your expertise can make a difference in national cyber security.</p>
+                </div>
+            </section>
+
+            <section class="intro-section">
+                <h2 class="section-heading">Why Volunteer with Us?</h2>
+                <p class="section-description-text">
+                    The CyberSecure Volunteer Program is a platform for individuals and organizations to lend their skills and passion to combat cyber threats. By joining, you help us analyze cases, identify emerging trends, and protect the public from online harm.
+                </p>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Protect the Community</h3>
+                        <p>Use your skills for good and make the internet a safer place for everyone.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Gain Experience</h3>
+                        <p>Work on real-world cases and enhance your cybersecurity expertise.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-network-wired"></i>
+                        <h3>Be Part of a Network</h3>
+                        <p>Collaborate with a community of like-minded professionals and enthusiasts.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="registration-section">
+                <h2 class="section-heading">Become a Volunteer</h2>
+                <p class="section-description-text">Fill out the form below to register your interest in joining our program. We will review your application and get in touch.</p>
+                
+                <form id="volunteerForm" class="volunteer-form">
+                    <div class="form-grid-single-col">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Are you registering as an individual or an organization?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="volunteerType" value="individual" checked> Individual</label>
+                                <label><input type="radio" name="volunteerType" value="organization"> Organization</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="organizationName">Organization Name (if applicable)</label>
+                            <input type="text" id="organizationName" name="organizationName" placeholder="Enter your organization's name">
+                        </div>
+                        <div class="form-group">
+                            <label for="skills">Your Skills/Expertise</label>
+                            <textarea id="skills" name="skills" rows="4" placeholder="e.g., threat analysis, malware research, digital forensics..." required></textarea>
+                        </div>
+                    </div>
+                    <div class="form-actions-center">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Submit Application
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Government of India. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.getElementById('themeToggle').addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+        });
+        
+        // Example: Add basic form submission handling (replace with your actual backend call)
+        document.getElementById('volunteerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Volunteer application submitted (Backend call simulated). Thank you!');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

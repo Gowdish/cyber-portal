@@ -1,0 +1,2173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Cybersecurity Complaint Portal - Government of India</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        /* ===== CSS Variables ===== */
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #dc2626;
+            --success-color: #16a34a;
+            --warning-color: #ea580c;
+            --info-color: #0284c7;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #e2e8f0;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #cbd5e0;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Dark Theme Variables */
+        body.dark-theme {
+            --bg-primary: #1e293b;
+            --bg-secondary: #0f172a;
+            --bg-tertiary: #334155;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e0;
+            --border-color: #475569;
+        }
+
+        /* ===== Reset & Base Styles ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* ===== Government Top Bar ===== */
+        .govt-bar {
+            background: linear-gradient(90deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 0.5rem 0;
+            font-size: 0.875rem;
+        }
+
+        .govt-bar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .govt-info {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .govt-text {
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .ministry-text {
+            font-weight: 400;
+        }
+
+        .divider {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .accessibility-links {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .acc-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+
+        .acc-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .theme-toggle {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* ===== Main Header ===== */
+        .main-header {
+            background: var(--bg-primary);
+            border-bottom: 3px solid var(--primary-color);
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .emblem {
+            height: 70px;
+            width: auto;
+        }
+
+        .header-titles {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .portal-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.5px;
+        }
+
+        .portal-subtitle {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .emergency-number {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: linear-gradient(135deg, var(--secondary-color), #ef4444);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .emergency-number i {
+            font-size: 1.5rem;
+        }
+
+        .emergency-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .helpline-label {
+            font-size: 0.75rem;
+            opacity: 0.9;
+        }
+
+        .helpline-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        /* ===== Navigation Bar ===== */
+        .main-nav {
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu li {
+            flex: 1;
+        }
+
+        .nav-menu a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem 1.5rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            background: var(--bg-secondary);
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .nav-menu a i {
+            font-size: 1.125rem;
+        }
+
+        /* ===== Main Content ===== */
+        .main-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), #3b82f6);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 2rem;
+        }
+
+        .hero-content {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-card i {
+            font-size: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .stat-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            opacity: 0.9;
+        }
+
+        /* ===== Alert Messages ===== */
+        .alert {
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            display: none;
+            border-left: 4px solid;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .alert.success {
+            background: #d1fae5;
+            border-color: var(--success-color);
+            color: #065f46;
+        }
+
+        .alert.error {
+            background: #fee2e2;
+            border-color: var(--secondary-color);
+            color: #991b1b;
+        }
+
+        .alert.warning {
+            background: #fef3c7;
+            border-color: var(--warning-color);
+            color: #92400e;
+        }
+
+        /* ===== Complaint Form ===== */
+        .complaint-form {
+            background: var(--bg-primary);
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .form-header {
+            background: linear-gradient(135deg, var(--primary-color), #3b82f6);
+            color: white;
+            padding: 2rem;
+        }
+
+        .form-header h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .form-instruction {
+            font-size: 0.875rem;
+            opacity: 0.9;
+        }
+
+        .required {
+            color: #fca5a5;
+            font-weight: 700;
+        }
+
+        /* Form Sections */
+        .form-section {
+            padding: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .form-section:last-of-type {
+            border-bottom: none;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-number {
+            background: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.125rem;
+            flex-shrink: 0;
+        }
+
+        .section-title-wrapper {
+            flex: 1;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .section-subtitle {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        /* Form Grid */
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 0.9375rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1rem;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .help-text {
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        /* Attack Type Cards */
+        .attack-type-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .attack-card {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .attack-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--primary-color);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .attack-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .attack-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .attack-card.selected {
+            border-color: var(--primary-color);
+            background: rgba(30, 58, 138, 0.05);
+            box-shadow: var(--shadow-md);
+        }
+
+        .attack-card.selected::before {
+            transform: scaleX(1);
+        }
+
+        .attack-icon {
+            background: rgba(30, 58, 138, 0.1);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .attack-card.selected .attack-icon {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .attack-icon i {
+            font-size: 1.75rem;
+            color: var(--primary-color);
+        }
+
+        .attack-card.selected .attack-icon i {
+            color: white;
+        }
+
+        .attack-card h5 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .attack-card p {
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        /* File Upload */
+        .upload-container {
+            margin-top: 1rem;
+        }
+
+        .file-upload {
+            border: 2px dashed var(--border-color);
+            border-radius: 10px;
+            padding: 3rem 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: var(--bg-secondary);
+        }
+
+        .file-upload:hover {
+            border-color: var(--primary-color);
+            background: rgba(30, 58, 138, 0.03);
+        }
+
+        .file-upload.dragover {
+            border-color: var(--primary-color);
+            background: rgba(30, 58, 138, 0.08);
+            border-style: solid;
+        }
+
+        .file-upload i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            opacity: 0.7;
+        }
+
+        .file-upload h4 {
+            font-size: 1.125rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .file-upload p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .supported-formats {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .format-badge {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            padding: 0.375rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+        }
+
+        .format-badge i {
+            font-size: 0.875rem;
+        }
+
+        /* File List */
+        .file-list {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .file-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .file-item:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .file-item span {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9375rem;
+            color: var(--text-primary);
+        }
+
+        .file-item i {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+        }
+
+        .remove-file {
+            color: var(--secondary-color);
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .remove-file:hover {
+            background: rgba(220, 38, 38, 0.1);
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            padding: 1.5rem 2rem;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            margin: 1rem 2rem;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--bg-tertiary);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), #3b82f6);
+            width: 0%;
+            transition: width 0.3s ease;
+            border-radius: 10px;
+        }
+
+        /* Declaration */
+        .declaration-section {
+            padding: 1.5rem 2rem;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .checkmark {
+            width: 22px;
+            height: 22px;
+            border: 2px solid var(--border-color);
+            border-radius: 4px;
+            background: var(--bg-primary);
+            flex-shrink: 0;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .checkbox-label input[type="checkbox"]:checked ~ .checkmark {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .checkbox-label input[type="checkbox"]:checked ~ .checkmark::after {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            color: white;
+            font-size: 0.75rem;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .declaration-text {
+            font-size: 0.9375rem;
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Form Actions */
+        .form-actions {
+            padding: 2rem;
+            background: var(--bg-secondary);
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 0.875rem 2rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), #3b82f6);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-secondary {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--border-color);
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* ===== Results Section ===== */
+        .results-section {
+            background: var(--bg-primary);
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            display: none;
+            margin-top: 2rem;
+        }
+
+        .result-header {
+            background: linear-gradient(135deg, var(--success-color), #22c55e);
+            color: white;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .result-header i {
+            font-size: 2.5rem;
+        }
+
+        .result-header h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        #complaintDetails {
+            padding: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        #complaintDetails h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .risk-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .risk-badge.low {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .risk-badge.medium {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .risk-badge.high {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        #complaintDetails p {
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        /* Analysis Section */
+        .analysis-section {
+            padding: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .analysis-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .analysis-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .analysis-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border-color);
+            font-size: 1.25rem;
+        }
+
+        .analysis-details p {
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+
+        .analysis-details ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .analysis-details li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .analysis-sub-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin-top: 1rem;
+        }
+
+        .analysis-sub-card h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.0625rem;
+        }
+
+        /* AI Assistance */
+        .ai-assistance {
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.05), rgba(59, 130, 246, 0.05));
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .ai-assistance h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .ai-assistance p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .ai-assistance ul,
+        .ai-assistance ol {
+            margin-left: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .ai-assistance li {
+            margin-bottom: 0.75rem;
+            line-height: 1.7;
+        }
+
+        /* ===== Chat Section ===== */
+        .chat-section {
+            background: var(--bg-primary);
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            margin-top: 2rem;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, var(--primary-color), #3b82f6);
+            color: white;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .chat-header-left i {
+            font-size: 1.75rem;
+        }
+
+        .chat-header h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.125rem;
+        }
+
+        .chat-status {
+            font-size: 0.8125rem;
+            opacity: 0.9;
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .chat-minimize {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.25rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .chat-minimize:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .chat-body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-messages {
+            height: 400px;
+            overflow-y: auto;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .message {
+            display: flex;
+            gap: 1rem;
+            animation: messageSlide 0.3s ease-out;
+        }
+
+        @keyframes messageSlide {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message.user {
+            flex-direction: row-reverse;
+        }
+
+        .message-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .message.user .message-avatar {
+            background: var(--success-color);
+        }
+
+        .message-content {
+            flex: 1;
+            background: var(--bg-primary);
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        .message.user .message-content {
+            background: rgba(30, 58, 138, 0.08);
+            border-color: rgba(30, 58, 138, 0.2);
+        }
+
+        .message-content strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-size: 0.9375rem;
+        }
+
+        .message-content p {
+            margin: 0;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+
+        .chat-input-container {
+            padding: 1.5rem;
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            gap: 1rem;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 0.875rem 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1rem;
+            color: var(--text-primary);
+            background: var(--bg-secondary);
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+
+        .chat-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+        }
+
+        .btn-chat-send {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.875rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1.125rem;
+        }
+
+        .btn-chat-send:hover {
+            background: #1e40af;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-chat-send:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* ===== Footer ===== */
+        .main-footer {
+            background: var(--bg-primary);
+            border-top: 3px solid var(--primary-color);
+            margin-top: 3rem;
+            box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--primary-color);
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+            font-size: 0.9375rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-color);
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-secondary);
+            font-size: 0.9375rem;
+        }
+
+        .contact-info i {
+            color: var(--primary-color);
+            width: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            transition: all 0.3s;
+            border: 1px solid var(--border-color);
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            background: var(--bg-secondary);
+            padding: 1.5rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-bottom p {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        /* ===== Responsive Design ===== */
+        @media (max-width: 1024px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+            
+            .header-left {
+                flex-direction: column;
+            }
+            
+            .nav-menu {
+                flex-wrap: wrap;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .govt-bar-container {
+                flex-direction: column;
+                gap: 0.75rem;
+                text-align: center;
+            }
+            
+            .portal-title {
+                font-size: 1.25rem;
+            }
+            
+            .hero-title {
+                font-size: 1.75rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .attack-type-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+            }
+            
+            .nav-menu li {
+                width: 100%;
+            }
+            
+            .form-actions {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .main-content {
+                padding: 1rem;
+            }
+            
+            .emergency-number {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* ===== Scrollbar Styling ===== */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-secondary);
+        }
+    </style>
+    </head>
+<body>
+    <div class="govt-bar">
+        <div class="govt-bar-container">
+            <div class="govt-info">
+                <span class="govt-text">Government of India</span>
+                <span class="divider">|</span>
+                <span class="ministry-text">Ministry of Home Affairs</span>
+            </div>
+            <div class="accessibility-links">
+                <a href="#" class="acc-link">हिंदी</a>
+                <a href="#" class="acc-link">A+</a>
+                <a href="#" class="acc-link">A-</a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-adjust"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-left">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="Emblem of India" class="emblem" onerror="this.style.display='none'">
+                <div class="header-titles">
+                    <h1 class="portal-title">National Cybersecurity Complaint Portal</h1>
+                    <p class="portal-subtitle">Ministry of Home Affairs | Cyber Crime Division</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="emergency-number">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="emergency-info">
+                        <span class="helpline-label">24x7 Helpline</span>
+                        <span class="helpline-number">1930</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#file-complaint"><i class="fas fa-file-alt"></i> File Complaint</a></li>
+                <li><a href="/trackcomplaint"><i class="fas fa-search"></i> Track Complaint</a></li>
+                <li><a href="/resource"><i class="fas fa-book"></i> Resources</a></li>
+                <li><a href="/admin"><i class="fas fa-user-shield"></i> Admin Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="hero-section">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Secure · Confidential · Swift Action</span>
+                    </div>
+                    <h2 class="hero-title">Report Cybercrime Incidents</h2>
+                    <p class="hero-description">Your safety is our priority. File your complaint securely and get assistance from our AI-powered support system.</p>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <div class="stat-info">
+                            <span class="stat-number">50,000+</span>
+                            <span class="stat-label">Complaints Resolved</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-clock"></i>
+                        <div class="stat-info">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Support Available</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-chart-line"></i>
+                        <div class="stat-info">
+                            <span class="stat-number">95%</span>
+                            <span class="stat-label">Success Rate</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="alert" id="alert"></div>
+
+            <form class="complaint-form" id="complaintForm" enctype="multipart/form-data">
+                <div class="form-header">
+                    <h3><i class="fas fa-edit"></i> File Your Complaint</h3>
+                    <p class="form-instruction">Please fill all mandatory fields marked with <span class="required">*</span></p>
+                </div>
+
+                <div class="form-section">
+                    <div class="section-header">
+                        <span class="section-number">1</span>
+                        <div class="section-title-wrapper">
+                            <h4 class="section-title">Personal Information</h4>
+                            <p class="section-subtitle">Your details will be kept confidential</p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Full Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="example@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+91 XXXXX XXXXX">
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="address">Address</label>
+                            <textarea id="address" name="address" rows="3" placeholder="Enter your complete address"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="section-header">
+                        <span class="section-number">2</span>
+                        <div class="section-title-wrapper">
+                            <h4 class="section-title">Type of Cybercrime <span class="required">*</span></h4>
+                            <p class="section-subtitle">Select the category that best describes your complaint</p>
+                        </div>
+                    </div>
+                    
+                    <div class="attack-type-grid">
+                        <div class="attack-card" data-type="phishing">
+                            <div class="attack-icon"><i class="fas fa-fish"></i></div>
+                            <h5>Phishing Attack</h5>
+                            <p>Fraudulent emails, messages or fake websites</p>
+                        </div>
+                        <div class="attack-card" data-type="deepfake_image">
+                            <div class="attack-icon"><i class="fas fa-image"></i></div>
+                            <h5>Deepfake Image</h5>
+                            <p>Manipulated or AI-generated fake images</p>
+                        </div>
+                        <div class="attack-card" data-type="deepfake_video">
+                            <div class="attack-icon"><i class="fas fa-video"></i></div>
+                            <h5>Deepfake Video</h5>
+                            <p>Manipulated or AI-generated fake videos</p>
+                        </div>
+                        <div class="attack-card" data-type="malware">
+                            <div class="attack-icon"><i class="fas fa-virus"></i></div>
+                            <h5>Malware/APK</h5>
+                            <p>Malicious applications or software</p>
+                        </div>
+                        <div class="attack-card" data-type="identity_theft">
+                            <div class="attack-icon"><i class="fas fa-user-secret"></i></div>
+                            <h5>Identity Theft</h5>
+                            <p>Unauthorized use of personal information</p>
+                        </div>
+                        <div class="attack-card" data-type="financial_fraud">
+                            <div class="attack-icon"><i class="fas fa-credit-card"></i></div>
+                            <h5>Financial Fraud</h5>
+                            <p>Unauthorized financial transactions</p>
+                        </div>
+                    </div>
+                    <input type="hidden" id="attack_type" name="attack_type" required>
+                </div>
+
+                <div class="form-section">
+                    <div class="section-header">
+                        <span class="section-number">3</span>
+                        <div class="section-title-wrapper">
+                            <h4 class="section-title">Incident Details</h4>
+                            <p class="section-subtitle">Provide comprehensive information about the incident</p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label for="scenario">Incident Description <span class="required">*</span></label>
+                            <textarea id="scenario" name="scenario" rows="6" required placeholder="Please describe the incident in detail - what happened, when it occurred, how you were affected, and any other relevant information..."></textarea>
+                            <small class="help-text">Minimum 50 characters required</small>
+                        </div>
+                        <div class="form-group full-width" id="url-input" style="display: none;">
+                            <label for="url">Suspicious URL</label>
+                            <input type="url" id="url" name="url" placeholder="https://suspicious-website.com">
+                            <small class="help-text">Enter the complete URL of the suspicious website</small>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="additional_info">Additional Information</label>
+                            <textarea id="additional_info" name="additional_info" rows="4" placeholder="Any other relevant details, witnesses, or supporting information..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="section-header">
+                        <span class="section-number">4</span>
+                        <div class="section-title-wrapper">
+                            <h4 class="section-title">Evidence Upload</h4>
+                            <p class="section-subtitle">Upload screenshots, documents, or other evidence</p>
+                        </div>
+                    </div>
+                    
+                    <div class="upload-container">
+                        <div class="file-upload" id="fileUpload">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <h4>Drag and drop files here</h4>
+                            <p>or click to browse from your device</p>
+                            <div class="supported-formats">
+                                <span class="format-badge"><i class="fas fa-image"></i> Images</span>
+                                <span class="format-badge"><i class="fas fa-video"></i> Videos</span>
+                                <span class="format-badge"><i class="fas fa-file-pdf"></i> PDF</span>
+                                <span class="format-badge"><i class="fas fa-file-archive"></i> APK</span>
+                            </div>
+                            <input type="file" id="evidence" name="evidence" multiple accept=".jpg,.jpeg,.png,.pdf,.mp4,.avi,.mov,.mkv,.apk" style="display: none;">
+                        </div>
+                        <div class="file-list" id="fileList"></div>
+                    </div>
+                </div>
+
+                <div class="progress-container" id="progressBar" style="display: none;">
+                    <div class="progress-label">
+                        <span>Uploading...</span>
+                        <span id="progressPercent">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+
+                <div class="declaration-section">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="declaration" required>
+                        <span class="checkmark"></span>
+                        <span class="declaration-text">I hereby declare that the information provided above is true and correct to the best of my knowledge. I understand that providing false information is a punishable offense.</span>
+                    </label>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="resetForm()">
+                        <i class="fas fa-redo"></i> Reset Form
+                    </button>
+                    <button type="submit" class="btn btn-primary" id="submitBtn">
+                        <i class="fas fa-paper-plane"></i> Submit Complaint
+                    </button>
+                </div>
+            </form>
+
+            <div class="results-section" id="resultsSection">
+                <div class="result-header">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Complaint Submitted Successfully</h3>
+                </div>
+                <div id="complaintDetails"></div>
+                <div class="analysis-section" id="analysisSection"></div>
+                <div class="ai-assistance" id="aiAssistance"></div>
+            </div>
+
+            <section class="chat-section">
+                <div class="chat-header">
+                    <div class="chat-header-left">
+                        <i class="fas fa-robot"></i>
+                        <div>
+                            <h4>AI Security Assistant</h4>
+                            <p class="chat-status"><span class="status-dot"></span> Online</p>
+                        </div>
+                    </div>
+                    <button class="chat-minimize" id="chatMinimize">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </div>
+                <div class="chat-body" id="chatBody">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message ai">
+                            <div class="message-avatar"><i class="fas fa-robot"></i></div>
+                            <div class="message-content">
+                                <strong>AI Assistant</strong>
+                                <p>Welcome! I'm here to help you with cybersecurity concerns and guide you through the complaint process. Feel free to ask me anything about staying safe online.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input-container">
+                        <input type="text" id="chatInput" placeholder="Type your question here..." class="chat-input">
+                        <button type="button" class="btn-chat-send" id="sendChatBtn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>About Portal</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Report Cybercrime</a></li>
+                    <li><a href="#">Track Complaint</a></li>
+                    <li><a href="#">Cyber Awareness</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Information</h4>
+                <ul class="contact-info">
+                    <li><i class="fas fa-phone"></i> Helpline: 1930</li>
+                    <li><i class="fas fa-envelope"></i> support@cybercrime.gov.in</li>
+                    <li><i class="fas fa-map-marker-alt"></i> New Delhi, India</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Government of India. All rights reserved. | Last Updated: October 06, 2025</p>
+        </div>
+    </footer>
+
+    
+    <script>
+        // Global variables
+        let selectedAttackType = '';
+        let uploadedFiles = [];
+        let currentComplaintId = '';
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeEventListeners();
+        });
+
+        function initializeEventListeners() {
+            document.querySelectorAll('.attack-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    selectAttackType(this.dataset.type);
+                });
+            });
+
+            const fileUpload = document.getElementById('fileUpload');
+            const fileInput = document.getElementById('evidence');
+
+            fileUpload.addEventListener('click', () => fileInput.click());
+            fileUpload.addEventListener('dragover', handleDragOver);
+            fileUpload.addEventListener('dragleave', handleDragLeave);
+            fileUpload.addEventListener('drop', handleDrop);
+            fileInput.addEventListener('change', handleFileSelect);
+
+            document.getElementById('complaintForm').addEventListener('submit', handleFormSubmit);
+
+            document.getElementById('sendChatBtn').addEventListener('click', sendChatMessage);
+            document.getElementById('chatInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendChatMessage();
+                }
+            });
+        }
+
+        function selectAttackType(type) {
+            selectedAttackType = type;
+            document.getElementById('attack_type').value = type;
+
+            document.querySelectorAll('.attack-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            document.querySelector(`[data-type="${type}"]`).classList.add('selected');
+
+            const urlInput = document.getElementById('url-input');
+            if (type === 'phishing') {
+                urlInput.style.display = 'block';
+            } else {
+                urlInput.style.display = 'none';
+            }
+        }
+
+        function handleDragOver(e) {
+            e.preventDefault();
+            e.currentTarget.classList.add('dragover');
+        }
+
+        function handleDragLeave(e) {
+            e.preventDefault();
+            e.currentTarget.classList.remove('dragover');
+        }
+
+        function handleDrop(e) {
+            e.preventDefault();
+            e.currentTarget.classList.remove('dragover');
+            const files = Array.from(e.dataTransfer.files);
+            addFiles(files);
+        }
+
+        function handleFileSelect(e) {
+            const files = Array.from(e.target.files);
+            addFiles(files);
+        }
+
+        function addFiles(files) {
+            files.forEach(file => {
+                if (!uploadedFiles.find(f => f.name === file.name)) {
+                    uploadedFiles.push(file);
+                    displayFile(file);
+                }
+            });
+        }
+
+        function displayFile(file) {
+            const fileList = document.getElementById('fileList');
+            const fileItem = document.createElement('div');
+            fileItem.className = 'file-item';
+            fileItem.innerHTML = `
+                <span><i class="fas fa-file"></i> ${file.name} (${formatFileSize(file.size)})</span>
+                <i class="fas fa-times remove-file" onclick="removeFile('${file.name}')"></i>
+            `;
+            fileList.appendChild(fileItem);
+        }
+
+        function removeFile(fileName) {
+            uploadedFiles = uploadedFiles.filter(f => f.name !== fileName);
+            updateFileDisplay();
+        }
+
+        function updateFileDisplay() {
+            const fileList = document.getElementById('fileList');
+            fileList.innerHTML = '';
+            uploadedFiles.forEach(file => displayFile(file));
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        async function handleFormSubmit(e) {
+            e.preventDefault();
+
+            if (!selectedAttackType) {
+                showAlert('Please select an attack type', 'error');
+                return;
+            }
+            
+            const hasFiles = uploadedFiles.length > 0;
+            const hasUrl = document.getElementById('url-input').style.display === 'block' && document.getElementById('url').value.trim() !== '';
+
+            if (selectedAttackType === 'phishing' && !hasFiles && !hasUrl) {
+                showAlert('Please upload evidence or enter a suspicious URL for phishing complaints.', 'error');
+                return;
+            } else if (selectedAttackType !== 'phishing' && !hasFiles && selectedAttackType !== 'identity_theft' && selectedAttackType !== 'financial_fraud') {
+                showAlert('Please upload evidence for this type of complaint.', 'error');
+                return;
+            }
+
+            const submitBtn = document.getElementById('submitBtn');
+            const progressBar = document.getElementById('progressBar');
+            const progressFill = document.getElementById('progressFill');
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<div class="loading-spinner"></div> Submitting...';
+            progressBar.style.display = 'block';
+
+            try {
+                const form = document.getElementById('complaintForm');
+                const formData = new FormData(form);
+
+                let progress = 0;
+                const progressInterval = setInterval(() => {
+                    progress += 10;
+                    progressFill.style.width = progress + '%';
+                    if (progress >= 90) {
+                        clearInterval(progressInterval);
+                    }
+                }, 100);
+
+                const response = await fetch('/api/submit_complaint', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                progressFill.style.width = '100%';
+                setTimeout(() => {
+                    progressBar.style.display = 'none';
+                }, 500);
+
+                if (response.ok && result.success) {
+                    currentComplaintId = result.complaint_id;
+                    showResults(result);
+                    showAlert('Complaint submitted successfully!', 'success');
+                } else {
+                    showAlert('Error: ' + (result.error || 'Something went wrong.'), 'error');
+                }
+
+            } catch (error) {
+                showAlert('Network error: ' + error.message, 'error');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Complaint';
+            }
+        }
+
+        function showResults(result) {
+            const resultsSection = document.getElementById('resultsSection');
+            const complaintDetails = document.getElementById('complaintDetails');
+            const analysisSection = document.getElementById('analysisSection');
+            const aiAssistance = document.getElementById('aiAssistance');
+
+            complaintDetails.innerHTML = `
+                <h3>Complaint ID: ${result.complaint_id}</h3>
+                <div class="risk-badge ${result.risk_level}">
+                    Risk Level: ${result.risk_level.toUpperCase()}
+                </div>
+                <p><strong>Status:</strong> Pending Review</p>
+                <p><strong>Attack Type:</strong> ${selectedAttackType.replace('_', ' ').toUpperCase()}</p>
+            `;
+
+            analysisSection.innerHTML = '';
+            const analysisResults = result.analysis_results;
+            
+            if (Object.keys(analysisResults).length > 0) {
+                for (const key in analysisResults) {
+                    if (analysisResults.hasOwnProperty(key)) {
+                        const analysis = analysisResults[key];
+                        const card = document.createElement('div');
+                        card.className = 'analysis-card';
+                        
+                        let title = '';
+                        let details = '';
+                        
+                        switch (key) {
+                            case 'apk_analysis':
+                                title = 'APK Analysis Results';
+                                details = `
+                                    <p><strong>App Name:</strong> ${analysis.app_name}</p>
+                                    <p><strong>Package:</strong> ${analysis.package}</p>
+                                    <p><strong>Malware Probability:</strong> ${(analysis.malware_probability * 100).toFixed(2)}%</p>
+                                    <p><strong>Severity:</strong> <span style="font-weight: bold; color: ${analysis.severity === 'Low' ? 'green' : analysis.severity === 'Moderate' ? 'orange' : 'red'};">${analysis.severity}</span></p>
+                                    <p><strong>Guidance:</strong> ${analysis.guidance}</p>
+                                    <p><strong>Permissions:</strong></p>
+                                    <ul>${analysis.permissions.map(p => `<li>${p}</li>`).join('')}</ul>
+                                `;
+                                break;
+                            case 'url_analysis':
+                                title = 'URL Analysis Results';
+                                details = `
+                                    <p><strong>URL:</strong> ${analysis.url}</p>
+                                    <p><strong>Final Verdict:</strong> ${analysis.final_verdict}</p>
+                                    <p><strong>Confidence:</strong> ${(analysis.confidence * 100).toFixed(2)}%</p>
+                                    <p><strong>Domain Analysis:</strong></p>
+                                    <ul>
+                                        <li><strong>Domain:</strong> ${analysis.domain_analysis.Domain}</li>
+                                        <li><strong>Uses IP:</strong> ${analysis.domain_analysis['Uses IP']}</li>
+                                        <li><strong>Has SSL:</strong> ${analysis.domain_analysis['Has SSL']}</li>
+                                        <li><strong>Domain Age:</strong> ${analysis.domain_analysis['Domain Age (days)']} days</li>
+                                    </ul>
+                                `;
+                                break;
+                            case 'phishing_document':
+                                title = 'Phishing Document Analysis';
+                                let urlReportsHtml = '';
+                                if (analysis.url_reports && analysis.url_reports.length > 0) {
+                                    urlReportsHtml = analysis.url_reports.map(report => `
+                                        <div class="analysis-sub-card">
+                                            <h4>URL: ${report.url}</h4>
+                                            <ul>
+                                                <li><strong>Verdict:</strong> ${report.final_verdict.toUpperCase()}</li>
+                                                <li><strong>Confidence:</strong> ${(report.confidence * 100).toFixed(2)}%</li>
+                                                <li><strong>Domain:</strong> ${report.domain_analysis.Domain}</li>
+                                                <li><strong>Has SSL:</strong> ${report.domain_analysis['Has SSL']}</li>
+                                                <li><strong>Domain Age:</strong> ${report.domain_analysis['Domain Age (days)']} days</li>
+                                            </ul>
+                                        </div>
+                                    `).join('');
+                                } else {
+                                    urlReportsHtml = '<p>No URLs were found in the document.</p>';
+                                }
+
+                                details = `
+                                    <p><strong>Overall Document Risk:</strong> ${analysis.risk_level.toUpperCase()}</p>
+                                    <p><strong>Extracted Text:</strong> ${analysis.extracted_text.substring(0, 200)}...</p>
+                                    <h4>Analyzed URLs:</h4>
+                                    ${urlReportsHtml}
+                                `;
+                                break;
+                            case 'deepfake_image':
+                                title = 'Deepfake Image Analysis';
+                                details = `
+                                    <p><strong>Prediction:</strong> ${analysis.prediction}</p>
+                                    <p><strong>Confidence:</strong> ${(analysis.confidence * 100).toFixed(2)}%</p>
+                                    <p><strong>Is Deepfake:</strong> ${analysis.is_deepfake ? 'Yes' : 'No'}</p>
+                                `;
+                                break;
+                            case 'deepfake_video':
+                                title = 'Deepfake Video Analysis';
+                                details = `
+                                    <p><strong>Prediction:</strong> ${analysis.prediction}</p>
+                                    <p><strong>Confidence:</strong> ${(analysis.confidence * 100).toFixed(2)}%</p>
+                                    <p><strong>Is Deepfake:</strong> ${analysis.is_deepfake ? 'Yes' : 'No'}</p>
+                                `;
+                                break;
+                            default:
+                                title = 'Analysis Results';
+                                details = `<pre>${JSON.stringify(analysis, null, 2)}</pre>`;
+                                break;
+                        }
+                        
+                        card.innerHTML = `
+                            <h3>${title}</h3>
+                            <div class="analysis-details">
+                                ${details}
+                            </div>
+                        `;
+                        analysisSection.appendChild(card);
+                    }
+                }
+            } else {
+                analysisSection.innerHTML = '<p>No specific file or URL analysis was performed for this complaint type.</p>';
+            }
+            
+            aiAssistance.innerHTML = formatAiResponse(result.ai_assistance);
+
+            resultsSection.style.display = 'block';
+            resultsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function formatAiResponse(text) {
+            let formattedText = `<h3><i class="fas fa-robot"></i> AI Security Assistance</h3>`;
+
+            // Split the text by empty lines to identify paragraphs/sections
+            const sections = text.split(/\n\n/);
+            
+            sections.forEach(section => {
+                // If it's a list item starting with a number
+                if (/^\d+\./.test(section.trim())) {
+                    const listItems = section.split('\n').map(item => `<li>${item.replace(/^\d+\./, '').trim()}</li>`).join('');
+                    formattedText += `<ol>${listItems}</ol>`;
+                } 
+                // If it's a bulleted list item
+                else if (/^-/.test(section.trim())) {
+                    const listItems = section.split('\n').map(item => `<li>${item.replace(/^-/, '').trim()}</li>`).join('');
+                    formattedText += `<ul>${listItems}</ul>`;
+                }
+                // Otherwise, treat as a paragraph
+                else {
+                    formattedText += `<p>${section.trim()}</p>`;
+                }
+            });
+
+            return formattedText;
+        }
+
+        async function sendChatMessage() {
+            const chatInput = document.getElementById('chatInput');
+            const chatMessages = document.getElementById('chatMessages');
+            const sendBtn = document.getElementById('sendChatBtn');
+
+            const message = chatInput.value.trim();
+            if (!message) return;
+
+            addChatMessage('user', message);
+            chatInput.value = '';
+
+            sendBtn.disabled = true;
+            sendBtn.innerHTML = '<div class="loading-spinner"></div>';
+
+            try {
+                const response = await fetch('/api/get_ai_guidance', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        attack_type: selectedAttackType || 'general',
+                        question: message,
+                        complaint_id: currentComplaintId
+                    })
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    addChatMessage('ai', result.guidance);
+                } else {
+                    addChatMessage('ai', 'Sorry, I\'m unable to provide guidance at the moment. Please try again later.');
+                }
+
+            } catch (error) {
+                addChatMessage('ai', 'Network error. Please check your connection and try again.');
+            } finally {
+                sendBtn.disabled = false;
+                sendBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send';
+            }
+        }
+
+        function addChatMessage(type, message) {
+            const chatMessages = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}`;
+            
+            if (type === 'user') {
+                messageDiv.innerHTML = `<strong>You:</strong> ${message}`;
+            } else {
+                messageDiv.innerHTML = `<strong>AI Assistant:</strong> ${message}`;
+            }
+
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function showAlert(message, type) {
+            const alert = document.getElementById('alert');
+            alert.textContent = message;
+            alert.className = `alert ${type}`;
+            alert.style.display = 'block';
+            
+            setTimeout(() => {
+                alert.style.display = 'none';
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

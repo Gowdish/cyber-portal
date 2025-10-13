@@ -1,0 +1,33 @@
+{
+    "complaint_id": "CYB-F3848FD5",
+    "user_info": {
+        "name": "Gowdish 2005",
+        "email": "siddiq492004@gmail.com",
+        "phone": "08489616411",
+        "address": "Pedari Amman Kovil Kadu\r\n1/295"
+    },
+    "attack_type": "malware",
+    "scenario": "sddc",
+    "additional_info": "",
+    "evidence_files": [
+        {
+            "filename": "sample.apk",
+            "file_path": "uploads\\sample.apk"
+        }
+    ],
+    "analysis_results": {
+        "apk_analysis": {
+            "app_name": "Rimichka",
+            "package": "com.avtobiografia.rimichka",
+            "permissions": [],
+            "malware_probability": 0.03334484629557379,
+            "severity": "Low",
+            "guidance": "Application appears safe."
+        }
+    },
+    "ai_assistance": "Here\u2019s a clear step-by-step guide to help you manage the malware incident effectively while also protecting yourself in the future:\n\n### Step 1: Immediately Mitigate the Attack\n1. **Disconnect from the Internet:**\n   - Disconnect your device from Wi-Fi or unplug any ethernet cables to prevent any potential data exfiltration or further malware activity.\n   \n2. **Change Passwords:**\n   - Using a secure device, go to your online accounts (e.g., email, banking) and change passwords. Ensure that you use strong, unique passwords for each account. Consider using a password manager to generate and store them securely.\n\n### Step 2: Overcome the Current Problem\n1. **Scan for Malware:**\n   - Use a reputable antivirus or anti-malware software to conduct a full scan on your device. Ensure that the software is up to date.\n   \n2. **Remove Suspicious Apps:**\n   - If you suspect that the application \"Rimichka\" was the source of the issue, uninstall it from your device immediately.\n   - Go to your device settings, find 'Apps' or 'Applications,' locate \"Rimichka,\" and select 'Uninstall.'\n\n3. **Check for Other Malware:**\n   - After removing the suspicious app, repeat the malware scan to ensure no other threats exist.\n\n4. **Back-Up Important Data:**\n   - Ensure you have backups of important files and documents regularly. If you haven't made backups recently, consider doing so after ensuring your device is clean.\n\n### Step 3: Protect Themselves in the Future\n1. **Install Updates:**\n   - Regularly update your operating system, applications, and antivirus software to make sure you have the latest security patches.\n   \n2. **Be Cautious with Downloads:**\n   - Only download applications from official app stores (Google Play Store, Apple App Store, etc.) and review permissions before installation. If an app does not need certain permissions, avoid granting them.\n\n3. **Use Anti-virus Software:**\n   - Consider installing reputable antivirus or endpoint protection solutions that provide real-time protection against malware.\n   \n4. **Enable Two-Factor Authentication (2FA):**\n   - For your accounts that support it, enable 2FA to add an extra layer of security.\n   \n5. **Educate Yourself:**\n   - Stay informed about the latest cybersecurity threats and best practices. Understanding malware tactics can help you avoid falling victim in the future",
+    "risk_level": "low",
+    "status": "pending",
+    "created_at": "2025-09-24T16:47:55.734709",
+    "last_updated": "2025-09-24T16:47:55.734709"
+}

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Resources - National Cybersecurity Portal</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/styles/resource.css"> 
+    
+    <style>
+        /* Replicating key variables from admin.html for local testing/fallback */
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #dc2626;
+            --info-color: #0284c7;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #cbd5e0;
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        body { 
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; 
+            background-color: var(--bg-secondary); 
+            color: var(--text-primary); 
+            line-height: 1.6; 
+            min-height: 100vh;
+        }
+
+        .main-content { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+        .resources-header {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: var(--bg-primary);
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+        }
+        .resources-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+
+        /* Grid Layout for Categories */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Individual Resource Card */
+        .resource-card {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .resource-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+        }
+        .resource-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        .resource-card .link-list {
+            list-style: none;
+            padding: 0;
+        }
+        .resource-card .link-list li {
+            margin-bottom: 0.5rem;
+        }
+        .resource-card .link-list a {
+            color: var(--info-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+            padding: 5px 0;
+            border-bottom: 1px dashed var(--border-color);
+            transition: color 0.2s;
+        }
+        .resource-card .link-list a:hover {
+            color: var(--primary-color);
+        }
+        .resource-card .btn-download {
+            margin-top: auto;
+            align-self: flex-start;
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.75rem 1.2rem;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.2s;
+        }
+        .resource-card .btn-download:hover {
+            background: #a31010;
+        }
+
+        /* Layout elements replicated for consistency */
+        .govt-bar { background: linear-gradient(90deg, #1e3a8a 0%, #3b82f6 100%); color: white; padding: 0.5rem 0; font-size: 0.875rem; }
+        .govt-bar-container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .main-header { background: var(--bg-primary); border-bottom: 3px solid var(--primary-color); box-shadow: var(--shadow-md); }
+        .header-container { max-width: 1400px; margin: 0 auto; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .main-nav { background: var(--bg-primary); border-bottom: 1px solid var(--border-color); box-shadow: var(--shadow-sm); }
+        .nav-container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; }
+        .nav-menu { list-style: none; display: flex; margin: 0; padding: 0; }
+        .nav-menu a { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem 1.5rem; color: var(--text-primary); text-decoration: none; font-weight: 500; border-bottom: 3px solid transparent; transition: all 0.3s; }
+        .nav-menu a:hover, .nav-menu a.active { background: var(--bg-secondary); color: var(--primary-color); border-bottom-color: var(--primary-color); }
+        .main-footer { background: var(--bg-primary); border-top: 3px solid var(--primary-color); margin-top: auto; padding: 1.5rem 0; text-align: center; color: var(--text-secondary); }
+        .footer-container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; font-size: 0.875rem; }
+
+        @media (max-width: 768px) {
+             .header-container, .nav-container, .govt-bar-container { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="govt-bar">
+        <div class="govt-bar-container">
+            <div class="govt-info">
+                <span class="govt-text">Government of India</span>
+                <span class="divider">|</span>
+                <span class="ministry-text">Ministry of Home Affairs</span>
+            </div>
+             </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-left">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="Emblem of India" class="emblem" style="height: 70px;" onerror="this.style.display='none'">
+                <div class="header-titles">
+                    <h1 class="portal-title" style="color: var(--info-color);">Cybersecurity Learning Hub</h1>
+                    <p class="portal-subtitle">Knowledge and Tools for a Safer Digital Life</p>
+                </div>
+            </div>
+             </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="/report"><i class="fas fa-file-shield"></i> Report Incident</a></li>
+                <li><a href="/learning" class="active"><i class="fas fa-graduation-cap"></i> Resources & Learning</a></li>
+                <li><a href="/trackcomplaint"><i class="fas fa-search"></i> Track Complaint</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="main-content">
+        <div class="container">
+            <div class="resources-header">
+                <h1>Essential Cybersecurity Toolkit</h1>
+                <p>Find official advisories, best practice guides, and free tools to protect your family and business.</p>
+            </div>
+
+            <div class="resource-grid">
+                
+                <div class="resource-card">
+                    <h3><i class="fas fa-shield-alt"></i> Cyber Hygiene Hub</h3>
+                    <p>Simple, effective steps to secure your personal data and devices against common threats like phishing and malware.</p>
+                    <ul class="link-list">
+                        <li><a href="#">Strong Passwords & MFA Setup Guide</a></li>
+                        <li><a href="#">Visual Guide: Spotting Phishing Scams</a></li>
+                        <li><a href="#">Home Wi-Fi Security Checklist</a></li>
+                        <li><a href="#">Parental Controls & Child Safety Basics</a></li>
+                    </ul>
+                </div>
+
+                <div class="resource-card">
+                    <h3><i class="fas fa-broadcast-tower"></i> Official Alerts & Tools</h3>
+                    <p>Access real-time threats and use certified tools from our national security agencies.</p>
+                    <ul class="link-list">
+                        <li><a href="http://cert-in.org.in" target="_blank">CERT-In Advisories (External Link)</a></li>
+                        <li><a href="http://csk.gov.in" target="_blank">Cyber Swachhta Kendra (Botnet Removal)</a></li>
+                        <li><a href="#">Official Digital Evidence Preservation Guide</a></li>
+                        <li><a href="#">Latest Advisory on Deepfake Scams</a></li>
+                    </ul>
+                </div>
+
+                <div class="resource-card">
+                    <h3><i class="fas fa-book-open"></i> Incident Response Plans</h3>
+                    <p>Immediate, actionable steps to minimize damage after a cyber attack, tailored for citizens and SMEs.</p>
+                    <a href="/static/CyberCrisisHandbook.pdf" class="btn-download"><i class="fas fa-file-pdf"></i> Download Crisis Handbook</a>
+                    <ul class="link-list" style="margin-top: 1rem;">
+                        <li><a href="#">I've been Hacked: Identity Theft Checklist</a></li>
+                        <li><a href="#">Ransomware Attack: First 5 Steps Guide</a></li>
+                        <li><a href="#">Lost Phone/Device Security Protocol</a></li>
+                    </ul>
+                </div>
+                
+                <div class="resource-card">
+                    <h3><i class="fas fa-code"></i> Career & Training</h3>
+                    <p>Free learning paths and resources to start or advance your career in cybersecurity.</p>
+                    <ul class="link-list">
+                        <li><a href="#">Cyber Career Path Map (Interactive)</a></li>
+                        <li><a href="#">Directory of Free MOOCs (Google, Cisco, etc.)</a></li>
+                        <li><a href="#">Tabletop Exercise Packages for SMEs</a></li>
+                        <li><a href="#">Vulnerability Disclosure Policy Guide</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Government of India. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

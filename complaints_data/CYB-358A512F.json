@@ -1,0 +1,139 @@
+{
+    "complaint_id": "CYB-358A512F",
+    "user_info": {
+        "name": "Gowdish 2005",
+        "email": "lidiyasolami@gmail.com",
+        "phone": "08489616411",
+        "address": "Pedari Amman Kovil Kadu\r\n1/295"
+    },
+    "attack_type": "phishing",
+    "scenario": "through the email they collectde data",
+    "additional_info": "",
+    "evidence_files": [
+        {
+            "filename": "test_gmail.pdf",
+            "file_path": "uploads\\test_gmail.pdf"
+        }
+    ],
+    "analysis_results": {
+        "phishing_document": {
+            "extracted_text": "Nomination of your innovation for The India Pitch\n2 messages\nYUKTI - National Innovation Repository <iic.mhrd@aicte-india.org> Tue, Jul 8, 2025 at 5:22 PM\nTo: gowdish2005@gmail.com\nYUKTI Innovation Repository\nDear Innovator,\nYour institute has nominated your Innovation submitted under YUKTI\nInnovation Repository to participate in the Yukti Innovation Challenge\n2025.\nYou need to login into YUKTI portal at https://yukti.mic.gov.in/login and\nupdate the innovation details if required.\nFor more details, please refer to the link: https://yukti.mic.gov.in/\nYIC2025 .\nThanks and Regards,\nYUKTI Implementation Team\nMinistry of Education's Innovation Cell, Govt. of India\nNote: This is an auto generated email, please don't reply to this\nemail id.\nTo know about YIR, please visit https://yukti.mic.gov.in/.\n\u00a9 2022 Institution's Innovation Council, Ministry of Education's\nInnovation Cell, All rights reserved.\nGowdish 2005 <gowdish2005@gmail.com> Tue, Jul 8, 2025 at 5:27 PM\nTo: HARIHARAN <tm07hariharan2122@gmail.com>\n[Quoted text hidden]",
+            "found_urls": [
+                "https://yukti.mic.gov.in/login",
+                "https://yukti.mic.gov.in/",
+                "https://yukti.mic.gov.in/."
+            ],
+            "url_reports": [
+                {
+                    "url": "https://yukti.mic.gov.in/login",
+                    "domain_analysis": {
+                        "Domain": "yukti.mic.gov.in",
+                        "Uses IP": false,
+                        "Has SSL": true,
+                        "Domain Age (days)": 2529,
+                        "DNS Records": {
+                            "A": [
+                                "20.204.13.165"
+                            ],
+                            "MX": [],
+                            "TXT": []
+                        },
+                        "Page Info": {
+                            "Title": "403 Forbidden",
+                            "Forms": 0,
+                            "iFrames": 0
+                        },
+                        "Pass Domain Check": true
+                    },
+                    "ml_prediction_raw": "Bypassed ML",
+                    "final_verdict": "legitimate",
+                    "confidence": 0.95
+                },
+                {
+                    "url": "https://yukti.mic.gov.in/",
+                    "domain_analysis": {
+                        "Domain": "yukti.mic.gov.in",
+                        "Uses IP": false,
+                        "Has SSL": true,
+                        "Domain Age (days)": 2529,
+                        "DNS Records": {
+                            "A": [
+                                "20.204.13.165"
+                            ],
+                            "MX": [],
+                            "TXT": []
+                        },
+                        "Page Info": {
+                            "Title": "403 Forbidden",
+                            "Forms": 0,
+                            "iFrames": 0
+                        },
+                        "Pass Domain Check": true
+                    },
+                    "ml_prediction_raw": "Bypassed ML",
+                    "final_verdict": "legitimate",
+                    "confidence": 0.95
+                },
+                {
+                    "url": "https://yukti.mic.gov.in/.",
+                    "domain_analysis": {
+                        "Domain": "yukti.mic.gov.in",
+                        "Uses IP": false,
+                        "Has SSL": true,
+                        "Domain Age (days)": 2529,
+                        "DNS Records": {
+                            "A": [
+                                "20.204.13.165"
+                            ],
+                            "MX": [],
+                            "TXT": []
+                        },
+                        "Page Info": {
+                            "Title": "403 Forbidden",
+                            "Forms": 0,
+                            "iFrames": 0
+                        },
+                        "Pass Domain Check": true
+                    },
+                    "ml_prediction_raw": "Bypassed ML",
+                    "final_verdict": "legitimate",
+                    "confidence": 0.95
+                }
+            ],
+            "risk_level": "low"
+        },
+        "url_analysis": {
+            "url": "https://code.jquery.com/jquery-1.12.4.min.js",
+            "domain_analysis": {
+                "Domain": "code.jquery.com",
+                "Uses IP": false,
+                "Has SSL": true,
+                "Domain Age (days)": 7227,
+                "DNS Records": {
+                    "A": [
+                        "151.101.2.137",
+                        "151.101.130.137",
+                        "151.101.194.137",
+                        "151.101.66.137"
+                    ],
+                    "MX": [],
+                    "TXT": []
+                },
+                "Page Info": {
+                    "Title": "No Title",
+                    "Forms": 0,
+                    "iFrames": 0
+                },
+                "Pass Domain Check": true
+            },
+            "ml_prediction_raw": "phishing",
+            "final_verdict": "phishing",
+            "confidence": 0.5065062025812026
+        }
+    },
+    "ai_assistance": "Here is a clear, step-by-step guide to help you deal with phishing links and avoid them in the future:\n\n### Step-by-Step Guide\n\n#### 1. **DO NOT click on or visit the detected URLs.**\n   - If you see a link suspected of being phishing, avoid clicking on it altogether. Close the tab or the application in which the link was encountered. Always exercise caution when you receive unknown links or emails.\n\n#### 2. **If you have already clicked on a link, immediately change passwords for any accounts you may have accessed.**\n   - Go to the official website of the service you logged into (do not use any links). Use the \"Forgot password\" feature if needed, and create a strong, unique password that you haven\u2019t used before. Also, consider enabling two-factor authentication (2FA) for added security.\n\n#### 3. **Run a security scan on your device.**\n   - Use reliable antivirus or antimalware software to perform a full scan of your device. This will help detect and remove any malicious software that may have been installed unintentionally. Ensure your security software is updated to the latest version before running the scan.\n\n#### 4. **How to identify phishing links in the future:**\n   - **Check the URL:** Phishing links often have unusual or misspelled domains. Before clicking any link, hover over it to see the actual URL. Look for discrepancies or anything that seems out of place.\n   - **Look for HTTPS:** Legitimate sites often use HTTPS instead of HTTP. While this is not a foolproof method, the absence of HTTPS can be a red flag.\n   - **Be cautious with emails:** If you receive emails urging immediate action, look for signs of phishing such as typos, generic greetings, or unfamiliar sender addresses.\n   - **Verify the source:** If the link is sent via email or a message, contact the sender directly to verify the authenticity of the link, using contact methods you know to be safe (not the contact details in the email).\n   - **Use a link scanner:** Online tools like VirusTotal can help you check if a link is safe before clicking.\n\n#### 5. **Advise on reporting the phishing attempt to relevant authorities or service providers.**\n   - Report phishing emails to the email provider (e.g., Gmail, Yahoo) by marking them as spam or using the \"Report Phishing\" option.\n   - Forward phishing emails to the Anti-Ph",
+    "risk_level": "high",
+    "status": "pending",
+    "created_at": "2025-09-24T17:09:00.219261",
+    "last_updated": "2025-09-24T17:09:00.219261"
+}

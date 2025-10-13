@@ -1,0 +1,56 @@
+{
+    "complaint_id": "CYB-5253CA25",
+    "user_info": {
+        "name": "jy",
+        "email": "statusday439@gmail.com",
+        "phone": "56677676",
+        "address": "gsdfjdsjgfjh"
+    },
+    "attack_type": "phishing",
+    "scenario": "bvfvb",
+    "additional_info": "",
+    "evidence_files": [],
+    "analysis_results": {
+        "url_analysis": {
+            "url": "https://nexonlogistics.com/",
+            "domain_analysis": {
+                "Domain": "nexonlogistics.com",
+                "Uses IP": false,
+                "Has SSL": true,
+                "Domain Age (days)": 1202,
+                "DNS Records": {
+                    "A": [
+                        "104.21.20.233",
+                        "172.67.194.193"
+                    ],
+                    "MX": [
+                        "alt2.aspmx.l.google.com.",
+                        "alt3.aspmx.l.google.com.",
+                        "alt4.aspmx.l.google.com.",
+                        "aspmx.l.google.com.",
+                        "alt1.aspmx.l.google.com."
+                    ],
+                    "TXT": [
+                        "\"google-site-verification=kdXFyFre7h1e0jinkqpDrDqY8SBBLrffG4nrbJ1CHnE\"",
+                        "\"v=spf1 include:_spf.mail.hostinger.com include:_spf.google.com ~all\"",
+                        "\"google-site-verification=8Przl4yBO-qZ6lads3vjLg6ca9QCnd1AV1zXw3MTXkM\""
+                    ]
+                },
+                "Page Info": {
+                    "Title": "Nexon Logistics - Professional Virtual Trucking Company",
+                    "Forms": 0,
+                    "iFrames": 0
+                },
+                "Pass Domain Check": true
+            },
+            "ml_prediction_raw": "phishing",
+            "final_verdict": "phishing",
+            "confidence": 0.5773807447057447
+        }
+    },
+    "ai_assistance": "Certainly! Here's a clear and step-by-step guide to handling potential phishing threats:\n\n### Step 1: DO NOT Click on or Visit the Detected URLs\n- **Stay Cautious**: If you've identified a URL or link as potentially phishing, do not attempt to click on it. Close any pop-ups or browser tabs that may have opened when the link was displayed.\n\n### Step 2: Change Passwords for Any Accounts You May Have Accessed\n- **Immediate Action**: If you have clicked on a suspected phishing link:\n  1. Go to the login page of the service you accessed (e.g., email, banking, social media).\n  2. Look for the \"Forgot Password?\" or \"Change Password\" option to reset your password.\n  3. Create a strong, unique password that includes a combination of letters, numbers, and symbols.\n  4. Enable two-factor authentication (2FA) if available for added security.\n\n### Step 3: Run a Security Scan on Your Device\n- **Use Antivirus Software**: \n  1. Open your antivirus or anti-malware program. If you don\u2019t have one, consider downloading a reputable tool such as Malwarebytes, Norton, or Bitdefender.\n  2. Update the software to ensure it has the latest virus definitions.\n  3. Perform a full system scan. Follow any prompts to quarantine or remove identified threats.\n\n### Step 4: Identify Phishing Links in the Future\n- **Look Out for Red Flags**:\n  - **Suspicious URLs**: Check for misspellings or unusual domain names (e.g., \"paypal.com.secure-login.com\" instead of \"paypal.com\").\n  - **Urgent Language**: Be wary of messages that create a sense of urgency or panic, prompting immediate action (e.g., \u201cYour account will be suspended!\u201d).\n  - **Generic Greetings**: Phishing emails often use \"Dear Customer\" instead of your name.\n  - **Unexpected Attachments**: Be cautious of unexpected files or links, especially in emails from unknown senders.\n  - **Design Flaws**: Look for poor grammar, spelling mistakes, or logos that don\u2019t seem quite right.\n\n### Step 5: Report the Phishing Attempt\n- **Report to Relevant Authorities**:\n  - **Email Providers**: If you received a phishing email, forward it to your email provider (e.g., Gmail, Yahoo)",
+    "risk_level": "high",
+    "status": "pending",
+    "created_at": "2025-09-25T10:08:47.424047",
+    "last_updated": "2025-09-25T10:08:47.424047"
+}

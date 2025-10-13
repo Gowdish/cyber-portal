@@ -1,0 +1,55 @@
+{
+    "complaint_id": "CYB-75030187",
+    "user_info": {
+        "name": "dfv",
+        "email": "gowdish2005@gmail.com",
+        "phone": "dfvdfvdfzvbd",
+        "address": "v v"
+    },
+    "attack_type": "phishing",
+    "scenario": "bvjhbd",
+    "additional_info": "",
+    "evidence_files": [],
+    "analysis_results": {
+        "url_analysis": {
+            "url": "https://kongunadu.ac.in/",
+            "domain_analysis": {
+                "Domain": "kongunadu.ac.in",
+                "Uses IP": false,
+                "Has SSL": true,
+                "Domain Age (days)": 3788,
+                "DNS Records": {
+                    "A": [
+                        "172.67.146.71",
+                        "104.21.73.165"
+                    ],
+                    "MX": [
+                        "aspmx.l.google.com.",
+                        "alt3.aspmx.l.google.com.",
+                        "alt4.aspmx.l.google.com.",
+                        "alt1.aspmx.l.google.com.",
+                        "alt2.aspmx.l.google.com."
+                    ],
+                    "TXT": [
+                        "\"v=spf1 +a +mx +ip4:122.185.252.19 ~all\"",
+                        "\"MS=7011055AEE3BE31C37EEB58FD57DACF954B1A3D9\""
+                    ]
+                },
+                "Page Info": {
+                    "Title": "Kongunadu College of Engineering and Technology - KONGUNADU COLLEGE OF ENGINEERING AND TECHNOLOGY",
+                    "Forms": 0,
+                    "iFrames": 0
+                },
+                "Pass Domain Check": true
+            },
+            "ml_prediction_raw": "phishing",
+            "final_verdict": "phishing",
+            "confidence": 0.5128662654742844
+        }
+    },
+    "ai_assistance": "Certainly! Here\u2019s a clear, step-by-step guide to help you handle phishing links and improve your online security.\n\n### Step 1: DO NOT click on or visit the detected URLs.\n- **Action**: If you've identified a URL as phishing, refrain from interacting with it. Ensure your browser or device does not inadvertently redirect you to the site.\n- **Tip**: Close any browser tabs that may contain the malicious links, and avoid pasting the link into your browser.\n\n### Step 2: If you have already clicked on a link, immediately change passwords for any accounts you may have accessed.\n- **Action**: Go to each of your accounts (email, banking, social media, etc.) and change your passwords. Use strong, unique passwords that combine letters, numbers, and special characters.\n- **Tip**: Consider using a password manager to generate and store complex passwords securely.\n\n### Step 3: Run a security scan on your device.\n- **Action**: Use updated antivirus or anti-malware software to perform a full system scan.\n- **Steps**:\n  1. Open your antivirus software.\n  2. Select the option for a full system scan.\n  3. Allow the scan to complete and follow any prompts to remove detected threats.\n- **Tip**: Ensure your security software is regularly updated for optimal protection.\n\n### Step 4: Explain how to identify phishing links in the future.\n- **Look for Suspicious URLs**: Check for misspellings or variations in the domain name (e.g., \u201cfaceb00k.com\u201d vs. \u201cfacebook.com\u201d).\n- **Hover Over Links**: Hover your mouse over any link (without clicking) to see the actual URL. Ensure it matches the expected website.\n- **Be Wary of Urgency**: Phishing attempts often create a sense of urgency, prompting quick action without careful consideration.\n- **Check for Generic Greetings**: Phishing emails often use generic salutations (e.g., \"Dear User\") rather than personal ones.\n- **Look for Poor Grammar and Spelling**: Many phishing messages contain errors in spelling or grammar.\n- **Avoid Unsolicited Requests**: Be cautious of unexpected emails or messages asking for personal information, especially from unknown sources.\n\n### Step 5: Advise on reporting the phishing attempt to the relevant authorities or service providers.\n- **Report to Email Provider**: If the phishing attempt came via email, report it",
+    "risk_level": "high",
+    "status": "pending",
+    "created_at": "2025-09-26T16:23:15.224560",
+    "last_updated": "2025-09-26T16:23:15.224560"
+}

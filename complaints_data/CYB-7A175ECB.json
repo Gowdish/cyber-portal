@@ -1,0 +1,55 @@
+{
+    "complaint_id": "CYB-7A175ECB",
+    "user_info": {
+        "name": "Gowdish S",
+        "email": "gowdish2005@gmail.com",
+        "phone": "8489616411",
+        "address": "1/295 pedari amman street Konappampatti Musiri Trichy"
+    },
+    "attack_type": "phishing",
+    "scenario": "asdasc",
+    "additional_info": "wddw",
+    "evidence_files": [],
+    "analysis_results": {
+        "url_analysis": {
+            "url": "https://kongunadu.ac.in/center-of-excellence/",
+            "domain_analysis": {
+                "Domain": "kongunadu.ac.in",
+                "Uses IP": false,
+                "Has SSL": true,
+                "Domain Age (days)": 3789,
+                "DNS Records": {
+                    "A": [
+                        "172.67.146.71",
+                        "104.21.73.165"
+                    ],
+                    "MX": [
+                        "alt3.aspmx.l.google.com.",
+                        "alt4.aspmx.l.google.com.",
+                        "aspmx.l.google.com.",
+                        "alt1.aspmx.l.google.com.",
+                        "alt2.aspmx.l.google.com."
+                    ],
+                    "TXT": [
+                        "\"MS=7011055AEE3BE31C37EEB58FD57DACF954B1A3D9\"",
+                        "\"v=spf1 +a +mx +ip4:122.185.252.19 ~all\""
+                    ]
+                },
+                "Page Info": {
+                    "Title": "Center of Excellence - KONGUNADU COLLEGE OF ENGINEERING AND TECHNOLOGY",
+                    "Forms": 0,
+                    "iFrames": 0
+                },
+                "Pass Domain Check": true
+            },
+            "ml_prediction_raw": "legitimate",
+            "final_verdict": "legitimate",
+            "confidence": 1.0
+        }
+    },
+    "ai_assistance": "I'm glad to inform you that the submitted URL or document has been thoroughly analyzed and was found to be safe, showing no signs of malicious activity. \n\nHowever, it's always wise to remain vigilant online. Here are some proactive tips to ensure your continued safety:\n\n- **Be Cautious with Links from Unknown Sources**: Always think twice before clicking on links in emails or messages from unfamiliar senders. They may lead to unwanted content or phishing attempts.\n\n- **Verify the Authenticity of Documents and Their Senders**: If you receive any documents or files from unknown sources or even familiar ones that seem suspicious, take a moment to verify their authenticity. Check email addresses carefully or reach out to the sender through another method to confirm.\n\n- **Use Strong, Unique Passwords**: Protect your online accounts with strong, unique passwords. Consider using a password manager to help you keep track of your credentials systematically.\n\n- **Ongoing Vigilance is Key**: Cyber threats are constantly evolving, so maintaining an awareness of the latest security practices is essential. Regularly update your software and security systems, and stay informed about potential threats.\n\nBy following these precautions, you can help safeguard your online presence and protect your personal information. Stay safe!",
+    "risk_level": "low",
+    "status": "pending",
+    "created_at": "2025-09-27T09:07:16.497991",
+    "last_updated": "2025-09-27T09:07:16.497991"
+}

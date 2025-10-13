@@ -1,0 +1,30 @@
+{
+    "complaint_id": "CYB-E320E25B",
+    "user_info": {
+        "name": "Gowdish 2005",
+        "email": "lidiyasolami@gmail.com",
+        "phone": "08489616411",
+        "address": "Pedari Amman Kovil Kadu\r\n1/295"
+    },
+    "attack_type": "deepfake_video",
+    "scenario": "it is morphed or really tsken",
+    "additional_info": "",
+    "evidence_files": [
+        {
+            "filename": "WhatsApp_Video_2025-09-23_at_2.36.13_PM.mp4",
+            "file_path": "uploads\\WhatsApp_Video_2025-09-23_at_2.36.13_PM.mp4"
+        }
+    ],
+    "analysis_results": {
+        "deepfake_video": {
+            "prediction": "real",
+            "confidence": 0.9368773698806763,
+            "is_deepfake": false
+        }
+    },
+    "ai_assistance": "Based on the details provided in the cybersecurity incident report regarding the deepfake video, follow the steps below to mitigate the issue, resolve the current situation, and enhance your future protection.\n\n### Step 1: Immediately Mitigate the Attack\n1. **Disconnect from the Internet**: Immediately disconnect your device from the internet to prevent any potential further compromise or data exfiltration.\n2. **Change All Passwords**: From a secure device (a device not potentially compromised), change the passwords for all accounts (email, social media, financial services) that may have been exposed. Use strong, unique passwords and consider enabling two-factor authentication for added security.\n3. **Activate Security Alerts**: Enable account activity alerts on important accounts (such as email and banking). This helps you quickly identify any unauthorized access.\n\n### Step 2: Overcome the Current Problem\n1. **Assess the Deepfake Video**: Since the analysis reports that the video is likely real, verify its legitimacy with trusted sources before proceeding to any action. \n2. **Report Fraud**: If the video is tied to a malicious use case, such as identity theft or defamation:\n   - **Report to Authorities**: Contact local law enforcement to report the incident.\n   - **Notify Platforms**: If the video is being distributed on social media or video platforms, report it to the platforms as well for inappropriate content or identity theft.\n3. **Consult a Professional**: Consider consulting a cybersecurity expert or a legal professional for advice tailored to your specific circumstances.\n\n### Step 3: Protect Themselves in the Future\n1. **Enhance Digital Literacy**: Educate yourself and your team on recognizing deepfakes and other types of media manipulation.\n2. **Use Security Software**: Install and update reputable antivirus and anti-malware software to protect your devices from malicious attacks.\n3. **Regular Security Audits**: Conduct periodic security checks of your personal devices and online accounts.\n4. **Backup Data Regularly**: Regularly back up important information to prevent loss in case of future attacks.\n5. **Limit Personal Information Exposure**: Be conscious of the data you share on social media; limit exposure that could be used against you.\n\n### Step 4: Closing the Case\n1. **Evaluate Comfort Level**: After following the steps above and addressing all concerns, take a moment to ensure you feel secure and informed moving forward.\n2. **Monitor for Signs of Compromise**:",
+    "risk_level": "low",
+    "status": "pending",
+    "created_at": "2025-09-24T17:24:24.600994",
+    "last_updated": "2025-09-24T17:24:24.600994"
+}

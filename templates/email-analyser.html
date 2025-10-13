@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Analysis - Cyber Defence Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; background: #0d1117; color: #e2e8f0; }
+    .container { max-width: 600px; margin: auto; background: #161b22; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+    input[type="file"] { margin-top: 10px; margin-bottom: 15px; color: #eee; }
+    button { padding: 12px 20px; background: #2ea043; border: none; border-radius: 8px; color: white; cursor: pointer; transition: background-color 0.3s, transform 0.2s; font-weight: 600; }
+    button:hover { background: #238636; transform: translateY(-1px); }
+    pre { background: #111827; padding: 20px; border-radius: 8px; white-space: pre-wrap; margin-top: 20px; overflow-x: auto; font-size: 0.875rem; }
+    .header { text-align: center; margin-bottom: 24px; }
+    input[type="file"]::-webkit-file-upload-button {
+      background-color: #2e8143;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    input[type="file"]::-webkit-file-upload-button:hover {
+      background-color: #238636;
+    }
+  </style>
+</head>
+<body class="p-4">
+  <div class="container mt-10">
+    <div class="header">
+        <h2 class="text-3xl font-bold mb-2">📧 Email & Document Analysis</h2>
+        <p class="text-gray-400">Upload a PDF or image to check for malicious URLs.</p>
+    </div>
+    <form id="emailForm" enctype="multipart/form-data" class="flex flex-col md:flex-row gap-3">
+      <input type="file" id="fileInput" accept=".pdf, image/*" required class="flex-1">
+      <button type="submit">Analyze</button>
+    </form>
+    <pre id="emailResult" class="text-gray-300">Results will be displayed here.</pre>
+  </div>
+
+  <script>
+    document.getElementById("emailForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const fileInput = document.getElementById("fileInput");
+      const resultDiv = document.getElementById("emailResult");
+      if (!fileInput.files.length) {
+        resultDiv.textContent = 'Please select a file!';
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("file", fileInput.files[0]);
+
+      resultDiv.textContent = "Analyzing...";
+
+      try {
+        const res = await fetch("http://127.0.0.1:5000/api/email-analyser", {
+          method: "POST",
+          body: formData,
+        });
+
+        if (!res.ok) {
+          const errorData = await res.json();
+          throw new Error(errorData.error || `HTTP error! status: ${res.status}`);
+        }
+        
+        const data = await res.json();
+        
+        const urlReports = data.url_reports.map(report => `
+---
+URL: ${report.url}
+Verdict: ${report.final_verdict}
+Domain Analysis: ${JSON.stringify(report.domain_analysis, null, 2)}
+---
+        `).join('\n');
+
+        resultDiv.textContent = `
+Filename: ${data.filename}
+Extracted Text:
+${data.extracted_text.slice(0, 500)}...
+
+--- URL Reports ---
+${urlReports || 'No URLs found in the document.'}
+
+AI Suggestion:
+${data.ai_suggestion}
+        `.trim();
+
+      } catch (err) {
+        resultDiv.textContent = `⚠️ Error: ${err.message}`;
+      }
+    });
+  </script>
+</body>
+</html>

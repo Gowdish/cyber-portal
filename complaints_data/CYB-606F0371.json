@@ -1,0 +1,34 @@
+{
+    "complaint_id": "CYB-606F0371",
+    "user_info": {
+        "name": "Gowdish 2005",
+        "email": "siddiq492004@gmail.com",
+        "phone": "08489616411",
+        "address": "Pedari Amman Kovil Kadu\r\n1/295"
+    },
+    "attack_type": "malware",
+    "scenario": "sdcbsdbcd",
+    "additional_info": "",
+    "evidence_files": [
+        {
+            "filename": "sample.apk",
+            "file_path": "uploads\\sample.apk"
+        }
+    ],
+    "analysis_results": {
+        "apk_analysis": {
+            "app_name": "Rimichka",
+            "package": "com.avtobiografia.rimichka",
+            "permissions": [],
+            "malware_probability": 0.03334484629557379,
+            "severity": "Low",
+            "guidance": "Application appears safe."
+        }
+    },
+    "ai_assistance": "Dear User,\n\nI'm pleased to inform you that after a thorough analysis, your submitted file \"Rimichka\" appears to be safe, with a low malware probability of just 3.33%. It seems like this application is harmless, which is great news!\n\nTo ensure your ongoing security and to keep your devices safe, here are some proactive tips you might find helpful:\n\n- **Only download apps from official app stores:** Sticking to trusted sources reduces the risk of encountering malicious software.\n- **Always check app permissions before installation:** This helps you understand what data and features the app will access, ensuring it aligns with your expectations.\n- **Keep your device's operating system and apps updated:** Regular updates help patch vulnerabilities and enhance device security.\n- **Use a reliable antivirus program:** Having a strong antivirus can provide an additional layer of protection against potential threats.\n\nGiven that the application seems safe, you can confidently close the case now. If you have any further questions or concerns, feel free to reach out!\n\nStay safe and take care!",
+    "risk_level": "low",
+    "status": "closed",
+    "created_at": "2025-09-26T15:47:36.133953",
+    "last_updated": "2025-10-06T18:21:09.898898",
+    "admin_notes": "Case closed by admin."
+}

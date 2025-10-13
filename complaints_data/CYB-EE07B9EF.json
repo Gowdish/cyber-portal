@@ -1,0 +1,109 @@
+{
+    "complaint_id": "CYB-EE07B9EF",
+    "user_info": {
+        "name": "Gowdish S",
+        "email": "gowdish2005@gmail.com",
+        "phone": "8489616411",
+        "address": "1/295 pedari amman street Konappampatti Musiri Trichy"
+    },
+    "attack_type": "phishing",
+    "scenario": "asdasc",
+    "additional_info": "wddw",
+    "evidence_files": [
+        {
+            "filename": "test_gmail.pdf",
+            "file_path": "uploads\\test_gmail.pdf"
+        }
+    ],
+    "analysis_results": {
+        "phishing_document": {
+            "extracted_text": "Nomination of your innovation for The India Pitch\n2 messages\nYUKTI - National Innovation Repository <iic.mhrd@aicte-india.org> Tue, Jul 8, 2025 at 5:22 PM\nTo: gowdish2005@gmail.com\nYUKTI Innovation Repository\nDear Innovator,\nYour institute has nominated your Innovation submitted under YUKTI\nInnovation Repository to participate in the Yukti Innovation Challenge\n2025.\nYou need to login into YUKTI portal at https://yukti.mic.gov.in/login and\nupdate the innovation details if required.\nFor more details, please refer to the link: https://yukti.mic.gov.in/\nYIC2025 .\nThanks and Regards,\nYUKTI Implementation Team\nMinistry of Education's Innovation Cell, Govt. of India\nNote: This is an auto generated email, please don't reply to this\nemail id.\nTo know about YIR, please visit https://yukti.mic.gov.in/.\n\u00a9 2022 Institution's Innovation Council, Ministry of Education's\nInnovation Cell, All rights reserved.\nGowdish 2005 <gowdish2005@gmail.com> Tue, Jul 8, 2025 at 5:27 PM\nTo: HARIHARAN <tm07hariharan2122@gmail.com>\n[Quoted text hidden]",
+            "found_urls": [
+                "https://yukti.mic.gov.in/login",
+                "https://yukti.mic.gov.in/",
+                "https://yukti.mic.gov.in/."
+            ],
+            "url_reports": [
+                {
+                    "url": "https://yukti.mic.gov.in/login",
+                    "domain_analysis": {
+                        "Domain": "yukti.mic.gov.in",
+                        "Uses IP": false,
+                        "Has SSL": true,
+                        "Domain Age (days)": 2529,
+                        "DNS Records": {
+                            "A": [
+                                "20.204.13.165"
+                            ],
+                            "MX": [],
+                            "TXT": []
+                        },
+                        "Page Info": {
+                            "Title": "403 Forbidden",
+                            "Forms": 0,
+                            "iFrames": 0
+                        },
+                        "Pass Domain Check": true
+                    },
+                    "final_verdict": "legitimate",
+                    "confidence": 0.95,
+                    "ml_prediction": "Bypassed ML"
+                },
+                {
+                    "url": "https://yukti.mic.gov.in/",
+                    "domain_analysis": {
+                        "Domain": "yukti.mic.gov.in",
+                        "Uses IP": false,
+                        "Has SSL": true,
+                        "Domain Age (days)": 2529,
+                        "DNS Records": {
+                            "A": [
+                                "20.204.13.165"
+                            ],
+                            "MX": [],
+                            "TXT": []
+                        },
+                        "Page Info": {
+                            "error": "Could not fetch page info"
+                        },
+                        "Pass Domain Check": true
+                    },
+                    "final_verdict": "legitimate",
+                    "confidence": 0.95,
+                    "ml_prediction": "Bypassed ML"
+                },
+                {
+                    "url": "https://yukti.mic.gov.in/.",
+                    "domain_analysis": {
+                        "Domain": "yukti.mic.gov.in",
+                        "Uses IP": false,
+                        "Has SSL": true,
+                        "Domain Age (days)": 2529,
+                        "DNS Records": {
+                            "A": [
+                                "20.204.13.165"
+                            ],
+                            "MX": [],
+                            "TXT": []
+                        },
+                        "Page Info": {
+                            "Title": "403 Forbidden",
+                            "Forms": 0,
+                            "iFrames": 0
+                        },
+                        "Pass Domain Check": true
+                    },
+                    "final_verdict": "legitimate",
+                    "confidence": 0.95,
+                    "ml_prediction": "Bypassed ML"
+                }
+            ],
+            "risk_level": "low"
+        }
+    },
+    "ai_assistance": "### Immediate Action Plan for Mitigating the Phishing Attack\n\n**Step 1: Disconnect from the Internet**\n- Immediately disconnect your device from the internet. This can prevent any potential unauthorized access or data leakage.\n\n**Step 2: Change Your Passwords**\n- Change your email password (gowdish2005@gmail.com) and any other accounts that might use the same or similar passwords. Make sure to use a strong password that includes upper and lower case letters, numbers, and special characters.\n- Enable two-factor authentication (2FA) wherever possible to add an extra layer of security.\n\n**Step 3: Review Account Activity**\n- Check your email account for any suspicious activities such as unauthorized changes to your account settings or sent messages that you did not authorize.\n\n### Overcoming Current Problems\n\n**Step 4: Report the Phishing Attempt**\n- Report the phishing email to your email service provider (e.g., Gmail) by selecting the email and clicking on the \"Report phishing\" option.\n- Additionally, report the incident to the relevant authorities (e.g., Cyber Crime Cell) to help combat phishing attempts.\n\n**Step 5: Scan Your Device for Malware**\n- Use reputable antivirus or anti-malware software to scan your device for any potential malware or unwanted software that may have been installed as a result of the phishing attempt.\n- Remove any detected threats and ensure your antivirus software is up-to-date.\n\n### Protecting Yourself in the Future\n\n**Step 6: Educate Yourself on Phishing Techniques**\n- Familiarize yourself with common phishing tactics, such as suspicious email addresses, urgent calls to action, and unexpected attachments or links.\n- Always double-check the URL in emails by hovering over links before clicking to confirm they lead to legitimate sites.\n\n**Step 7: Use Email Filtering Tools**\n- Enable spam filters and phishing detection tools provided by your email service. This can help filter out suspicious emails before they reach your inbox.\n\n**Step 8: Regularly Update Your Software**\n- Keep your operating system, software applications, and security tools updated to ensure you have the latest security patches that protect you from vulnerabilities.\n\n**Step 9: Backup Important Data**\n- Regularly back up your important files to an external hard drive or a secure cloud service. This will help you recover your data in case of future incidents.\n\n### Closing the Case\n\n**Step 10: Assess Your Readiness to Close the Case**\n- Once you have completed the above steps and feel secure,",
+    "risk_level": "low",
+    "status": "pending",
+    "created_at": "2025-09-24T08:59:36.586007",
+    "last_updated": "2025-09-24T08:59:36.586007"
+}

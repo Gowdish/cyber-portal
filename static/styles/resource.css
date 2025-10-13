@@ -1,0 +1,103 @@
+/*
+ * File: static/styles.css
+ * Description: Shared styles for the National Cybersecurity Portal (copied from admin.html's <style> block)
+ */
+
+/* ===== CSS Variables ===== */
+:root {
+    --primary-color: #1e3a8a;
+    --secondary-color: #dc2626;
+    --success-color: #16a34a;
+    --warning-color: #ea580c;
+    --info-color: #0284c7;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --bg-tertiary: #e2e8f0;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border-color: #cbd5e0;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Theme Variables */
+body.dark-theme {
+    --bg-primary: #1e293b;
+    --bg-secondary: #0f172a;
+    --bg-tertiary: #334155;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e0;
+    --border-color: #475569;
+}
+
+/* ===== Base Styles ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; 
+    background-color: var(--bg-secondary); 
+    color: var(--text-primary); 
+    line-height: 1.6; 
+    transition: background-color 0.3s, color 0.3s; 
+    min-height: 100vh;
+}
+
+/* ===== Header/Navigation/Layout (Shared) ===== */
+.govt-bar { background: linear-gradient(90deg, #1e3a8a 0%, #3b82f6 100%); color: white; padding: 0.5rem 0; font-size: 0.875rem; }
+.govt-bar-container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+.main-header { background: var(--bg-primary); border-bottom: 3px solid var(--primary-color); box-shadow: var(--shadow-md); }
+.header-container { max-width: 1400px; margin: 0 auto; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+.header-left { display: flex; align-items: center; gap: 1.5rem; }
+.portal-title { font-size: 1.75rem; font-weight: 700; color: var(--primary-color); margin-bottom: 0.25rem; letter-spacing: -0.5px; }
+.portal-subtitle { font-size: 0.875rem; color: var(--text-secondary); font-weight: 500; }
+.emergency-number { display: flex; align-items: center; gap: 1rem; background: linear-gradient(135deg, var(--primary-color), #3b82f6); padding: 1rem 1.5rem; border-radius: 8px; color: white; box-shadow: var(--shadow-md); }
+.emergency-number .helpline-label { font-size: 0.75rem; opacity: 0.9; }
+.emergency-number .helpline-number { font-size: 1.25rem; font-weight: 700; }
+
+.main-nav { background: var(--bg-primary); border-bottom: 1px solid var(--border-color); box-shadow: var(--shadow-sm); }
+.nav-container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; }
+.nav-menu { list-style: none; display: flex; margin: 0; padding: 0; }
+.nav-menu a { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem 1.5rem; color: var(--text-primary); text-decoration: none; font-weight: 500; border-bottom: 3px solid transparent; transition: all 0.3s; }
+.nav-menu a:hover, .nav-menu a.active { background: var(--bg-secondary); color: var(--primary-color); border-bottom-color: var(--primary-color); }
+
+.main-content { max-width: 1400px; margin: 0 auto; padding: 2rem; flex: 1; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+/* Dashboard Header Style (Shared by admin/resources) */
+.dashboard-header, .resources-header {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+}
+.dashboard-header h1, .resources-header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-shadow: none;
+}
+.dashboard-header p, .resources-header p {
+    color: var(--text-secondary);
+}
+
+/* Footer Styles (Shared) */
+.main-footer { 
+    background: var(--bg-primary); 
+    border-top: 3px solid var(--primary-color); 
+    margin-top: auto; 
+    padding: 1.5rem 0; 
+    text-align: center;
+    color: var(--text-secondary);
+}
+.footer-container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; font-size: 0.875rem; }
+
+/* Responsive Adjustments (Shared) */
+@media (max-width: 768px) {
+    .header-container, .nav-container, .govt-bar-container { flex-direction: column; gap: 1rem; text-align: center; }
+    .main-content { padding: 1rem; }
+}
+
+/* Add any other shared styles from admin.html here */

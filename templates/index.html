@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Cyber Crime Reporting Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <span>भारत सरकार / गृह मंत्रालय</span>
+            <span>GOVERNMENT OF INDIA / MINISTRY OF HOME AFFAIRS</span>
+        </div>
+        <div class="top-bar-right">
+            <span class="language-text">Language</span>
+            <select class="language-dropdown">
+                <option value="en">English</option>
+                <option value="hi">हिंदी</option>
+            </select>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="main-header-content">
+            <div class="logos-and-title">
+                <img src="https://via.placeholder.com/80x80?text=Emblem" alt="Indian Emblem" class="emblem-logo">
+                <img src="https://via.placeholder.com/80x80?text=ICCC" alt="Indian Cyber Coordination Centre" class="iccc-logo">
+                <div class="portal-titles">
+                    <p class="hindi-title">राष्ट्रीय साइबर अपराध रिपोर्टिंग पोर्टल</p>
+                    <p class="english-title">National Cyber Crime Reporting Portal</p>
+                </div>
+            </div>
+            <div class="header-utility">
+                <a href="/login" class="login-link">Login</a>
+                <img src="https://via.placeholder.com/100x80?text=Azadi" alt="Azadi Ka Amrit Mahotsav" class="azadi-logo">
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav-bar">
+        <ul>
+            <li><a href="/" class="home-icon"><i class="fas fa-home"></i></a></li>
+            <li><a href="/combined">Register a Complaint</a></li>
+            <li><a href="/trackcomplaint">Track Your Complaint</a></li>
+            <li><a href="/report">Report & Check Suspect</a></li>
+            <li><a href="/volunteer">Cyber Volunteers</a></li>
+            <li><a href="/learning">Learning Corner</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="news-ticker-container">
+        <div class="news-ticker">
+            <p>⚡ Cybersecurity Alert: Phishing attacks rise by 30% | 🔒 Government releases new cybersecurity guidelines | 🛡️ Protect your online accounts with MFA</p>
+        </div>
+    </div>
+
+    <section class="hero-section">
+        <div class="hero-carousel">
+            <div class="carousel-image active" style="background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop');"></div>
+            <div class="carousel-image" style="background-image: url('https://images.unsplash.com/photo-1596558450257-297592955519?q=80&w=1929&auto=format&fit=crop');"></div>
+            <div class="carousel-image" style="background-image: url('https://images.unsplash.com/photo-1627916666986-74d754b2d978?q=80&w=2070&auto=format&fit=crop');"></div>
+            <div class="carousel-image" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd724d356ee?q=80&w=2070&auto=format&fit=crop');"></div>
+            <div class="carousel-image" style="background-image: url('https://images.unsplash.com/photo-1549497042-b062b16a416b?q=80&w=2070&auto=format&fit=crop');"></div>
+        </div>
+        <div class="hero-content-container">
+            <h1>Report Cyber Crimes.<br> Stay Safe.</h1>
+            <p>Your trusted platform for reporting online fraud, cyberbullying, and other digital crimes.</p>
+            <a href="/login" class="cta-btn">File a Complaint Now</a>
+        </div>
+    </section>
+
+    <main>
+        <section class="main-content-grid">
+            <div class="section-card">
+                <h2>Register a Complaint</h2>
+                <p>File a complaint and upload evidence like URLs, APKs, emails, and images.</p>
+                <a href="/combined" class="section-btn">Start Complaint</a>
+            </div>
+
+            <div class="section-card">
+                <h2>Track Your Complaint</h2>
+                <input type="text" placeholder="Enter Complaint ID" class="track-input">
+                <button class="section-btn">Track Status</button>
+            </div>
+
+            <div class="section-card">
+                <h2>Learning Portal</h2>
+                <ul>
+                    <li>Courses</li>
+                    <li>Cybersecurity Awareness</li>
+                    <li>Attack Prevention Tips</li>
+                </ul>
+                <a href="/learning" class="section-btn">Explore Now</a>
+            </div>
+
+            <div class="section-card">
+                <h2>Cyber Companies & Govt Links</h2>
+                <ul class="link-list">
+                    <li>Indian CERT</li>
+                    <li>Cyber Crime Police</li>
+                    <li>NCIIPC</li>
+                </ul>
+            </div>
+
+            <div class="section-card">
+                <h2>Cyber Volunteers</h2>
+                <p>Join our mission to spread cybersecurity awareness in your community.</p>
+                <a href="/volunteer" class="section-btn">Join Now</a>
+            </div>
+        </section>
+
+        <section class="info-section types-of-crime">
+            <div class="info-container">
+                <h2 class="section-title">Common Types of Cyber Crime</h2>
+                <div class="crime-grid">
+                    <div class="crime-item">
+                        <i class="fas fa-lock-open crime-icon"></i>
+                        <h3>Financial Fraud</h3>
+                        <p>Scams involving online banking, credit cards, UPI fraud, and fake investment schemes.</p>
+                    </div>
+                    <div class="crime-item">
+                        <i class="fas fa-user-shield crime-icon"></i>
+                        <h3>Identity Theft</h3>
+                        <p>Misuse of personal information to impersonate someone and commit fraudulent activities.</p>
+                    </div>
+                    <div class="crime-item">
+                        <i class="fas fa-user-slash crime-icon"></i>
+                        <h3>Cyberstalking & Bullying</h3>
+                        <p>Harassment, threats, and intimidation carried out using digital communication platforms.</p>
+                    </div>
+                    <div class="crime-item">
+                        <i class="fas fa-desktop crime-icon"></i>
+                        <h3>Malware & Ransomware</h3>
+                        <p>Attacks where malicious software is used to damage or seize control of your computer systems.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section how-to-report">
+            <div class="info-container">
+                <h2 class="section-title">Simple Steps to Report a Cyber Crime</h2>
+                <div class="step-grid">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <h3>Gather Evidence</h3>
+                        <p>Collect all relevant details like screenshots, transaction IDs, emails, and URLs.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <h3>File a Complaint</h3>
+                        <p>Use our portal to fill out the complaint form with all the collected information.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <h3>Get a Complaint ID</h3>
+                        <p>Receive an official ID to track the status of your complaint and for future reference.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <h3>Follow Up</h3>
+                        <p>Our team will review your case and may contact you for more details if needed.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-section logos-section">
+                <img src="{{ url_for('static', filename='styles/assests/OIP.webp') }}" alt="govt-logo-1" class="footer-logo">
+                <img src="https://via.placeholder.com/40" alt="Govt Logo 2" class="footer-logo">
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Email: contact@portal.gov.in</p>
+                <p>Phone: 1800-123-4567</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='carousel.js') }}"></script>
+</body>
+</html>

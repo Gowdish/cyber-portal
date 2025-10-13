@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Complaint Status - Government of India</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        /* ===== CSS Variables ===== */
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #dc2626;
+            --success-color: #16a34a;
+            --warning-color: #ea580c;
+            --info-color: #0284c7;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #e2e8f0;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #cbd5e0;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Dark Theme Variables */
+        body.dark-theme {
+            --bg-primary: #1e293b;
+            --bg-secondary: #0f172a;
+            --bg-tertiary: #334155;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e0;
+            --border-color: #475569;
+        }
+
+        /* ===== Base Styles ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; background-color: var(--bg-secondary); color: var(--text-primary); line-height: 1.6; transition: background-color 0.3s, color 0.3s; display: flex; flex-direction: column; min-height: 100vh; }
+        
+        /* ===== Layout Containers ===== */
+        .govt-bar { background: linear-gradient(90deg, #1e3a8a 0%, #3b82f6 100%); color: white; padding: 0.5rem 0; font-size: 0.875rem; }
+        .govt-bar-container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .main-header { background: var(--bg-primary); border-bottom: 3px solid var(--primary-color); box-shadow: var(--shadow-md); }
+        .header-container { max-width: 1400px; margin: 0 auto; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .header-left { display: flex; align-items: center; gap: 1.5rem; }
+        .header-titles { display: flex; flex-direction: column; }
+        .portal-title { font-size: 1.75rem; font-weight: 700; color: var(--primary-color); margin-bottom: 0.25rem; letter-spacing: -0.5px; }
+        .emergency-number { display: flex; align-items: center; gap: 1rem; background: linear-gradient(135deg, var(--secondary-color), #ef4444); padding: 1rem 1.5rem; border-radius: 8px; color: white; box-shadow: var(--shadow-md); }
+        .main-nav { background: var(--bg-primary); border-bottom: 1px solid var(--border-color); box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 100; }
+        .nav-container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; }
+        .nav-menu { list-style: none; display: flex; margin: 0; padding: 0; }
+        .nav-menu a { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem 1.5rem; color: var(--text-primary); text-decoration: none; font-weight: 500; border-bottom: 3px solid transparent; transition: all 0.3s; }
+        .nav-menu a:hover, .nav-menu a.active { background: var(--bg-secondary); color: var(--primary-color); border-bottom-color: var(--primary-color); }
+        .main-content { max-width: 1400px; margin: 0 auto; padding: 2rem; flex: 1; }
+        .content-wrapper { display: flex; flex-direction: column; gap: 2rem; }
+        
+        /* New Tracking Content Container (Styled to fit design) */
+        .track-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: var(--bg-primary);
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Forms, Alerts, and Buttons */
+        .alert { 
+            padding: 1rem 1.5rem; 
+            border-radius: 8px; 
+            margin-bottom: 1.5rem; 
+            display: none; 
+            border-left: 4px solid;
+            box-shadow: var(--shadow-sm);
+        }
+        .alert.error { 
+            background: #fee2e2; 
+            border-color: var(--secondary-color); 
+            color: #991b1b; 
+        }
+
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { 
+            display: block; 
+            margin-bottom: 0.5rem; 
+            font-weight: 500; 
+            color: var(--text-primary); 
+        }
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            color: var(--text-primary);
+            background: var(--bg-secondary);
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, var(--primary-color), #3b82f6);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow-md);
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Results Display */
+        #results-container {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            display: none;
+            box-shadow: var(--shadow-sm);
+        }
+        #results-container h3 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color); 
+            padding-bottom: 0.5rem; 
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        #results-container p {
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        /* Badges */
+        .risk-badge, .status-badge {
+            display: inline-block;
+            padding: 0.35rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            text-transform: uppercase;
+        }
+        /* Status Color Matching Government Template */
+        .status-badge.pending { background: #fee2e2; color: #991b1b; } /* High Priority/Warning equivalent */
+        .status-badge.in-progress { background: #fef3c7; color: #92400e; } /* Warning equivalent */
+        .status-badge.resolved, .status-badge.closed { background: #d1fae5; color: #065f46; } /* Success equivalent */
+
+        /* Risk Color Matching Government Template */
+        .risk-badge.low { background: #d1fae5; color: #065f46; }
+        .risk-badge.medium { background: #fef3c7; color: #92400e; }
+        .risk-badge.high { background: #fee2e2; color: #991b1b; }
+        
+        .ai-assistance {
+            background: var(--bg-primary);
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1.5rem 0 0;
+            box-shadow: var(--shadow-sm);
+        }
+        .ai-assistance p {
+            font-size: 0.9rem;
+        }
+
+        /* Footer Styles (Minimal for integrity) */
+        .main-footer { background: var(--bg-primary); border-top: 3px solid var(--primary-color); margin-top: auto; padding: 2rem 0; box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1); }
+        .footer-container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-around; font-size: 0.875rem; color: var(--text-secondary); }
+    </style>
+    </head>
+<body>
+    <div class="govt-bar">
+        <div class="govt-bar-container">
+            <div class="govt-info">
+                <span class="govt-text">Government of India</span>
+                <span class="divider">|</span>
+                <span class="ministry-text">Ministry of Home Affairs</span>
+            </div>
+            <div class="accessibility-links">
+                <a href="#" class="acc-link">हिंदी</a>
+                <a href="#" class="acc-link">A+</a>
+                <a href="#" class="acc-link">A-</a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-adjust"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-left">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="Emblem of India" class="emblem" style="height: 70px;" onerror="this.style.display='none'">
+                <div class="header-titles">
+                    <h1 class="portal-title">National Cybersecurity Complaint Portal</h1>
+                    <p class="portal-subtitle">Ministry of Home Affairs | Cyber Crime Division</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="emergency-number">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="emergency-info">
+                        <span class="helpline-label">24x7 Helpline</span>
+                        <span class="helpline-number">1930</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="/#file-complaint"><i class="fas fa-file-alt"></i> File Complaint</a></li>
+                <li><a href="#" class="active"><i class="fas fa-search"></i> Track Complaint</a></li>
+                <li><a href="#resources"><i class="fas fa-book"></i> Resources</a></li>
+                <li><a href="/admin"><i class="fas fa-user-shield"></i> Admin Login</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="main-content">
+        <div class="track-container">
+            <h2 style="text-align: center; margin-bottom: 1.5rem; color: var(--primary-color);">Track Your Complaint Status</h2>
+            <div id="alert" class="alert"></div>
+
+            <form id="trackForm">
+                <div class="form-group">
+                    <label for="complaintId">Enter Your Complaint ID:</label>
+                    <input type="text" id="complaintId" name="complaintId" placeholder="e.g., CYB123456" required>
+                </div>
+                <button type="submit" class="btn">
+                    <i class="fas fa-search"></i> Track Complaint
+                </button>
+            </form>
+
+            <div id="results-container">
+                <h3 style="border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">Complaint Details</h3>
+                <p><strong>Complaint ID:</strong> <span id="display-id"></span></p>
+                <p>
+                    <strong>Status:</strong> 
+                    <span id="display-status" class="status-badge"></span>
+                </p>
+                <p>
+                    <strong>Risk Level:</strong> 
+                    <span id="display-risk" class="risk-badge"></span>
+                </p>
+                <p><strong>Incident Type:</strong> <span id="display-type"></span></p>
+                <p><strong>Scenario:</strong> <span id="display-scenario"></span></p>
+                <p><strong>Admin Notes:</strong> <span id="display-notes"></span></p>
+                <div class="ai-assistance">
+                    <p><strong>AI Assistant Guidance:</strong> <span id="display-ai-guidance"></span></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Government of India. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('trackForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const complaintId = document.getElementById('complaintId').value.trim();
+            const resultsContainer = document.getElementById('results-container');
+            const submitBtn = this.querySelector('.btn');
+            
+            if (!complaintId) {
+                showAlert('Please enter a complaint ID.', 'error');
+                return;
+            }
+
+            // Show loading state
+            const originalButtonText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<span class="loading-spinner"></span> Tracking...';
+            submitBtn.disabled = true;
+
+            try {
+                // Use the backend endpoint for tracking
+                const response = await fetch(`/api/get_complaint/${complaintId}`);
+                const data = await response.json();
+
+                if (response.ok && data.success) {
+                    const complaint = data.complaint;
+                    
+                    // Normalize status and risk for CSS classes
+                    const statusClass = complaint.status.toLowerCase().replace(/\s+/g, '-');
+                    const riskClass = complaint.risk_level.toLowerCase();
+
+                    // Update DOM elements
+                    document.getElementById('display-id').textContent = complaint.complaint_id;
+                    
+                    const statusSpan = document.getElementById('display-status');
+                    statusSpan.textContent = complaint.status.toUpperCase();
+                    statusSpan.className = `status-badge ${statusClass}`;
+                    
+                    const riskSpan = document.getElementById('display-risk');
+                    riskSpan.textContent = complaint.risk_level.toUpperCase();
+                    riskSpan.className = `risk-badge ${riskClass}`;
+                    
+                    document.getElementById('display-type').textContent = complaint.attack_type.toUpperCase();
+                    document.getElementById('display-scenario').textContent = complaint.scenario;
+                    document.getElementById('display-notes').textContent = complaint.admin_notes || 'No notes available.';
+                    document.getElementById('display-ai-guidance').textContent = complaint.ai_assistance || 'No specific guidance available.';
+                    
+                    resultsContainer.style.display = 'block';
+                    showAlert('', ''); // Clear any previous alerts
+                } else {
+                    resultsContainer.style.display = 'none';
+                    showAlert(data.error || 'Complaint not found. Please verify the ID.', 'error');
+                }
+            } catch (error) {
+                resultsContainer.style.display = 'none';
+                showAlert('Network error. Failed to connect to the complaint server.', 'error');
+            } finally {
+                // Reset button state
+                submitBtn.innerHTML = originalButtonText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        function showAlert(message, type) {
+            const alert = document.getElementById('alert');
+            alert.textContent = message;
+            // Use classes from the Government Portal CSS
+            alert.className = `alert ${type}`;
+            alert.style.display = message ? 'block' : 'none';
+        }
+        
+        // --- Theme Toggle Logic (Added for consistency with the design template) ---
+        document.getElementById('themeToggle').addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+        });
+    </script>
+</body>
+</html>

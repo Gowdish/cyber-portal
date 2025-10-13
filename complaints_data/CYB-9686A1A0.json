@@ -1,0 +1,111 @@
+{
+    "complaint_id": "CYB-9686A1A0",
+    "user_info": {
+        "name": "Free Fire",
+        "email": "abubakkarsiddiq123as@gmail.com",
+        "phone": "08489843737",
+        "address": "ponnamaravathy\r\nponnamaravathy"
+    },
+    "attack_type": "phishing",
+    "scenario": "I received this phising email now",
+    "additional_info": "",
+    "evidence_files": [
+        {
+            "filename": "test_gmail.pdf",
+            "file_path": "uploads\\test_gmail.pdf"
+        }
+    ],
+    "analysis_results": {
+        "phishing_document": {
+            "extracted_text": "Nomination of your innovation for The India Pitch\n2 messages\nYUKTI - National Innovation Repository <iic.mhrd@aicte-india.org> Tue, Jul 8, 2025 at 5:22 PM\nTo: gowdish2005@gmail.com\nYUKTI Innovation Repository\nDear Innovator,\nYour institute has nominated your Innovation submitted under YUKTI\nInnovation Repository to participate in the Yukti Innovation Challenge\n2025.\nYou need to login into YUKTI portal at https://yukti.mic.gov.in/login and\nupdate the innovation details if required.\nFor more details, please refer to the link: https://yukti.mic.gov.in/\nYIC2025 .\nThanks and Regards,\nYUKTI Implementation Team\nMinistry of Education's Innovation Cell, Govt. of India\nNote: This is an auto generated email, please don't reply to this\nemail id.\nTo know about YIR, please visit https://yukti.mic.gov.in/.\n\u00a9 2022 Institution's Innovation Council, Ministry of Education's\nInnovation Cell, All rights reserved.\nGowdish 2005 <gowdish2005@gmail.com> Tue, Jul 8, 2025 at 5:27 PM\nTo: HARIHARAN <tm07hariharan2122@gmail.com>\n[Quoted text hidden]",
+            "found_urls": [
+                "https://yukti.mic.gov.in/login",
+                "https://yukti.mic.gov.in/",
+                "https://yukti.mic.gov.in/."
+            ],
+            "url_reports": [
+                {
+                    "url": "https://yukti.mic.gov.in/login",
+                    "domain_analysis": {
+                        "Domain": "yukti.mic.gov.in",
+                        "Uses IP": false,
+                        "Has SSL": true,
+                        "Domain Age (days)": 2530,
+                        "DNS Records": {
+                            "A": [
+                                "20.204.13.165"
+                            ],
+                            "MX": [],
+                            "TXT": []
+                        },
+                        "Page Info": {
+                            "Title": "403 Forbidden",
+                            "Forms": 0,
+                            "iFrames": 0
+                        },
+                        "Pass Domain Check": true
+                    },
+                    "ml_prediction_raw": "Bypassed ML",
+                    "final_verdict": "legitimate",
+                    "confidence": 0.95
+                },
+                {
+                    "url": "https://yukti.mic.gov.in/",
+                    "domain_analysis": {
+                        "Domain": "yukti.mic.gov.in",
+                        "Uses IP": false,
+                        "Has SSL": true,
+                        "Domain Age (days)": 2530,
+                        "DNS Records": {
+                            "A": [
+                                "20.204.13.165"
+                            ],
+                            "MX": [],
+                            "TXT": []
+                        },
+                        "Page Info": {
+                            "Title": "403 Forbidden",
+                            "Forms": 0,
+                            "iFrames": 0
+                        },
+                        "Pass Domain Check": true
+                    },
+                    "ml_prediction_raw": "Bypassed ML",
+                    "final_verdict": "legitimate",
+                    "confidence": 0.95
+                },
+                {
+                    "url": "https://yukti.mic.gov.in/.",
+                    "domain_analysis": {
+                        "Domain": "yukti.mic.gov.in",
+                        "Uses IP": false,
+                        "Has SSL": true,
+                        "Domain Age (days)": 2530,
+                        "DNS Records": {
+                            "A": [
+                                "20.204.13.165"
+                            ],
+                            "MX": [],
+                            "TXT": []
+                        },
+                        "Page Info": {
+                            "Title": "403 Forbidden",
+                            "Forms": 0,
+                            "iFrames": 0
+                        },
+                        "Pass Domain Check": true
+                    },
+                    "ml_prediction_raw": "Bypassed ML",
+                    "final_verdict": "legitimate",
+                    "confidence": 0.95
+                }
+            ],
+            "risk_level": "low"
+        }
+    },
+    "ai_assistance": "I'm glad to inform you that the analysis of the submitted URL or document did not detect any malicious activity, and it appears to be safe. However, it's important to maintain a proactive approach to online safety. Here are some key practices to ensure your security:\n\n1. **Be Cautious with Links from Unknown Sources:** Always be suspicious of links in emails or messages from unfamiliar senders. If a link seems unexpected, it\u2019s best to refrain from clicking until you\u2019ve verified its legitimacy.\n\n2. **Verify the Authenticity of Documents and Their Senders:** Before opening any documents, especially attachments, confirm that they are from trusted sources. If you're unsure, consider reaching out to the sender through a different communication method to check.\n\n3. **Use Strong, Unique Passwords:** Protect your accounts by using complex passwords that combine letters, numbers, and symbols, and ensure they are unique to each account. Consider a password manager to help keep track of them.\n\n4. **Importance of Ongoing Vigilance:** Cyber threats are continually evolving, so it's essential to stay vigilant. Regularly update your software, utilize security features like two-factor authentication, and educate yourself about new scams and phishing techniques.\n\nBy following these guidelines, you can significantly enhance your online safety and protect yourself from potential threats. Stay safe!",
+    "risk_level": "low",
+    "status": "pending",
+    "created_at": "2025-09-25T09:25:15.496493",
+    "last_updated": "2025-09-25T09:25:15.496493"
+}

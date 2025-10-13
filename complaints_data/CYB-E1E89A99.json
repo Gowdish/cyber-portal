@@ -1,0 +1,154 @@
+{
+    "complaint_id": "CYB-E1E89A99",
+    "user_info": {
+        "name": "Free Fire",
+        "email": "abubakkarsiddiq123as@gmail.com",
+        "phone": "+918489843737",
+        "address": "ponnamaravathy\r\nponnamaravathy"
+    },
+    "attack_type": "phishing",
+    "scenario": "mnmn",
+    "additional_info": "",
+    "evidence_files": [],
+    "analysis_results": {
+        "url_analysis": {
+            "url": "https://g00g1e.com/",
+            "domain": "g00g1e.com",
+            "final_verdict": "phishing",
+            "verdict_detailed": "CRITICAL_PHISHING",
+            "risk_score": 0.64,
+            "confidence": "MEDIUM",
+            "ml_prediction": {
+                "verdict": "legitimate",
+                "probability": 0.4641162654742843
+            },
+            "layers": {
+                "url_structure": {
+                    "score": 0.0,
+                    "is_suspicious": false,
+                    "reasons": [],
+                    "details": {
+                        "length_suspicious": 0,
+                        "special_chars": 0,
+                        "subdomain_count": 0,
+                        "path_depth": 0,
+                        "has_port": 0,
+                        "encoded_chars": 0,
+                        "suspicious_keywords": 0
+                    }
+                },
+                "domain_reputation": {
+                    "age_days": 4589,
+                    "registrar": "TurnCommerce, Inc. DBA NameBright.com",
+                    "creation_date": "2013-03-15 18:11:20",
+                    "expiry_date": "2026-03-15 18:11:20",
+                    "dns_records": {
+                        "A": [
+                            "13.223.25.84",
+                            "54.243.117.197"
+                        ],
+                        "MX": [],
+                        "TXT": [
+                            "\"v=spf1 -all\"",
+                            "\"afternic-verification-G9G3tM8T8EwEizzPzjGJWF\""
+                        ],
+                        "NS": [
+                            "domain-for-sale.hugedomainsdns.com.",
+                            "forsale.hugedomainsdns.com."
+                        ]
+                    },
+                    "is_suspicious": false,
+                    "reasons": [
+                        "No MX (email) records found"
+                    ]
+                },
+                "ssl_certificate": {
+                    "has_ssl": true,
+                    "issuer": {
+                        "countryName": "US",
+                        "organizationName": "Let's Encrypt",
+                        "commonName": "E8"
+                    },
+                    "subject": {
+                        "commonName": "g00g1e.com"
+                    },
+                    "valid_from": "Sep 12 00:50:58 2025 GMT",
+                    "valid_until": "Dec 11 00:50:57 2025 GMT",
+                    "is_suspicious": true,
+                    "reasons": [
+                        "Very new SSL certificate (25 days)",
+                        "Free/Self-signed certificate (common in phishing)"
+                    ]
+                },
+                "page_content": {
+                    "title": null,
+                    "forms_count": 0,
+                    "iframes_count": 0,
+                    "external_links": 0,
+                    "suspicious_forms": false,
+                    "hidden_elements": 0,
+                    "is_suspicious": false,
+                    "reasons": [
+                        "Content analysis failed: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))"
+                    ]
+                },
+                "typosquatting": {
+                    "is_typosquatting": true,
+                    "similar_to": "google",
+                    "technique": "Character substitution (homograph)",
+                    "confidence": 0.95,
+                    "reasons": [
+                        "Uses digit substitution to mimic 'google'"
+                    ]
+                },
+                "ip_analysis": {
+                    "ip_address": "13.223.25.84",
+                    "is_ip_url": false,
+                    "is_private": false,
+                    "is_suspicious": false,
+                    "reasons": []
+                },
+                "malware_indicators": {
+                    "has_malware_extension": false,
+                    "has_suspicious_params": false,
+                    "file_extension": null,
+                    "is_suspicious": false,
+                    "reasons": []
+                }
+            },
+            "all_reasons": [
+                "No MX (email) records found",
+                "Very new SSL certificate (25 days)",
+                "Free/Self-signed certificate (common in phishing)",
+                "Content analysis failed: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))",
+                "Uses digit substitution to mimic 'google'"
+            ],
+            "domain_analysis": {
+                "Domain": "g00g1e.com",
+                "Has SSL": true,
+                "Domain Age (days)": 4589,
+                "DNS Records": {
+                    "A": [
+                        "13.223.25.84",
+                        "54.243.117.197"
+                    ],
+                    "MX": [],
+                    "TXT": [
+                        "\"v=spf1 -all\"",
+                        "\"afternic-verification-G9G3tM8T8EwEizzPzjGJWF\""
+                    ],
+                    "NS": [
+                        "domain-for-sale.hugedomainsdns.com.",
+                        "forsale.hugedomainsdns.com."
+                    ]
+                },
+                "Pass Domain Check": false
+            }
+        }
+    },
+    "ai_assistance": "Here\u2019s a step-by-step guide on how to handle phishing links safely and effectively:\n\n### 1. **DO NOT Click on or Visit the Detected URLs**\n   - If you see a suspicious link, do not click on it! Close the message or document immediately. \n   - Make a note of the URLs for reporting purposes, but refrain from interacting with them.\n\n### 2. If You Have Already Clicked on a Link\n   - **Change Your Passwords Immediately:**\n     - Navigate to any accounts (emails, banking, social media) that you accessed after clicking the link.\n     - Use a strong, unique password for each account; consider using a password manager for help.\n     - Enable two-factor authentication (2FA) for an added layer of security.\n\n### 3. **Run a Full Security Scan on Your Device**\n   - Use trusted antivirus or anti-malware software to perform a full system scan.\n     - Ensure your antivirus software is up-to-date to detect the latest threats.\n     - Follow the software's prompts to quarantine or delete any identified threats.\n   - Check for any unusual behavior on your device (e.g., slow performance, pop-ups), which could indicate malware.\n\n### 4. **How to Identify Phishing Links in the Future**\n   - **Check the Domain Name Closely:**\n     - Look for subtle misspellings or variations in the domain (e.g., \"bankofamer1ca.com\" instead of \"bankofamerica.com\").\n     - Hover over links to preview the URL without clicking on them.\n   - **Look for Generic Messages:**\n     - Phishing attempts often use generic greetings like \"Dear Customer\" instead of your name.\n     - Be cautious of urgent language that pressures you into taking immediate action.\n   - **Assess the Quality of the Communication:**\n     - Poor spelling and grammar can be a red flag.\n     - Official messages from companies are generally well-written and professional.\n\n### 5. **Report the Phishing Attempt**\n   - **To Relevant Authorities:**\n     - Report the phishing link to Google Safe Browsing: [report phishing page](https://safebrowsing.google.com/safebrowsing/report_phishing/?hl=en)\n     - If it appears to be from a specific company (like a bank), report it directly to their fraud department or customer service.\n   - **To Your Email Provider:**\n     - Use the \"Report Spam\" or \"",
+    "risk_level": "high",
+    "status": "pending",
+    "created_at": "2025-10-07T16:04:24.555870",
+    "last_updated": "2025-10-07T16:04:24.555870"
+}

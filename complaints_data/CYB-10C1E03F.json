@@ -1,0 +1,49 @@
+{
+    "complaint_id": "CYB-10C1E03F",
+    "user_info": {
+        "name": "Gowdish S",
+        "email": "gowdish2005@gmail.com",
+        "phone": "8489616411",
+        "address": "1/295 pedari amman street Konappampatti Musiri Trichy"
+    },
+    "attack_type": "phishing",
+    "scenario": "asdasc",
+    "additional_info": "wddw",
+    "evidence_files": [],
+    "analysis_results": {
+        "url_analysis": {
+            "url": "https://g00g1e.com",
+            "domain_analysis": {
+                "Domain": "g00g1e.com",
+                "Uses IP": false,
+                "Has SSL": true,
+                "Domain Age (days)": 4578,
+                "DNS Records": {
+                    "A": [
+                        "54.243.117.197",
+                        "13.223.25.84"
+                    ],
+                    "MX": [],
+                    "TXT": [
+                        "\"v=spf1 -all\"",
+                        "\"afternic-verification-G9G3tM8T8EwEizzPzjGJWF\""
+                    ]
+                },
+                "Page Info": {
+                    "Title": "G00g1e.com is for sale | HugeDomains",
+                    "Forms": 3,
+                    "iFrames": 1
+                },
+                "Pass Domain Check": true
+            },
+            "ml_prediction_raw": "legitimate",
+            "final_verdict": "legitimate",
+            "confidence": 0.5995087345257157
+        }
+    },
+    "ai_assistance": "I'm glad to hear that the analysis of the submitted URL or document showed no malicious activity. It's always important to stay vigilant. Here are some proactive practices to help keep your online experience safe:\n\n1. **Be Cautious with Links from Unknown Sources**: Always think twice before clicking on links or downloading files from unfamiliar emails or websites. Even if something appears safe at first glance, it\u2019s better to verify first.\n\n2. **Verify the Authenticity of Documents and Their Senders**: If you receive unexpected documents or messages, double-check the sender\u2019s email address and reach out directly to confirm their legitimacy.\n\n3. **Use Strong, Unique Passwords**: Create complex passwords that include a mix of letters, numbers, and symbols, and ensure you use different passwords for different accounts. This helps protect your information in the event of a data breach.\n\n4. **Ongoing Vigilance is Key**: Cyber threats are constantly evolving, so it\u2019s important to remain alert even after a positive security check. Regularly monitor your accounts and be aware of any unusual activity.\n\nBy following these best practices, you can significantly reduce your risk and maintain a safer online environment. Stay safe!",
+    "risk_level": "low",
+    "status": "pending",
+    "created_at": "2025-09-27T09:08:04.545371",
+    "last_updated": "2025-09-27T09:08:04.545371"
+}

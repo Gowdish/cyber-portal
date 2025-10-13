@@ -1,0 +1,270 @@
+/* styles.css - Consolidated Government Portal Styling */
+
+/* ===== CSS Variables (Required for the Theme) ===== */
+:root {
+    --primary-color: #1e3a8a;
+    --secondary-color: #dc2626;
+    --success-color: #16a34a;
+    --warning-color: #ea580c;
+    --info-color: #0284c7;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --bg-tertiary: #e2e8f0;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border-color: #cbd5e0;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Theme Variables */
+body.dark-theme {
+    --bg-primary: #1e293b;
+    --bg-secondary: #0f172a;
+    --bg-tertiary: #334155;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e0;
+    --border-color: #475569;
+}
+
+/* ===== BASE LAYOUT & GOVERNMENT ELEMENTS ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; 
+    background-color: var(--bg-secondary); 
+    color: var(--text-primary); 
+    line-height: 1.6; 
+    transition: background-color 0.3s, color 0.3s; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top Bar */
+.govt-bar { background: linear-gradient(90deg, #1e3a8a 0%, #3b82f6 100%); color: white; padding: 0.5rem 0; font-size: 0.875rem; }
+.govt-bar-container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+.govt-info { display: flex; align-items: center; gap: 0.75rem; }
+.govt-text, .ministry-text { font-weight: 600; }
+.accessibility-links { display: flex; gap: 1rem; align-items: center; }
+.acc-link { color: white; text-decoration: none; }
+.theme-toggle { background: transparent; border: 1px solid rgba(255, 255, 255, 0.3); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; cursor: pointer; }
+
+/* Main Header */
+.main-header { background: var(--bg-primary); border-bottom: 3px solid var(--primary-color); box-shadow: var(--shadow-md); }
+.header-container { max-width: 1400px; margin: 0 auto; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+.header-left { display: flex; align-items: center; gap: 1.5rem; }
+.portal-title { font-size: 1.75rem; font-weight: 700; color: var(--primary-color); margin-bottom: 0.25rem; letter-spacing: -0.5px; }
+.portal-subtitle { font-size: 0.875rem; color: var(--text-secondary); font-weight: 500; }
+.emergency-number { display: flex; align-items: center; gap: 1rem; background: linear-gradient(135deg, var(--primary-color), #3b82f6); padding: 1rem 1.5rem; border-radius: 8px; color: white; box-shadow: var(--shadow-md); }
+.emergency-number .helpline-label { font-size: 0.75rem; opacity: 0.9; }
+.emergency-number .helpline-number { font-size: 1.25rem; font-weight: 700; }
+
+/* Navigation */
+.main-nav { background: var(--bg-primary); border-bottom: 1px solid var(--border-color); box-shadow: var(--shadow-sm); }
+.nav-container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; }
+.nav-menu { list-style: none; display: flex; margin: 0; padding: 0; }
+.nav-menu a { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem 1.5rem; color: var(--text-primary); text-decoration: none; font-weight: 500; border-bottom: 3px solid transparent; transition: all 0.3s; }
+.nav-menu a:hover, .nav-menu a.active { background: var(--bg-secondary); color: var(--primary-color); border-bottom-color: var(--primary-color); }
+
+/* Main Content Wrapper */
+.main-content { max-width: 1400px; margin: 0 auto; padding: 2rem; flex: 1; width: 100%; }
+.content-wrapper { display: flex; flex-direction: column; gap: 2rem; width: 100%; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+/* Footer */
+.main-footer { 
+    background: var(--bg-primary); 
+    border-top: 3px solid var(--primary-color); 
+    margin-top: auto; 
+    padding: 1.5rem 0; 
+    text-align: center;
+    color: var(--text-secondary);
+    width: 100%;
+    box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+.main-footer p { font-size: 0.875rem; }
+
+/* ===== VOLUNTEER PAGE SPECIFIC STYLES (Adapted) ===== */
+
+/* Volunteer Banner */
+.volunteer-banner-section {
+    background: linear-gradient(135deg, var(--primary-color), #3b82f6);
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    margin-bottom: 2rem;
+}
+.volunteer-banner-section .hero-title {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0;
+}
+.volunteer-banner-section .hero-description {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Intro and Registration Sections */
+.intro-section, .registration-section {
+    background-color: var(--bg-primary);
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    margin: 0 auto 2rem auto;
+    max-width: 1000px;
+    border: 1px solid var(--border-color);
+}
+
+.section-heading {
+    color: var(--primary-color);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid var(--bg-tertiary);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto 1.5rem auto;
+    display: block;
+}
+
+.section-description-text {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+/* Benefits Grid */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.benefit-card {
+    background-color: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-color);
+}
+
+.benefit-card i {
+    font-size: 2.5rem;
+    color: var(--info-color); /* Using info color for icons */
+    margin-bottom: 1rem;
+}
+
+.benefit-card h3 {
+    color: var(--text-primary);
+    margin-top: 0;
+    font-size: 1.25rem;
+}
+
+/* Registration Form */
+.volunteer-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.volunteer-form input[type="text"],
+.volunteer-form input[type="email"],
+.volunteer-form textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.volunteer-form input:focus,
+.volunteer-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+.volunteer-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+.radio-group label {
+    font-weight: 500;
+}
+
+.form-actions-center {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 2.5rem;
+    background-color: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color), #3b82f6);
+    color: white;
+    font-size: 1.15rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s;
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header-container, .nav-container, .govt-bar-container { flex-direction: column; gap: 1rem; text-align: center; }
+    .main-content { padding: 1rem; }
+    .volunteer-banner-section { padding: 3rem 1rem; }
+    .volunteer-banner-section .hero-title { font-size: 2rem; }
+    .intro-section, .registration-section { padding: 1.5rem; }
+    .nav-menu { flex-wrap: wrap; }
+    .nav-menu li { width: 45%; }
+}

@@ -1,0 +1,24 @@
+{
+    "complaint_id": "CYB-DFECF343",
+    "user_info": {
+        "name": "Gowdish 2005",
+        "email": "lidiyasolami@gmail.com",
+        "phone": "08489616411",
+        "address": "Pedari Amman Kovil Kadu\r\n1/295"
+    },
+    "attack_type": "identity_theft",
+    "scenario": "I was on a website and got a pop-up saying my computer was infected. I called the number on the screen, and they told me to buy gift cards to fix the issue. They instructed me to read the codes over the phone. Now, my credit card has a charge for the gift cards, but I never received any service. I think it was a scam.\"",
+    "additional_info": "",
+    "evidence_files": [
+        {
+            "filename": "WhatsApp_Video_2025-09-23_at_2.36.13_PM.mp4",
+            "file_path": "uploads\\WhatsApp_Video_2025-09-23_at_2.36.13_PM.mp4"
+        }
+    ],
+    "analysis_results": {},
+    "ai_assistance": "### Immediate Action Steps to Mitigate the Attack\n\n1. **Disconnect from the Internet**: \n   - Immediately disconnect your computer from the internet to prevent any further unauthorized access. Unplug your Ethernet cable or disable Wi-Fi if you're connected wirelessly.\n\n2. **Change Your Passwords**: \n   - Change the passwords for your email accounts, financial institutions, and any other accounts where sensitive information is stored. Use a strong, unique password for each account. Consider using a password manager to help create and store passwords securely.\n\n3. **Enable Two-Factor Authentication (2FA)**:\n   - If available, enable 2FA on your accounts to add an extra layer of security. This means that even if someone obtains your password, they would still need access to your second authentication method (like a text message or authenticator app) to access your accounts.\n\n### Overcome the Current Problem\n\n4. **Report the Fraud**:\n   - Contact your bank or credit card company immediately to report the unauthorized charge for the gift cards. They may be able to reverse the transaction and provide further assistance.\n  \n5. **File a Complaint**:\n   - Report the scam to the Federal Trade Commission (FTC) at [reportfraud.ftc.gov](https://reportfraud.ftc.gov). This will help them track the scam and potentially warn others.\n  \n6. **Monitor Your Accounts**:\n   - Keep an eye on your bank statements and financial accounts for any unusual activity. Consider setting up transaction alerts if your financial institution offers this service.\n\n7. **Consider a Fraud Alert or Credit Freeze**:\n   - Place a fraud alert on your credit report by contacting one of the three major credit bureaus (Equifax, Experian, TransUnion). Alternatively, consider freezing your credit to prevent new accounts from being opened in your name.\n\n### Protect Yourself in the Future\n\n8. **Install Reliable Security Software**:\n   - Ensure you have updated antivirus and anti-malware software installed on your computer. Run a complete system scan to check for any lingering issues.\n\n9. **Be Wary of Pop-Ups and Unsolicited Contacts**:\n   - Be suspicious of unsolicited calls or messages, especially those asking for personal information or payment. Legitimate companies will not ask you to pay via gift cards or over the phone.\n\n10. **Educate Yourself on Scams**:\n   - Stay informed about common scams and phishing tactics. Familiarize yourself with how to",
+    "risk_level": "low",
+    "status": "pending",
+    "created_at": "2025-09-24T17:27:09.801127",
+    "last_updated": "2025-09-24T17:27:09.801127"
+}

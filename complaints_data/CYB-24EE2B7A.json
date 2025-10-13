@@ -1,0 +1,49 @@
+{
+    "complaint_id": "CYB-24EE2B7A",
+    "user_info": {
+        "name": "Gowdish S",
+        "email": "gowdish2005@gmail.com",
+        "phone": "8489616411",
+        "address": "1/295 pedari amman street Konappampatti Musiri Trichy"
+    },
+    "attack_type": "phishing",
+    "scenario": "asdasc",
+    "additional_info": "wddw",
+    "evidence_files": [],
+    "analysis_results": {
+        "url_analysis": {
+            "url": "https://g00g1e.com",
+            "domain_analysis": {
+                "Domain": "g00g1e.com",
+                "Uses IP": false,
+                "Has SSL": true,
+                "Domain Age (days)": 4578,
+                "DNS Records": {
+                    "A": [
+                        "13.223.25.84",
+                        "54.243.117.197"
+                    ],
+                    "MX": [],
+                    "TXT": [
+                        "\"afternic-verification-G9G3tM8T8EwEizzPzjGJWF\"",
+                        "\"v=spf1 -all\""
+                    ]
+                },
+                "Page Info": {
+                    "Title": "G00g1e.com is for sale | HugeDomains",
+                    "Forms": 3,
+                    "iFrames": 1
+                },
+                "Pass Domain Check": true
+            },
+            "ml_prediction_raw": "Rule-Based Override (Typosquatting)",
+            "final_verdict": "phishing",
+            "confidence": 0.9999
+        }
+    },
+    "ai_assistance": "Here\u2019s a step-by-step guide to follow if you suspect you're dealing with phishing links:\n\n### 1. Do Not Click on or Visit the Detected URLs\n- **Stop Immediately**: If you have identified URLs that may be phishing attempts, do not click on them or any links associated with them.\n- **Avoid Further Interaction**: Refrain from engaging with any content or communications that include these URLs.\n\n### 2. Change Passwords for Any Accounts You May Have Accessed\n- **Identify Affected Accounts**: Determine which online accounts you may have accessed after clicking the phishing link.\n- **Use a Secure Device**: If possible, use a trusted and secure device to change your passwords.\n- **Choose Strong Passwords**: Create complex passwords using combinations of letters (both upper and lower case), numbers, and special characters for added security.\n- **Implement Two-Factor Authentication (2FA)**: If available, enable 2FA to add an extra layer of security to your accounts.\n\n### 3. Run a Security Scan on Your Device\n- **Update Security Software**: Ensure that your antivirus and anti-malware software is up to date.\n- **Perform a Full System Scan**: Use your security software to run a thorough scan of your device to identify and remove any malicious malware.\n- **Review and Remove Threats**: Follow the software\u2019s instructions to quarantine or remove any identified threats.\n\n### 4. How to Identify Phishing Links in the Future\n- **Check the URL**: Always hover over a link (without clicking) to view the actual URL. Check for misspellings, unusual domain endings (.com, .net, etc.), or extra characters.\n- **Look for HTTPS**: Legitimate sites generally have URLs that start with \"https://\". However, note that some phishing sites can also use HTTPS.\n- **Be Wary of Unsolicited Communications**: Emails, texts, or messages that you weren't expecting or that seem unusual should be treated with caution.\n- **Grammar and Spelling**: Many phishing emails contain poor grammar and spelling mistakes.\n- **Urgency or Threats**: Phishing attempts often create a sense of urgency or fear to prompt swift action. Be cautious of such tactics.\n\n### 5. Reporting the Phishing Attempt\n- **Report to Your Email Provider**: Use the report features in email services like Gmail, Outlook, or Yahoo to report phishing attempts directly within the",
+    "risk_level": "high",
+    "status": "pending",
+    "created_at": "2025-09-27T09:14:11.833019",
+    "last_updated": "2025-09-27T09:14:11.833019"
+}

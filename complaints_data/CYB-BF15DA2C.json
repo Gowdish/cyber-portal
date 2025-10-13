@@ -1,0 +1,30 @@
+{
+    "complaint_id": "CYB-BF15DA2C",
+    "user_info": {
+        "name": "Gowdish 2005",
+        "email": "saniya@gmail.com1234",
+        "phone": "08489616411",
+        "address": "Pedari Amman Kovil Kadu\r\n1/295"
+    },
+    "attack_type": "deepfake_image",
+    "scenario": "ssdsd",
+    "additional_info": "",
+    "evidence_files": [
+        {
+            "filename": "R.jpg",
+            "file_path": "uploads\\R.jpg"
+        }
+    ],
+    "analysis_results": {
+        "deepfake_image": {
+            "prediction": "Fake",
+            "confidence": 0.9781403541564941,
+            "is_deepfake": true
+        }
+    },
+    "ai_assistance": "### Immediate Action Plan for Deepfake Image Incident\n\n#### Step 1: Immediately Mitigate the Attack\n1. **Disconnect from the Internet**: As a precaution, disconnect your device from the internet to prevent any further data leakage or unauthorized access.\n2. **Change Passwords**: Change passwords for any accounts you suspect may be compromised. Use strong, unique passwords and consider enabling two-factor authentication (2FA) for added security.\n\n#### Step 2: Overcome the Current Problem\n1. **Remove Affected Files**: Identify and delete the deepfake images and any related files from your device. Be sure to empty your recycle bin or use secure deletion tools.\n2. **Scan Your Device**: Run a complete antivirus/malware scan using reputable security software to check for any threats or vulnerabilities. Follow up by applying any recommended fixes or quarantining suspicious files.\n3. **Report Fraud**: If the deepfake has been used to impersonate you or is damaging your reputation, report this to the platform(s) where it appeared (such as social media). Additionally, consider reporting the incident to local authorities if necessary.\n\n#### Step 3: Protect Yourself in the Future\n1. **Increase Awareness**: Stay informed about deepfake technology and its potential implications. Understanding how these attacks occur can help you identify threats early.\n2. **Verify Sources**: Always verify the authenticity of images or videos before sharing them or acting based on their content. If something looks suspicious, conduct a reverse image search or consult with trusted sources.\n3. **Use Enhanced Security Tools**: Consider using specialized anti-deepfake tools or services that can help detect manipulated media in the future. Additionally, keep your security software and operating system up to date.\n4. **Educate Your Contacts**: Inform your close contacts about the potential for deepfake attempts involving your identity. Encourage them to question unusual communications.\n\n#### Step 4: Closing the Case\n1. **Review Your Situation**: Take a moment to review any further steps you may want to take. Ensure you feel secure and have taken all necessary precautions.\n2. **Close the Case**: Once you are comfortable and feel that the risk has been mitigated, you can close this incident report. Document what you have learned from this experience for future reference, and consider consulting a cybersecurity expert for additional guidance if needed.\n\n### Final Thoughts\nBy following these steps, you can minimize the impact of the current deepfake incident and",
+    "risk_level": "medium",
+    "status": "pending",
+    "created_at": "2025-09-24T17:21:56.299537",
+    "last_updated": "2025-09-24T17:21:56.299537"
+}

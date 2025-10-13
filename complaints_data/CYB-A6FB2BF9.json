@@ -1,0 +1,111 @@
+{
+    "complaint_id": "CYB-A6FB2BF9",
+    "user_info": {
+        "name": "Gowdish 2005",
+        "email": "gowdish2005@gmail.com",
+        "phone": "08489616411",
+        "address": "Pedari Amman Kovil Kadu\r\n1/295"
+    },
+    "attack_type": "phishing",
+    "scenario": "rfbjf",
+    "additional_info": "",
+    "evidence_files": [
+        {
+            "filename": "test_gmail.pdf",
+            "file_path": "uploads\\test_gmail.pdf"
+        }
+    ],
+    "analysis_results": {
+        "phishing_document": {
+            "extracted_text": "Nomination of your innovation for The India Pitch\n2 messages\nYUKTI - National Innovation Repository <iic.mhrd@aicte-india.org> Tue, Jul 8, 2025 at 5:22 PM\nTo: gowdish2005@gmail.com\nYUKTI Innovation Repository\nDear Innovator,\nYour institute has nominated your Innovation submitted under YUKTI\nInnovation Repository to participate in the Yukti Innovation Challenge\n2025.\nYou need to login into YUKTI portal at https://yukti.mic.gov.in/login and\nupdate the innovation details if required.\nFor more details, please refer to the link: https://yukti.mic.gov.in/\nYIC2025 .\nThanks and Regards,\nYUKTI Implementation Team\nMinistry of Education's Innovation Cell, Govt. of India\nNote: This is an auto generated email, please don't reply to this\nemail id.\nTo know about YIR, please visit https://yukti.mic.gov.in/.\n\u00a9 2022 Institution's Innovation Council, Ministry of Education's\nInnovation Cell, All rights reserved.\nGowdish 2005 <gowdish2005@gmail.com> Tue, Jul 8, 2025 at 5:27 PM\nTo: HARIHARAN <tm07hariharan2122@gmail.com>\n[Quoted text hidden]",
+            "found_urls": [
+                "https://yukti.mic.gov.in/login",
+                "https://yukti.mic.gov.in/",
+                "https://yukti.mic.gov.in/."
+            ],
+            "url_reports": [
+                {
+                    "url": "https://yukti.mic.gov.in/login",
+                    "domain_analysis": {
+                        "Domain": "yukti.mic.gov.in",
+                        "Uses IP": false,
+                        "Has SSL": true,
+                        "Domain Age (days)": 2531,
+                        "DNS Records": {
+                            "A": [
+                                "20.204.13.165"
+                            ],
+                            "MX": [],
+                            "TXT": []
+                        },
+                        "Page Info": {
+                            "Title": "403 Forbidden",
+                            "Forms": 0,
+                            "iFrames": 0
+                        },
+                        "Pass Domain Check": true
+                    },
+                    "ml_prediction_raw": "Bypassed ML",
+                    "final_verdict": "legitimate",
+                    "confidence": 0.95
+                },
+                {
+                    "url": "https://yukti.mic.gov.in/",
+                    "domain_analysis": {
+                        "Domain": "yukti.mic.gov.in",
+                        "Uses IP": false,
+                        "Has SSL": true,
+                        "Domain Age (days)": 2531,
+                        "DNS Records": {
+                            "A": [
+                                "20.204.13.165"
+                            ],
+                            "MX": [],
+                            "TXT": []
+                        },
+                        "Page Info": {
+                            "Title": "403 Forbidden",
+                            "Forms": 0,
+                            "iFrames": 0
+                        },
+                        "Pass Domain Check": true
+                    },
+                    "ml_prediction_raw": "Bypassed ML",
+                    "final_verdict": "legitimate",
+                    "confidence": 0.95
+                },
+                {
+                    "url": "https://yukti.mic.gov.in/.",
+                    "domain_analysis": {
+                        "Domain": "yukti.mic.gov.in",
+                        "Uses IP": false,
+                        "Has SSL": true,
+                        "Domain Age (days)": 2531,
+                        "DNS Records": {
+                            "A": [
+                                "20.204.13.165"
+                            ],
+                            "MX": [],
+                            "TXT": []
+                        },
+                        "Page Info": {
+                            "Title": "403 Forbidden",
+                            "Forms": 0,
+                            "iFrames": 0
+                        },
+                        "Pass Domain Check": true
+                    },
+                    "ml_prediction_raw": "Bypassed ML",
+                    "final_verdict": "legitimate",
+                    "confidence": 0.95
+                }
+            ],
+            "risk_level": "low"
+        }
+    },
+    "ai_assistance": "It's great to hear that the analysis of the submitted URL or document has confirmed it's safe! However, it\u2019s always essential to maintain a proactive approach to online safety. Here are some reassuring reminders and tips to keep in mind as you navigate the digital landscape:\n\n1. **Stay Cautious with Unknown Links**: Even if a link looks safe, it's best to avoid clicking on links from unknown sources. Always verify the sender\u2019s identity before proceeding.\n\n2. **Verify Authenticity**: When receiving documents, especially from unfamiliar contacts, take a moment to confirm their authenticity. Look for signs that the document is legitimate, such as the sender's email address and the context of their communication.\n\n3. **Use Strong, Unique Passwords**: Protect your online accounts by using strong, unique passwords for each one. Consider using a password manager to keep track of your credentials and to generate secure passwords.\n\n4. **Importance of Ongoing Vigilance**: Cyber threats can evolve rapidly, so it\u2019s crucial to remain vigilant. Regularly update your software, be skeptical of unsolicited requests for personal information, and stay informed about the latest security best practices.\n\nBy staying cautious and following these guidelines, you'll enhance your online safety and reduce the risk of encountering malicious content in the future. Remember, being proactive is key to a secure digital experience!",
+    "risk_level": "low",
+    "status": "pending",
+    "created_at": "2025-09-26T15:29:23.766074",
+    "last_updated": "2025-09-26T15:29:23.766074"
+}

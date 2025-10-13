@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report & Check Suspect - Cyber Security Division</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+        body { font-family: 'Roboto', sans-serif; background-color: #f0f2f5; color: #333; }
+        .header { background-color: #0d47a1; color: #fff; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 4px solid #1976d2; }
+        .header .branding { display: flex; align-items: center; }
+        .header .branding .emblem { width: 40px; height: 40px; margin-right: 15px; }
+        .header .branding .logo-text { font-size: 1.5rem; font-weight: bold; }
+        .nav a { margin-left: 2rem; color: #fff; text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
+        .nav a:hover { color: #bbdefb; }
+        .banner { background-color: #1976d2; color: #fff; text-align: center; padding: 3rem 1rem; }
+        .banner h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .banner p { max-width: 600px; margin: 0 auto; font-size: 1rem; }
+        .main-container { padding: 2rem; max-width: 1200px; margin: 0 auto; }
+        .analysis-section, .report-section { background-color: #fff; padding: 2rem; margin-bottom: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+        .analysis-section h2, .report-section h2 { font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem; border-bottom: 2px solid #ddd; padding-bottom: 0.5rem; color: #0d47a1; }
+        .ai-form { background-color: #e3f2fd; padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; }
+        .form-group { margin-bottom: 1rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; color: #555; }
+        .form-group input[type="url"], .form-group input[type="file"] { width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px; background-color: #fff; color: #333; }
+        .ai-form button { width: 100%; padding: 0.75rem; background-color: #0d47a1; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 500; transition: background-color 0.3s; }
+        .ai-form button:hover { background-color: #1976d2; }
+        .report-categories { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        .category-card { background-color: #e3f2fd; padding: 1.5rem; border-radius: 8px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; align-items: center; border: 1px solid #b3e5fc; }
+        .category-card h3 { font-size: 1.25rem; font-weight: 700; margin-top: 1rem; color: #0d47a1; }
+        .category-card p { color: #555; margin-top: 0.5rem; font-size: 0.875rem; }
+        .report-btn { margin-top: 1rem; display: inline-block; padding: 0.75rem 1.5rem; background-color: #1976d2; color: white; border-radius: 4px; text-decoration: none; font-weight: 500; transition: background-color 0.3s; }
+        .report-btn:hover { background-color: #0d47a1; }
+        .footer { text-align: center; padding: 1.5rem; color: #555; background-color: #e0e0e0; margin-top: 2rem; border-top: 2px solid #ccc; }
+        
+        /* Status and Loader styles */
+        .status-label { padding: 0.25rem 0.75rem; border-radius: 9999px; font-weight: 600; font-size: 0.875rem; display: inline-block; }
+        .status-label.phishing, .status-label.high-severity { background-color: #ef9a9a; color: #c62828; }
+        .status-label.suspicious, .status-label.moderate-severity { background-color: #ffcc80; color: #ef6c00; }
+        .status-label.legitimate, .status-label.low-severity { background-color: #a5d6a7; color: #2e7d32; }
+        
+        .loader { border: 4px solid #b0c4de; border-top: 4px solid #1976d2; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .hidden { display: none; }
+        .ai-results-container { background-color: #e3f2fd; padding: 1.5rem; border-radius: 8px; margin-top: 2rem; border: 1px solid #b3e5fc; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="branding">
+            <img src="https://placehold.co/40x40/0d47a1/FFFFFF?text=CSD" alt="Cyber Security Division Emblem" class="emblem">
+            <span class="logo-text">Cyber Security Division</span>
+        </div>
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">Services</a>
+            <a href="#">Guidelines</a>
+            <a href="#">Contact Us</a>
+            <a href="#">My Account</a>
+        </nav>
+    </header>
+
+    <section class="banner">
+        <h1>Official Cyber Reporting Portal</h1>
+        <p>A secure platform for citizens to report cyber abuses and analyze suspicious online content.</p>
+    </section>
+
+    <main class="main-container">
+
+        <section class="analysis-section">
+            <h2 class="text-3xl">AI Analysis Services</h2>
+            <p class="text-gray-600 mt-2 mb-4">Use our automated tools to check URLs, apps, and documents for potential threats.</p>
+
+            <form id="urlAnalysisForm" class="ai-form mb-6">
+                <h3 class="text-xl font-semibold mb-3">Analyze Suspicious URL</h3>
+                <div class="form-group">
+                    <label for="url">URL Address</label>
+                    <input type="url" id="url" name="url" placeholder="Enter full URL, e.g., https://example.com/scam" class="w-full">
+                </div>
+                <button type="submit">Analyze URL</button>
+            </form>
+
+            <form id="apkAnalysisForm" class="ai-form mb-6">
+                <h3 class="text-xl font-semibold mb-3">Analyze Android Application (APK)</h3>
+                <div class="form-group">
+                    <label for="apk">Upload APK File</label>
+                    <input type="file" id="apk" name="apk" accept=".apk" class="w-full">
+                </div>
+                <button type="submit">Analyze APK</button>
+            </form>
+
+            <form id="emailAnalysisForm" class="ai-form mb-6">
+                <h3 class="text-xl font-semibold mb-3">Analyze Phishing Email or Document</h3>
+                <div class="form-group">
+                    <label for="phishing">Upload PDF or Image</label>
+                    <input type="file" id="phishing" name="phishing" accept=".pdf,image/*" class="w-full">
+                </div>
+                <button type="submit">Analyze Email/Document</button>
+            </form>
+
+            <div id="analysis-results" class="ai-results-container hidden">
+                <div id="loader" class="flex flex-col items-center justify-center p-6 hidden">
+                    <div class="loader"></div>
+                    <p class="mt-4 text-sm text-gray-600">Analyzing content... Please wait.</p>
+                </div>
+                <div id="result-content"></div>
+                <div id="error-message" class="hidden bg-red-100 border border-red-400 text-red-700 p-4 rounded-lg font-semibold text-center mt-6">
+                    <p></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="report-section">
+            <h2 class="text-3xl">Report Cyber Abuses</h2>
+            <p class="text-gray-600 mt-2 mb-4">Select a category below to officially report a cyber incident.</p>
+
+            <div class="report-categories">
+                <div class="category-card">
+                    <img src="https://placehold.co/100x100/e3f2fd/0d47a1?text=Social" alt="Social Media Abuse" class="rounded-lg">
+                    <h3>Social Media Abuse</h3>
+                    <p>Report abusive content or behavior on social platforms.</p>
+                    <button class="mt-4">Report Now</button>
+                </div>
+                <div class="category-card">
+                    <img src="https://placehold.co/100x100/e3f2fd/0d47a1?text=Women" alt="Women Abuse" class="rounded-lg">
+                    <h3>Women Abuse</h3>
+                    <p>Report harassment or abuse targeting women online.</p>
+                    <button class="mt-4">Report Now</button>
+                </div>
+                <div class="category-card">
+                    <img src="https://placehold.co/100x100/e3f2fd/0d47a1?text=Image" alt="Image Morphing" class="rounded-lg">
+                    <h3>Image Morphing</h3>
+                    <p>Report manipulated images or deepfakes.</p>
+                    <button class="mt-4">Report Now</button>
+                </div>
+                <div class="category-card">
+                    <img src="https://placehold.co/100x100/e3f2fd/0d47a1?text=Bidding" alt="Bidding App Scam" class="rounded-lg">
+                    <h3>Bidding App Scam</h3>
+                    <p>Report fraudulent bids, fake auctions, or deceptive apps.</p>
+                    <button class="mt-4">Report Now</button>
+                </div>
+                <div class="category-card">
+                    <img src="https://placehold.co/100x100/e3f2fd/0d47a1?text=Fraud" alt="Online Fraud" class="rounded-lg">
+                    <h3>Online Fraud</h3>
+                    <p>Report phishing, fake transactions, or payment fraud.</p>
+                    <button class="mt-4">Report Now</button>
+                </div>
+                <div class="category-card">
+                    <img src="https://placehold.co/100x100/e3f2fd/0d47a1?text=Account" alt="Account Takeover" class="rounded-lg">
+                    <h3>Account Takeover</h3>
+                    <p>Report unauthorized access to your accounts.</p>
+                    <button class="mt-4">Report Now</button>
+                </div>
+                <div class="category-card">
+                    <img src="https://placehold.co/100x100/e3f2fd/0d47a1?text=Offers" alt="Fake Offers" class="rounded-lg">
+                    <h3>Fake Offers</h3>
+                    <p>Report misleading discounts, offers, or free giveaways.</p>
+                    <button class="mt-4">Report Now</button>
+                </div>
+                <div class="category-card">
+                    <img src="https://placehold.co/100x100/e3f2fd/0d47a1?text=Ransom" alt="Ransomware" class="rounded-lg">
+                    <h3>Ransomware</h3>
+                    <p>Report malware that locks your files or devices.</p>
+                    <button class="mt-4">Report Now</button>
+                </div>
+                <div class="category-card">
+                    <img src="https://placehold.co/100x100/e3f2fd/0d47a1?text=Spam" alt="Spam Messages" class="rounded-lg">
+                    <h3>Spam Messages</h3>
+                    <p>Report repeated unwanted messages or scams.</p>
+                    <button class="mt-4">Report Now</button>
+                </div>
+                <div class="category-card">
+                    <img src="https://placehold.co/100x100/e3f2fd/0d47a1?text=Other" alt="Spam Messages" class="rounded-lg">
+                    <h3>Others</h3>
+                    <p>Report repeated other incidence </p>
+                    <a href="#" class="report-btn">Report Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Cyber Security Division. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const resultsContainer = document.getElementById("analysis-results");
+        const loaderDiv = document.getElementById("loader");
+        const resultContent = document.getElementById("result-content");
+        const errorDiv = document.getElementById("error-message");
+
+        function showLoader() {
+            resultsContainer.classList.remove("hidden");
+            loaderDiv.classList.remove("hidden");
+            resultContent.innerHTML = "";
+            errorDiv.classList.add("hidden");
+        }
+
+        function hideLoader() {
+            loaderDiv.classList.add("hidden");
+        }
+
+        function showError(message) {
+            hideLoader();
+            errorDiv.classList.remove("hidden");
+            errorDiv.querySelector("p").textContent = "Error: " + message;
+        }
+
+        // --- RENDER FUNCTIONS ---
+        function getStatusClass(verdict) {
+            if (!verdict) return 'status-label low-severity';
+            const lowerVerdict = verdict.toLowerCase();
+            if (lowerVerdict.includes("phish") || lowerVerdict.includes("high")) return 'status-label phishing';
+            if (lowerVerdict.includes("suspic") || lowerVerdict.includes("moderate")) return 'status-label suspicious';
+            return 'status-label legitimate';
+        }
+
+        function renderUrlReport(data) {
+            const verdict = data.final_verdict || "N/A";
+            const verdictClass = getStatusClass(verdict);
+            
+            let html = `
+                <h3 class="text-xl font-semibold mb-4 text-blue-800">URL Analysis Report</h3>
+                <div class="space-y-3 text-sm text-gray-700">
+                    <p><strong>URL:</strong> <span class="font-medium text-blue-600">${data.url}</span></p>
+                    <p><strong>Verdict:</strong> <span class="${verdictClass}">${verdict.toUpperCase()}</span></p>
+                    <p><strong>Risk Score:</strong> ${data.risk_score ? data.risk_score.toFixed(2) : 'N/A'}</p>
+                    
+                    <div class="ai-report mt-4 pt-4 border-t border-gray-300">
+                        <h4 class="font-semibold mb-2 text-blue-800">Official Security Guidance:</h4>
+                        <pre class="bg-gray-100 p-3 rounded-md whitespace-pre-wrap">${data.ai_suggestion || "No guidance available."}</pre>
+                    </div>
+                </div>
+            `;
+            resultContent.innerHTML = html;
+        }
+
+        function renderApkReport(data) {
+            const severityClass = getStatusClass(data.severity);
+            const malwareProbability = data.malware_probability !== undefined ? (data.malware_probability * 100).toFixed(2) + "%" : "N/A";
+            
+            let html = `
+                <h3 class="text-xl font-semibold mb-4 text-blue-800">APK Analysis Report</h3>
+                <div class="space-y-3 text-sm text-gray-700">
+                    <p><strong>App Name:</strong> <span class="font-medium text-blue-600">${data.app_name || "N/A"}</span></p>
+                    <p><strong>Package:</strong> <span class="text-gray-700">${data.package || "N/A"}</span></p>
+                    <p><strong>Severity:</strong> <span class="${severityClass}">${(data.severity || "Unknown").toUpperCase()}</span></p>
+                    <p><strong>Malware Probability:</strong> <span class="text-red-700 font-bold">${malwareProbability}</span></p>
+                    
+                    <div class="ai-report mt-4 pt-4 border-t border-gray-300">
+                        <h4 class="font-semibold mb-2 text-blue-800">Official Security Guidance:</h4>
+                        <pre class="bg-gray-100 p-3 rounded-md whitespace-pre-wrap">${data.ai_suggestion || "No guidance available."}</pre>
+                    </div>
+                </div>
+            `;
+            resultContent.innerHTML = html;
+        }
+
+        function renderEmailReport(data) {
+            const riskClass = getStatusClass(data.risk_level);
+            const urlsList = data.url_reports && data.url_reports.length > 0 
+                ? data.url_reports.map(report => `<li>${report.url} - <span class="${getStatusClass(report.final_verdict)}">${report.final_verdict.toUpperCase()}</span></li>`).join('') 
+                : '<li>No actionable URLs found.</li>';
+            
+            let html = `
+                <h3 class="text-xl font-semibold mb-4 text-blue-800">Document/Image Analysis Report</h3>
+                <div class="space-y-3 text-sm text-gray-700">
+                    <p><strong>File Name:</strong> <span class="font-medium text-blue-600">${data.filename || "N/A"}</span></p>
+                    <p><strong>Overall Risk:</strong> <span class="${riskClass}">${(data.risk_level || "UNKNOWN").toUpperCase()}</span></p>
+                    <p class="mt-4"><strong>Analyzed Links:</strong></p>
+                    <ul class="list-disc list-inside text-gray-700">${urlsList}</ul>
+                    
+                    <div class="ai-report mt-4 pt-4 border-t border-gray-300">
+                        <h4 class="font-semibold mb-2 text-blue-800">Official Security Guidance:</h4>
+                        <pre class="bg-gray-100 p-3 rounded-md whitespace-pre-wrap">${data.ai_suggestion || "No guidance available."}</pre>
+                    </div>
+                </div>
+            `;
+            resultContent.innerHTML = html;
+        }
+
+
+        // --- EVENT HANDLERS (FIXED API URLS) ---
+
+        // URL Analysis Form
+        document.getElementById("urlAnalysisForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const urlInput = document.getElementById("url");
+            if (!urlInput.value) { showError("Please enter a URL."); return; }
+
+            showLoader();
+
+            try {
+                const response = await fetch("/api/url-analyser", { // FIXED: Used relative path
+                    method: "POST",
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ url: urlInput.value }),
+                });
+
+                hideLoader();
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    showError(errorData.error || `Failed to analyze URL (Status: ${response.status}).`);
+                    return;
+                }
+
+                const data = await response.json();
+                // Ensure AI suggestion field name is consistent
+                data.ai_suggestion = data.ai_suggestion || data.ai_assistance; 
+                renderUrlReport(data);
+
+            } catch (err) {
+                showError("Network Error: Could not connect to the API server.");
+            }
+        });
+
+        // APK Analysis Form
+        document.getElementById("apkAnalysisForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const fileInput = document.getElementById("apk");
+            if (!fileInput.files[0]) { showError("Please select an APK file."); return; }
+
+            showLoader();
+
+            const formData = new FormData();
+            formData.append("file", fileInput.files[0]);
+
+            try {
+                const response = await fetch("/api/apk-analyser", { // FIXED: Used relative path
+                    method: "POST",
+                    body: formData,
+                });
+
+                hideLoader();
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    showError(errorData.error || `Failed to analyze APK (Status: ${response.status}).`);
+                    return;
+                }
+
+                const data = await response.json();
+                // Ensure AI suggestion field name is consistent
+                data.ai_suggestion = data.ai_suggestion || data.ai_assistance;
+                renderApkReport(data);
+
+            } catch (err) {
+                showError("Network Error: Could not connect to the API server.");
+            }
+        });
+
+        // Email/Document Analysis Form
+        document.getElementById("emailAnalysisForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const fileInput = document.getElementById("phishing");
+            if (!fileInput.files[0]) { showError("Please select a document or image file."); return; }
+
+            showLoader();
+
+            const formData = new FormData();
+            formData.append("file", fileInput.files[0]);
+
+            try {
+                const response = await fetch("/api/email-analyser", { // FIXED: Used relative path
+                    method: "POST",
+                    body: formData,
+                });
+
+                hideLoader();
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    showError(errorData.error || `Failed to analyze document (Status: ${response.status}).`);
+                    return;
+                }
+
+                const data = await response.json();
+                // Ensure AI suggestion field name is consistent
+                data.ai_suggestion = data.ai_suggestion || data.ai_assistance;
+                renderEmailReport(data);
+
+            } catch (err) {
+                showError("Network Error: Could not connect to the API server.");
+            }
+        });
+    </script>
+</body>
+</html>

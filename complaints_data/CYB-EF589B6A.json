@@ -1,0 +1,33 @@
+{
+    "complaint_id": "CYB-EF589B6A",
+    "user_info": {
+        "name": "Gowdish 2005",
+        "email": "iuyhwuhcyuw@fjgfgeh",
+        "phone": "08489616411",
+        "address": "Pedari Amman Kovil Kadu\r\n1/295"
+    },
+    "attack_type": "malware",
+    "scenario": "fvfvf",
+    "additional_info": "",
+    "evidence_files": [
+        {
+            "filename": "sample.apk",
+            "file_path": "uploads\\sample.apk"
+        }
+    ],
+    "analysis_results": {
+        "apk_analysis": {
+            "app_name": "Rimichka",
+            "package": "com.avtobiografia.rimichka",
+            "permissions": [],
+            "malware_probability": 0.03334484629557379,
+            "severity": "Low",
+            "guidance": "Application appears safe."
+        }
+    },
+    "ai_assistance": "### Immediate Action Steps to Mitigate the Attack\n\n1. **Disconnect from the Internet**:\n   - Disable your Wi-Fi and mobile data connection to prevent any potential malware from communicating with external servers.\n\n2. **Change Your Passwords**:\n   - Use a secure device (not the infected device) to change your passwords for critical accounts, such as email, online banking, and social media. Consider using a password manager for security.\n\n### Overcoming the Current Problem\n\n3. **Remove Potential Malware**:\n   - If you suspect that the Rimichka app might pose a risk, you can uninstall it as a precaution:\n     - Go to your device's **Settings** > **Apps** > **Rimichka** and select **Uninstall**.\n   - After removing the app, reboot your device to ensure all residual processes are terminated.\n\n4. **Run a Malware Scan**:\n   - Install a reputable mobile security application (such as Malwarebytes or Avast) and perform a full scan of your device. Follow the app's guidance to remove any detected threats.\n\n5. **Review App Permissions**:\n   - After scanning, check other installed apps for excessive or unnecessary permissions. Remove apps that seem suspicious or that you do not recognize.\n\n### Protecting Yourself in the Future\n\n6. **Keep Software Updated**:\n   - Regularly update your device's operating system and installed applications to ensure you have the latest security patches.\n\n7. **Be Cautious of APK Files**:\n   - Avoid installing apps from unknown sources. Use only trusted app stores (like Google Play or Apple App Store) to ensure applications are safe.\n\n8. **Use Two-Factor Authentication (2FA)**:\n   - Enable 2FA on important online accounts whenever possible to add an extra layer of security.\n\n9. **Regular Security Audits**:\n   - Periodically review installed applications and their permissions. Remove any applications that you no longer use or that seem suspicious.\n\n### Closing the Case\n\n10. **Review and Assess**:\n    - After following the above steps and once you feel secure, consider closing this incident. Document what steps were taken and any lessons learned to improve your security practices.\n\n11. **Seek Professional Help If Needed**:\n    - If you continue to experience issues or are unsure about any part of the process, seek professional cybersecurity assistance to evaluate and secure your device.\n\nFollowing these steps should help you resolve the current issue and mitigate the risk of future incidents",
+    "risk_level": "low",
+    "status": "pending",
+    "created_at": "2025-09-24T16:55:21.715967",
+    "last_updated": "2025-09-24T16:55:21.715967"
+}

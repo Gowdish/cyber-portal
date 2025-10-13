@@ -1,0 +1,111 @@
+{
+    "complaint_id": "CYB-80A69B68",
+    "user_info": {
+        "name": "Gowdish 2005",
+        "email": "saniya@gmail.com1234",
+        "phone": "08489616411",
+        "address": "Pedari Amman Kovil Kadu\r\n1/295"
+    },
+    "attack_type": "phishing",
+    "scenario": "ssdsd",
+    "additional_info": "",
+    "evidence_files": [
+        {
+            "filename": "test_gmail.pdf",
+            "file_path": "uploads\\test_gmail.pdf"
+        }
+    ],
+    "analysis_results": {
+        "phishing_document": {
+            "extracted_text": "Nomination of your innovation for The India Pitch\n2 messages\nYUKTI - National Innovation Repository <iic.mhrd@aicte-india.org> Tue, Jul 8, 2025 at 5:22 PM\nTo: gowdish2005@gmail.com\nYUKTI Innovation Repository\nDear Innovator,\nYour institute has nominated your Innovation submitted under YUKTI\nInnovation Repository to participate in the Yukti Innovation Challenge\n2025.\nYou need to login into YUKTI portal at https://yukti.mic.gov.in/login and\nupdate the innovation details if required.\nFor more details, please refer to the link: https://yukti.mic.gov.in/\nYIC2025 .\nThanks and Regards,\nYUKTI Implementation Team\nMinistry of Education's Innovation Cell, Govt. of India\nNote: This is an auto generated email, please don't reply to this\nemail id.\nTo know about YIR, please visit https://yukti.mic.gov.in/.\n\u00a9 2022 Institution's Innovation Council, Ministry of Education's\nInnovation Cell, All rights reserved.\nGowdish 2005 <gowdish2005@gmail.com> Tue, Jul 8, 2025 at 5:27 PM\nTo: HARIHARAN <tm07hariharan2122@gmail.com>\n[Quoted text hidden]",
+            "found_urls": [
+                "https://yukti.mic.gov.in/login",
+                "https://yukti.mic.gov.in/",
+                "https://yukti.mic.gov.in/."
+            ],
+            "url_reports": [
+                {
+                    "url": "https://yukti.mic.gov.in/login",
+                    "domain_analysis": {
+                        "Domain": "yukti.mic.gov.in",
+                        "Uses IP": false,
+                        "Has SSL": true,
+                        "Domain Age (days)": 2529,
+                        "DNS Records": {
+                            "A": [
+                                "20.204.13.165"
+                            ],
+                            "MX": [],
+                            "TXT": []
+                        },
+                        "Page Info": {
+                            "Title": "403 Forbidden",
+                            "Forms": 0,
+                            "iFrames": 0
+                        },
+                        "Pass Domain Check": true
+                    },
+                    "ml_prediction_raw": "Bypassed ML",
+                    "final_verdict": "legitimate",
+                    "confidence": 0.95
+                },
+                {
+                    "url": "https://yukti.mic.gov.in/",
+                    "domain_analysis": {
+                        "Domain": "yukti.mic.gov.in",
+                        "Uses IP": false,
+                        "Has SSL": true,
+                        "Domain Age (days)": 2529,
+                        "DNS Records": {
+                            "A": [
+                                "20.204.13.165"
+                            ],
+                            "MX": [],
+                            "TXT": []
+                        },
+                        "Page Info": {
+                            "Title": "403 Forbidden",
+                            "Forms": 0,
+                            "iFrames": 0
+                        },
+                        "Pass Domain Check": true
+                    },
+                    "ml_prediction_raw": "Bypassed ML",
+                    "final_verdict": "legitimate",
+                    "confidence": 0.95
+                },
+                {
+                    "url": "https://yukti.mic.gov.in/.",
+                    "domain_analysis": {
+                        "Domain": "yukti.mic.gov.in",
+                        "Uses IP": false,
+                        "Has SSL": true,
+                        "Domain Age (days)": 2529,
+                        "DNS Records": {
+                            "A": [
+                                "20.204.13.165"
+                            ],
+                            "MX": [],
+                            "TXT": []
+                        },
+                        "Page Info": {
+                            "Title": "403 Forbidden",
+                            "Forms": 0,
+                            "iFrames": 0
+                        },
+                        "Pass Domain Check": true
+                    },
+                    "ml_prediction_raw": "Bypassed ML",
+                    "final_verdict": "legitimate",
+                    "confidence": 0.95
+                }
+            ],
+            "risk_level": "low"
+        }
+    },
+    "ai_assistance": "We're glad to inform you that the analysis of the submitted URL or document did not detect any malicious activity, and it appears to be safe. However, it's always wise to remain vigilant online. Here are some proactive steps you can take to enhance your digital safety:\n\n1. **Be Cautious with Links**: Always exercise caution when clicking on links from unknown sources. Phishing attempts often disguise themselves as legitimate communications.\n\n2. **Verify Authenticity**: Before downloading documents or opening attachments, verify the authenticity of the sender. If you're unsure, reach out to them directly using a trusted contact method.\n\n3. **Use Strong, Unique Passwords**: Ensure all your accounts have strong, unique passwords. Consider using a password manager to help keep track of them securely.\n\n4. **Ongoing Vigilance**: Cyber threats are constantly evolving. Regularly update your software, avoid sharing sensitive information unnecessarily, and stay informed about the latest security practices.\n\nBy following these guidelines, you can help protect yourself against potential threats and maintain a safer online experience. Stay safe!",
+    "risk_level": "low",
+    "status": "pending",
+    "created_at": "2025-09-24T17:20:49.053774",
+    "last_updated": "2025-09-24T17:20:49.053774"
+}

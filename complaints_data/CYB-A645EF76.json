@@ -1,0 +1,46 @@
+{
+    "complaint_id": "CYB-A645EF76",
+    "user_info": {
+        "name": "Gowdish S",
+        "email": "gowdish2005@gmail.com",
+        "phone": "8489616411",
+        "address": "1/297 Pedari amman street Konnappampatti Musiri Trichy"
+    },
+    "attack_type": "phishing",
+    "scenario": "..",
+    "additional_info": "",
+    "evidence_files": [],
+    "analysis_results": {
+        "url_analysis": {
+            "url": "http://0x7f000001/flag",
+            "domain_analysis": {
+                "Domain": "0x7f000001",
+                "Uses IP": true,
+                "Has SSL": false,
+                "Domain Age (days)": null,
+                "DNS Records": {
+                    "A": [
+                        "127.0.0.1"
+                    ],
+                    "MX": [],
+                    "TXT": []
+                },
+                "Page Info": {
+                    "Title": "Could not fetch page info",
+                    "Forms": -1,
+                    "iFrames": -1
+                },
+                "Pass Domain Check": false
+            },
+            "ml_prediction_raw": "phishing",
+            "final_verdict": "phishing",
+            "confidence": 0.6092826819407007
+        }
+    },
+    "ai_assistance": "### Step-by-Step Guide for Dealing with Malicious or High-Risk Phishing Links\n\n#### 1. DO NOT Click on or Visit the Detected URLs\n- **Stay Safe**: Ensure that you do not click on any links identified as malicious. Closing the browser or tab where the link appeared is a prudent step.\n- **Notify Others**: If you're in a communal or shared space, inform your colleagues or family members not to engage with the links either.\n\n#### 2. If You Have Already Clicked on a Link:\n- **Immediate Action**: Change the passwords for any accounts you accessed while visiting the phishing link. This especially includes email, banking, or social media accounts.\n- **Enable Two-Factor Authentication (2FA)**: For added security, enable 2FA on your accounts to provide an extra layer of protection.\n\n#### 3. Run a Full Security Scan on Your Device:\n- **Antivirus Software**: Use reliable antivirus or antimalware programs to run a full security scan of your device. This will help detect and remove any malicious software that may have been installed inadvertently.\n- **Keep Software Updated**: Ensure your antivirus software is up-to-date to protect against the latest threats.\n\n#### 4. Identifying Phishing Links in the Future:\n- **Check the Domain Name Closely**: \n  - Verify the spelling of the domain. Phishing links often use slight misspellings or variations (e.g., \u201cgnail.com\u201d instead of \u201cgmail.com\u201d).\n  - Look for a secure connection (indicated by \u201chttps://\u201d), but remember that this is not a guarantee of safety.\n  \n- **Look for Generic Messages**: \n  - Phishing messages often have generic greetings like \"Dear Customer\" or contain poor grammar and spelling.\n  - Be wary of any messages that create urgency or fear, prompting immediate action.\n\n- **Hover Over Links**: If you\u2019re using a computer, hover your mouse over links to see the URL it leads to before clicking. Ensure it matches the claimed source.\n\n#### 5. Reporting the Phishing Attempt:\n- **Report to Authorities**:\n  - Visit [Google Safe Browsing](https://safebrowsing.google.com/safebrowsing/report_phish/) to report phishing URLs.\n  - If the phishing attempt impersonated your bank, report it directly to your bank's fraud department.\n  - You can also report phishing scams to the Federal",
+    "risk_level": "high",
+    "status": "pending",
+    "admin_notes": "",
+    "created_at": "2025-10-02T17:22:32.489664",
+    "last_updated": "2025-10-02T17:22:32.489664"
+}

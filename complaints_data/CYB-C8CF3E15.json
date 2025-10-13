@@ -1,0 +1,31 @@
+{
+    "complaint_id": "CYB-C8CF3E15",
+    "user_info": {
+        "name": "Gowdish S",
+        "email": "gowdish2005@gmail.com",
+        "phone": "8489616411",
+        "address": ","
+    },
+    "attack_type": "deepfake_video",
+    "scenario": ",,",
+    "additional_info": "",
+    "evidence_files": [
+        {
+            "filename": "WhatsApp_Video_2025-09-23_at_2.36.13_PM.mp4",
+            "file_path": "uploads\\CYB-C8CF3E15_WhatsApp_Video_2025-09-23_at_2.36.13_PM.mp4"
+        }
+    ],
+    "analysis_results": {
+        "deepfake_video": {
+            "prediction": "real",
+            "confidence": 0.9368773698806763,
+            "is_deepfake": false
+        }
+    },
+    "ai_assistance": "Thank you for your patience. I\u2019m pleased to inform you that the analysis indicates the submitted media is **Real** and not a deepfake. \n\nTo ensure you maintain confidence in the authenticity of media in the future, here are some helpful tips:\n\n- **Always be skeptical of unexpected media**: If something seems too sensational or out of place, take a moment to question its authenticity.\n- **Cross-reference the content with trusted news sources**: Verify the information by checking reputable news outlets.\n- **Use reverse image search tools**: Tools like Google Reverse Image Search or TinEye can help trace the origin of images to see if they\u2019ve been altered or misrepresented.\n\nRemember, staying informed and vigilant is key to navigating the digital landscape safely. \n\nSince the media appears to be real and safe, you can now confidently close this case. Should you have any further questions or need assistance, feel free to reach out!",
+    "risk_level": "low",
+    "status": "solved_by_ai",
+    "admin_notes": "CASE AUTO-RESOLVED (Low Risk):\nRisk Score: LOW\nAI successfully analyzed the submission (e.g., safe URL, low malware risk, real media). Assumed Resolution: The user was given the immediate guidance (provided below), accepted it, and closed the case.\n--- AI Guidance Snapshot (First 200 Chars):\nThank you for your patience. I\u2019m pleased to inform you that the analysis indicates the submitted media is **Real** and not a deepfake. \n\nTo ensure you maintain confidence in the authenticity of media ...",
+    "created_at": "2025-10-02T17:37:20.966271",
+    "last_updated": "2025-10-02T17:37:20.966271"
+}

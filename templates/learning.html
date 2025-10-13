@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Learning Corner</title>
+    <link rel="stylesheet" href="../static/styles/learning.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">CyberSecure Portal</div>
+        <nav class="nav">
+            <a href="report.html">Home</a>
+            <a href="report.html">Report & Check Suspect</a>
+            <a href="#" class="active">Learning</a>
+            <a href="#">Contact</a>
+            <a href="volunteers.html">Cyber Volunteers</a>
+            <a href="#">Login</a>
+        </nav>
+    </header>
+
+    <!-- Main Banner -->
+    <section class="banner">
+        <h1>Cyber Learning Corner</h1>
+        <p>Enhance your cybersecurity skills and earn certificates by completing our comprehensive courses.</p>
+    </section>
+
+    <main class="main-container">
+
+        <!-- Course Domains Section -->
+        <section class="courses-section">
+            <h2>Explore Our Courses</h2>
+            <p class="section-description">
+                Browse different cybersecurity domains and start your learning journey. Complete all modules, pass the final assessment with an 80% score, and complete the CTF challenge to earn your certificate.
+            </p>
+            <div class="course-grid">
+                <!-- Course Card 1: Network Security -->
+                <div class="course-card" data-course="network">
+                    <img src="https://placehold.co/200x120/1a2a3a/fff?text=Network+Security" alt="Network Security">
+                    <h3>Network Security</h3>
+                    <p>Learn how to secure networks, defend against attacks, and monitor traffic.</p>
+                    <button class="start-btn">Start Course</button>
+                </div>
+                <!-- Course Card 2: Web Application Security -->
+                <div class="course-card" data-course="web-app">
+                    <img src="https://placehold.co/200x120/1a2a3a/fff?text=Web+App+Security" alt="Web App Security">
+                    <h3>Web Application Security</h3>
+                    <p>Discover common web vulnerabilities and techniques to protect web applications.</p>
+                    <button class="start-btn">Start Course</button>
+                </div>
+                <!-- Course Card 3: Digital Forensics -->
+                <div class="course-card" data-course="forensics">
+                    <img src="https://placehold.co/200x120/1a2a3a/fff?text=Digital+Forensics" alt="Digital Forensics">
+                    <h3>Digital Forensics</h3>
+                    <p>Uncover the secrets of digital evidence and learn how to trace cyber incidents.</p>
+                    <button class="start-btn">Start Course</button>
+                </div>
+                <!-- Course Card 4: Ethical Hacking -->
+                <div class="course-card" data-course="ethical-hacking">
+                    <img src="https://placehold.co/200x120/1a2a3a/fff?text=Ethical+Hacking" alt="Ethical Hacking">
+                    <h3>Ethical Hacking</h3>
+                    <p>Understand the mindset of a hacker to build stronger defenses.</p>
+                    <button class="start-btn">Start Course</button>
+                </div>
+                <!-- Course Card 5: Malware Analysis -->
+                <div class="course-card" data-course="malware">
+                    <img src="https://placehold.co/200x120/1a2a3a/fff?text=Malware+Analysis" alt="Malware Analysis">
+                    <h3>Malware Analysis</h3>
+                    <p>Dissect malicious software to understand its behavior and impact.</p>
+                    <button class="start-btn">Start Course</button>
+                </div>
+                 <!-- Course Card 6: Cryptography -->
+                 <div class="course-card" data-course="cryptography">
+                    <img src="https://placehold.co/200x120/1a2a3a/fff?text=Cryptography" alt="Cryptography">
+                    <h3>Cryptography</h3>
+                    <p>Learn the principles of secure communication and data encryption.</p>
+                    <button class="start-btn">Start Course</button>
+                </div>
+                <!-- Course Card 7: Cloud Security -->
+                <div class="course-card" data-course="cloud">
+                    <img src="https://placehold.co/200x120/1a2a3a/fff?text=Cloud+Security" alt="Cloud Security">
+                    <h3>Cloud Security</h3>
+                    <p>Secure cloud environments, data, and applications from cyber threats.</p>
+                    <button class="start-btn">Start Course</button>
+                </div>
+                <!-- Course Card 8: IoT Security -->
+                <div class="course-card" data-course="iot">
+                    <img src="https://placehold.co/200x120/1a2a3a/fff?text=IoT+Security" alt="IoT Security">
+                    <h3>IoT Security</h3>
+                    <p>Address security challenges in the world of connected devices.</p>
+                    <button class="start-btn">Start Course</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Course Modal -->
+    <div id="courseModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="courseContent">
+                <div id="videoContainer">
+                    <div id="videoHeader">
+                        <h3></h3>
+                        <p id="moduleTitle"></p>
+                    </div>
+                    <iframe id="courseVideo" width="100%" height="315" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <button id="nextModuleBtn">Next Module</button>
+                
+                <div id="assessmentContainer" class="assessment-box" style="display: none;">
+                    <h4>Final Course Assessment</h4>
+                    <p>Answer the questions below. You must score 80% or more to pass this course and proceed to the CTF.</p>
+                    <div id="quizQuestions"></div>
+                    <button id="submitAssessmentBtn">Submit Answers</button>
+                    <p id="assessmentStatus"></p>
+                </div>
+                
+                <div id="ctfContainer" class="ctf-box" style="display: none;">
+                    <h4>Final Challenge: Find the Flag!</h4>
+                    <p>You've passed the assessment! The flag is a secret code hidden in this course's videos or documentation. Enter it below to earn your certificate.</p>
+                    <div class="form-group">
+                        <label for="flagInput">Enter the Flag</label>
+                        <input type="text" id="flagInput" placeholder="Flag format: CTF{...}">
+                    </div>
+                    <button id="verifyBtn">Verify Flag</button>
+                    <p id="ctfStatus"></p>
+                </div>
+            </div>
+            
+            <div id="certificateContainer" class="certificate-container" style="display: none;">
+                <div class="certificate-preview" id="certificatePreview">
+                    <h2>Certificate of Completion</h2>
+                    <p>This certifies that</p>
+                    <h1 id="certName"></h1>
+                    <p>has successfully completed the course in</p>
+                    <h2 id="certCourse"></h2>
+                    <p>and has demonstrated proficiency in the subject matter.</p>
+                    <div class="certificate-info">
+                        <span>Date: <span id="certDate"></span></span>
+                        <span>Signature: <img src="https://placehold.co/100x50/A0C49D/333?text=Signature" alt="Signature"></span>
+                    </div>
+                </div>
+                <div id="nameFormGroup" style="margin-top: 20px;">
+                    <label for="certificateName">Enter your name for the certificate:</label>
+                    <input type="text" id="certificateName" placeholder="Your Full Name">
+                </div>
+                <button id="generateCertBtn">Generate Certificate Preview</button>
+                <button id="downloadPdfBtn" style="display: none;">Download as PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 CyberSecure Portal. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Use a dummy YouTube playlist link as a placeholder since real ones are not available.
+        const DUMMY_VIDEO_URL = 'https://www.youtube.com/embed/videoseries?list=PLBf0-G6oFq96S7B91054Jk7S0V124E56P';
+        
+        const courseData = {
+            'network': {
+                title: 'Network Security',
+                modules: Array.from({ length: 11 }, (_, i) => ({ title: `Module ${i+1}: Network Concept`, videoUrl: DUMMY_VIDEO_URL })),
+                assessment: [
+                    { q: 'What protocol is used for secure web traffic?', a: ['HTTPS', 'HTTP', 'FTP'] },
+                    { q: 'Which of these is a preventive control?', a: ['Firewall', 'IDS', 'Log Analyzer'] },
+                    { q: 'What is the primary purpose of an IDS?', a: ['Detecting malicious activity', 'Preventing all network traffic', 'Encrypting data'] },
+                    { q: 'Which port is commonly used for DNS?', a: ['53', '80', '443'] },
+                    { q: 'What is a SYN flood attack?', a: ['A type of DoS attack', 'A type of malware', 'A phishing technique'] },
+                ],
+                ctfFlag: 'CTF{PACKET_SNIFFER_COMPLETE}',
+            },
+            'web-app': {
+                title: 'Web Application Security',
+                modules: Array.from({ length: 11 }, (_, i) => ({ title: `Module ${i+1}: Web App Vulnerabilities`, videoUrl: DUMMY_VIDEO_URL })),
+                assessment: [
+                    { q: 'What does SQL Injection exploit?', a: ['Database Queries', 'HTTP Headers', 'User Input'] },
+                    { q: 'What is the primary defense against XSS?', a: ['Input Validation & Output Encoding', 'Firewall Rules', 'HTTPS'] },
+                    { q: 'What is CSRF?', a: ['Cross-Site Request Forgery', 'Cross-Site Role Function', 'Cross-Server Resource File'] },
+                    { q: 'Which vulnerability can lead to remote code execution?', a: ['XML External Entities', 'Security Misconfiguration', 'Cross-Site Scripting'] },
+                    { q: 'What does a broken authentication vulnerability allow?', a: ['Impersonating legitimate users', 'Accessing sensitive data', 'Denial of Service'] },
+                ],
+                ctfFlag: 'CTF{XSS_INJECTION_PROTECTED}',
+            },
+            'forensics': {
+                title: 'Digital Forensics',
+                modules: Array.from({ length: 11 }, (_, i) => ({ title: `Module ${i+1}: Digital Evidence`, videoUrl: DUMMY_VIDEO_URL })),
+                assessment: [
+                    { q: 'What is the first step in a forensic investigation?', a: ['System Isolation', 'Evidence Analysis', 'Reporting'] },
+                    { q: 'Which file system is commonly used in Windows?', a: ['NTFS', 'ext4', 'HFS+'] },
+                    { q: 'What tool is used for memory acquisition?', a: ['Volatility', 'Wireshark', 'Autopsy'] },
+                    { q: 'What does a "hash" ensure?', a: ['Data integrity', 'Data encryption', 'Data storage'] },
+                    { q: 'What is the purpose of chain of custody?', a: ['Maintaining a record of evidence handling', 'Encrypting evidence files', 'Creating forensic images'] },
+                ],
+                ctfFlag: 'CTF{DATA_RECOVERY_COMPLETE}',
+            },
+            'ethical-hacking': {
+                title: 'Ethical Hacking',
+                modules: Array.from({ length: 11 }, (_, i) => ({ title: `Module ${i+1}: Hacking Fundamentals`, videoUrl: DUMMY_VIDEO_URL })),
+                assessment: [
+                    { q: 'What is passive reconnaissance?', a: ['Collecting information without direct interaction', 'Actively scanning a network', 'Exploiting a vulnerability'] },
+                    { q: 'What tool is commonly used for port scanning?', a: ['Nmap', 'Wireshark', 'Metasploit'] },
+                    { q: 'What is the most common vulnerability in web applications?', a: ['SQL Injection', 'Cross-Site Scripting', 'Broken Authentication'] },
+                    { q: 'What is the final phase of ethical hacking?', a: ['Reporting', 'Exploitation', 'Reconnaissance'] },
+                    { q: 'Which attack uses psychological manipulation to trick people?', a: ['Social Engineering', 'Denial of Service', 'Malware'] },
+                ],
+                ctfFlag: 'CTF{HACK_LIKE_PRO}',
+            },
+            'malware': {
+                title: 'Malware Analysis',
+                modules: Array.from({ length: 11 }, (_, i) => ({ title: `Module ${i+1}: Malware Analysis`, videoUrl: DUMMY_VIDEO_URL })),
+                assessment: [
+                    { q: 'What does static analysis involve?', a: ['Examining the code without running it', 'Executing the malware in a controlled environment', 'Using a debugger to trace execution'] },
+                    { q: 'What is a sandbox used for?', a: ['Creating a secure environment for testing', 'Storing malware samples', 'Disassembling the malware code'] },
+                    { q: 'Which type of malware can take over a computer\'s operating system?', a: ['Rootkit', 'Adware', 'Spyware'] },
+                    { q: 'What is the main goal of ransomware?', a: ['To encrypt data and demand a ransom', 'To steal user credentials', 'To send spam messages'] },
+                    { q: 'What is a trojan?', a: ['A malicious program disguised as a legitimate one', 'A self-replicating virus', 'A program that sends spam'] },
+                ],
+                ctfFlag: 'CTF{MALWARE_ANALYSIS_MASTER}',
+            },
+            'cryptography': {
+                title: 'Cryptography',
+                modules: Array.from({ length: 11 }, (_, i) => ({ title: `Module ${i+1}: Cryptographic Principles`, videoUrl: DUMMY_VIDEO_URL })),
+                assessment: [
+                    { q: 'What is the goal of symmetric encryption?', a: ['Using the same key for encryption and decryption', 'Using different keys for encryption and decryption', 'Signing a message digitally'] },
+                    { q: 'Which algorithm is a classic example of asymmetric encryption?', a: ['RSA', 'AES', 'SHA-256'] },
+                    { q: 'What does a hash function ensure?', a: ['Data integrity', 'Data privacy', 'Data confidentiality'] },
+                    { q: 'What is a digital signature used for?', a: ['Authentication and non-repudiation', 'Encrypting a message', 'Signing a contract'] },
+                    { q: 'What is a salt used for in password hashing?', a: ['To prevent rainbow table attacks', 'To speed up hashing', 'To encrypt the password'] },
+                ],
+                ctfFlag: 'CTF{CRYPTO_CHALLENGE_SOLVED}',
+            },
+            'cloud': {
+                title: 'Cloud Security',
+                modules: Array.from({ length: 11 }, (_, i) => ({ title: `Module ${i+1}: Cloud Security`, videoUrl: DUMMY_VIDEO_URL })),
+                assessment: [
+                    { q: 'What is the shared responsibility model?', a: ['A framework outlining security duties for the provider and the user', 'A model for sharing cloud resources', 'A legal document for cloud usage'] },
+                    { q: 'Which of these is a benefit of cloud security?', a: ['Scalability and cost-effectiveness', 'Physical access control', 'Full control over hardware'] },
+                    { q: 'What does a CASB do?', a: ['Enforces security policies for cloud access', 'Encrypts cloud data', 'Manages virtual machines'] },
+                    { q: 'What is a common threat in cloud computing?', a: ['Data breaches and misconfigurations', 'Physical server theft', 'Power outages'] },
+                    { q: 'What is the purpose of an API Gateway?', a: ['To act as a single entry point for all API calls', 'To store user data', 'To manage user authentication'] },
+                ],
+                ctfFlag: 'CTF{CLOUD_SECURED}',
+            },
+            'iot': {
+                title: 'IoT Security',
+                modules: Array.from({ length: 11 }, (_, i) => ({ title: `Module ${i+1}: IoT Security`, videoUrl: DUMMY_VIDEO_URL })),
+                assessment: [
+                    { q: 'What is a major challenge in IoT security?', a: ['Lack of standardization and weak credentials', 'High cost of devices', 'Limited device functionality'] },
+                    { q: 'What protocol is often used for IoT communication?', a: ['MQTT', 'HTTP', 'FTP'] },
+                    { q: 'Why is physical security important for IoT devices?', a: ['To prevent device tampering and data theft', 'To keep the device cool', 'To ensure network connectivity'] },
+                    { q: 'What is a common attack vector for IoT devices?', a: ['Default passwords and weak firmware', 'Phishing emails', 'Website vulnerabilities'] },
+                    { q: 'How can you protect your home IoT devices?', a: ['Using strong passwords and network segmentation', 'Turning off all devices', 'Using only one brand of devices'] },
+                ],
+                ctfFlag: 'CTF{IOT_PROTECTED}',
+            },
+        };
+
+        const modal = document.getElementById('courseModal');
+        const modalVideo = document.getElementById('courseVideo');
+        const modalTitle = modal.querySelector('h3');
+        const moduleTitle = document.getElementById('moduleTitle');
+        const nextModuleBtn = document.getElementById('nextModuleBtn');
+        const closeBtn = document.querySelector('.close-btn');
+        const submitAssessmentBtn = document.getElementById('submitAssessmentBtn');
+        const quizQuestionsContainer = document.getElementById('quizQuestions');
+        const assessmentStatus = document.getElementById('assessmentStatus');
+        const ctfContainer = document.getElementById('ctfContainer');
+        const verifyBtn = document.getElementById('verifyBtn');
+        const flagInput = document.getElementById('flagInput');
+        const ctfStatus = document.getElementById('ctfStatus');
+        const certificateContainer = document.getElementById('certificateContainer');
+        const generateCertBtn = document.getElementById('generateCertBtn');
+        const certificateNameInput = document.getElementById('certificateName');
+        const downloadPdfBtn = document.getElementById('downloadPdfBtn');
+        const courseContent = document.getElementById('courseContent');
+        const nameFormGroup = document.getElementById('nameFormGroup');
+        const certificatePreview = document.getElementById('certificatePreview');
+
+        let currentCourse = null;
+        let currentModuleIndex = 0;
+        let currentCourseFlag = '';
+        let currentCourseTitle = '';
+
+        document.querySelectorAll('.start-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const courseId = e.target.closest('.course-card').dataset.course;
+                currentCourse = courseData[courseId];
+                if (currentCourse) {
+                    currentCourseTitle = currentCourse.title;
+                    currentCourseFlag = currentCourse.ctfFlag;
+                    currentModuleIndex = 0;
+                    showModule(currentModuleIndex);
+                    
+                    modal.style.display = 'flex';
+                    courseContent.style.display = 'block';
+                    certificateContainer.style.display = 'none';
+                    downloadPdfBtn.style.display = 'none';
+                    nameFormGroup.style.display = 'block';
+                    generateCertBtn.style.display = 'block';
+                    certificatePreview.style.display = 'none'; // Hide preview initially
+                }
+            });
+        });
+
+        const showModule = (index) => {
+            document.getElementById('assessmentContainer').style.display = 'none';
+            document.getElementById('ctfContainer').style.display = 'none';
+            if (index < currentCourse.modules.length) {
+                const module = currentCourse.modules[index];
+                modalTitle.textContent = currentCourse.title;
+                moduleTitle.textContent = `Module ${index + 1}: ${module.title}`;
+                modalVideo.src = module.videoUrl;
+                nextModuleBtn.style.display = 'block';
+            } else {
+                showAssessment();
+            }
+        };
+
+        const showAssessment = () => {
+            nextModuleBtn.style.display = 'none';
+            quizQuestionsContainer.innerHTML = '';
+            currentCourse.assessment.forEach((q, i) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+                questionDiv.innerHTML = `<p>${i + 1}. ${q.q}</p>`;
+                q.a.forEach((option) => {
+                    questionDiv.innerHTML += `
+                        <label>
+                            <input type="radio" name="q${i}" value="${option}">
+                            ${option}
+                        </label><br>
+                    `;
+                });
+                quizQuestionsContainer.appendChild(questionDiv);
+            });
+            assessmentStatus.textContent = '';
+            document.getElementById('assessmentContainer').style.display = 'block';
+        };
+
+        nextModuleBtn.addEventListener('click', () => {
+            currentModuleIndex++;
+            showModule(currentModuleIndex);
+        });
+
+        submitAssessmentBtn.addEventListener('click', () => {
+            let correctAnswers = 0;
+            const totalQuestions = currentCourse.assessment.length;
+            
+            let allAnswered = true;
+            currentCourse.assessment.forEach((q, i) => {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected) {
+                    if (selected.value === q.a[0]) {
+                        correctAnswers++;
+                    }
+                } else {
+                    allAnswered = false;
+                }
+            });
+
+            if (!allAnswered) {
+                assessmentStatus.textContent = 'Please answer all questions.';
+                assessmentStatus.style.color = '#e74c3c';
+                return;
+            }
+
+            const score = (correctAnswers / totalQuestions) * 100;
+            if (score >= 80) {
+                assessmentStatus.textContent = `You passed with a score of ${score.toFixed(0)}%! You can now proceed to the CTF challenge.`;
+                assessmentStatus.style.color = '#5ac18e';
+                document.getElementById('assessmentContainer').style.display = 'none';
+                document.getElementById('ctfContainer').style.display = 'block';
+            } else {
+                assessmentStatus.textContent = `You scored ${score.toFixed(0)}%. You must score 80% to pass. Please review the modules and try again.`;
+                assessmentStatus.style.color = '#e74c3c';
+            }
+        });
+        
+        verifyBtn.addEventListener('click', () => {
+            const enteredFlag = flagInput.value.trim();
+            if (enteredFlag === currentCourseFlag) {
+                ctfStatus.textContent = 'Correct! You have completed the challenge and earned your certificate.';
+                ctfStatus.style.color = '#5ac18e';
+                ctfContainer.style.display = 'none';
+                certificateContainer.style.display = 'block';
+            } else {
+                ctfStatus.textContent = 'Incorrect flag. Please try again.';
+                ctfStatus.style.color = '#e74c3c';
+            }
+        });
+
+        generateCertBtn.addEventListener('click', () => {
+            const name = certificateNameInput.value.trim();
+            if (name) {
+                document.getElementById('certName').textContent = name;
+                document.getElementById('certCourse').textContent = currentCourseTitle;
+                document.getElementById('certDate').textContent = new Date().toLocaleDateString();
+                certificatePreview.style.display = 'block'; // Show the certificate preview
+                nameFormGroup.style.display = 'none'; // Hide the name input
+                generateCertBtn.style.display = 'none'; // Hide the generate button
+                downloadPdfBtn.style.display = 'block'; // Show the download button
+            } else {
+                console.error('Please enter your name.');
+            }
+        });
+
+        downloadPdfBtn.addEventListener('click', () => {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF('l', 'mm', 'a4');
+            const certElement = document.getElementById('certificatePreview');
+            
+            html2canvas(certElement, { scale: 2 }).then(canvas => {
+                const imgData = canvas.toDataURL('image/png');
+                const imgProps= doc.getImageProperties(imgData);
+                const pdfWidth = doc.internal.pageSize.getWidth();
+                const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+                doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+                doc.save(`${certificateNameInput.value.trim()}_${currentCourseTitle}_Certificate.pdf`);
+            });
+        });
+        
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+            modalVideo.src = '';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                modalVideo.src = '';
+            }
+        });
+    </script>
+</body>
+</html>

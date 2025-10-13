@@ -1,0 +1,24 @@
+{
+    "complaint_id": "CYB-D71A0F45",
+    "user_info": {
+        "name": "Gowdish 2005",
+        "email": "lidiyasolami@gmail.com",
+        "phone": "08489616411",
+        "address": "Pedari Amman Kovil Kadu\r\n1/295"
+    },
+    "attack_type": "financial_fraud",
+    "scenario": "\"I've noticed several unauthorized charges on my credit card statement over the past week for small amounts from online stores I don't recognize. The total is around $150. I still have my physical card, so I'm not sure how the charges were made. I'm worried my card information was stolen.\"",
+    "additional_info": "",
+    "evidence_files": [
+        {
+            "filename": "WhatsApp_Video_2025-09-23_at_2.36.13_PM.mp4",
+            "file_path": "uploads\\WhatsApp_Video_2025-09-23_at_2.36.13_PM.mp4"
+        }
+    ],
+    "analysis_results": {},
+    "ai_assistance": "### Immediate Action Steps to Address Unauthorized Charges\n\n1. **Disconnect from the Internet:** \n   - Temporarily disconnect your device from the internet (Wi-Fi and mobile data) to prevent any potential further unauthorized activity.\n\n2. **Contact Your Credit Card Issuer:**\n   - Call the customer service number on the back of your credit card immediately. Report the unauthorized charges and request to block your card to prevent further transactions. They will guide you through the process of disputing the charges and may issue a new card.\n   \n3. **Review Your Transactions:**\n   - Carefully review your recent transactions to see if there are any other unauthorized charges. Note any that you do not recognize for reporting.\n\n4. **Document Everything:**\n   - Keep detailed records of unauthorized transactions, including dates, amounts, and the names of merchants. This information will be useful for your bank and potentially for fraud investigations.\n\n5. **Change Your Online Passwords:**\n   - For your online accounts where the credit card is linked, change your passwords immediately. Ensure your new passwords are strong (at least 12-16 characters, using a mix of letters, numbers, and special characters) and unique to each account.\n\n### Overcoming the Current Problem\n\n6. **Report Fraud:**\n   - File a fraud report with your credit card issuer. Most companies have a dedicated department for handling fraud cases. They may ask for the details you documented earlier.\n\n7. **Monitor Your Account:**\n   - Keep an eye on your credit card statement for further unauthorized charges while you wait for your bank to resolve the issue. Check your online banking regularly.\n\n8. **Consider a Fraud Alert:**\n   - Place a fraud alert on your credit report by contacting one of the major credit bureaus (Equifax, Experian, or TransUnion). This makes it harder for identity thieves to open accounts in your name.\n\n9. **Request a Credit Report:**\n   - Obtain a free credit report from each of the three major credit bureaus at annualcreditreport.com to check for any unrecognized accounts or inquiries.\n\n### Protecting Yourself from Future Attacks\n\n10. **Enable Two-Factor Authentication (2FA):**\n    - For online accounts, enable 2FA where available. This adds an extra layer of security beyond just passwords.\n\n11. **Use Security Software:**\n    - Install reputable antivirus and anti-malware software on your devices and keep it updated to protect against malicious attacks.\n\n12.",
+    "risk_level": "low",
+    "status": "pending",
+    "created_at": "2025-09-24T17:29:20.964302",
+    "last_updated": "2025-09-24T17:29:20.964302"
+}

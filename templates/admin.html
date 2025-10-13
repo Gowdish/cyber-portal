@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - National Cybersecurity Complaint Portal</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        /* ===== CSS Variables (No Change) ===== */
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #dc2626;
+            --success-color: #16a34a;
+            --warning-color: #ea580c;
+            --info-color: #0284c7;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #e2e8f0;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #cbd5e0;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Dark Theme Variables (No Change) */
+        body.dark-theme {
+            --bg-primary: #1e293b;
+            --bg-secondary: #0f172a;
+            --bg-tertiary: #334155;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e0;
+            --border-color: #475569;
+        }
+
+        /* ===== Base Styles (No Change) ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; 
+            background-color: var(--bg-secondary); 
+            color: var(--text-primary); 
+            line-height: 1.6; 
+            transition: background-color 0.3s, color 0.3s; 
+            min-height: 100vh;
+        }
+
+        /* ... (Header/Navigation/Layout Styles remain the same) ... */
+        .govt-bar { background: linear-gradient(90deg, #1e3a8a 0%, #3b82f6 100%); color: white; padding: 0.5rem 0; font-size: 0.875rem; }
+        .govt-bar-container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .main-header { background: var(--bg-primary); border-bottom: 3px solid var(--primary-color); box-shadow: var(--shadow-md); }
+        .header-container { max-width: 1400px; margin: 0 auto; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .header-left { display: flex; align-items: center; gap: 1.5rem; }
+        .portal-title { font-size: 1.75rem; font-weight: 700; color: var(--primary-color); margin-bottom: 0.25rem; letter-spacing: -0.5px; }
+        .portal-subtitle { font-size: 0.875rem; color: var(--text-secondary); font-weight: 500; }
+        .emergency-number { display: flex; align-items: center; gap: 1rem; background: linear-gradient(135deg, var(--primary-color), #3b82f6); padding: 1rem 1.5rem; border-radius: 8px; color: white; box-shadow: var(--shadow-md); }
+        .emergency-number .helpline-label { font-size: 0.75rem; opacity: 0.9; }
+        .emergency-number .helpline-number { font-size: 1.25rem; font-weight: 700; }
+
+        .main-nav { background: var(--bg-primary); border-bottom: 1px solid var(--border-color); box-shadow: var(--shadow-sm); }
+        .nav-container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; }
+        .nav-menu { list-style: none; display: flex; margin: 0; padding: 0; }
+        .nav-menu a { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem 1.5rem; color: var(--text-primary); text-decoration: none; font-weight: 500; border-bottom: 3px solid transparent; transition: all 0.3s; }
+        .nav-menu a:hover, .nav-menu a.active { background: var(--bg-secondary); color: var(--primary-color); border-bottom-color: var(--primary-color); }
+
+        .main-content { max-width: 1400px; margin: 0 auto; padding: 2rem; flex: 1; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+        .dashboard-header {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: var(--bg-primary);
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+        }
+        .dashboard-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            text-shadow: none;
+        }
+        .dashboard-header p {
+            color: var(--text-secondary);
+        }
+        
+        /* NEW: Tab-like Navigation for Categories */
+        .category-tabs {
+            display: flex;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--border-color);
+            background: var(--bg-primary);
+            border-radius: 12px 12px 0 0;
+            padding-top: 1rem;
+        }
+        .category-tab {
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-secondary);
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px; /* Pull tab up to overlap border */
+            transition: color 0.3s, border-bottom-color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .category-tab:hover {
+            color: var(--primary-color);
+        }
+        .category-tab.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+        
+        /* Table and Data Display (No Change to original styling) */
+        .complaints-table-container {
+            background: var(--bg-primary);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+            border-radius: 0 0 12px 12px; /* Adjust border radius for tab integration */
+        }
+        .complaints-table-container h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        #loading-message {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        th {
+            background-color: var(--bg-tertiary);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        tr:hover {
+            background-color: var(--bg-secondary);
+            cursor: pointer;
+        }
+
+        /* ===== Badges (No Change) ===== */
+        .risk-badge, .status-badge {
+            display: inline-block;
+            padding: 0.35rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        /* Risk Colors */
+        .risk-badge.low { background: #d1fae5; color: #065f46; } /* Success */
+        .risk-badge.medium { background: #fef3c7; color: #92400e; } /* Warning */
+        .risk-badge.high { background: #fee2e2; color: #991b1b; } /* Error/Secondary */
+        /* Status Colors */
+        .status-badge.pending { background: #fef3c7; color: #92400e; } /* Warning */
+        .status-badge.in-progress { background: #c3dafe; color: var(--primary-color); } /* Primary/Info */
+        .status-badge.closed { background: #d1fae5; color: #065f46; } /* Success */
+        
+        /* NEW: Intervention Badge (Human/AI) */
+        .intervention-badge {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            white-space: nowrap;
+            margin-left: 0.5rem;
+        }
+        .intervention-badge.ai { background: #e0f2fe; color: #0284c7; } /* Sky-blue: AI Handling */
+        .intervention-badge.human { background: #fecaca; color: #b91c1c; } /* Red: Human Needed */
+        .intervention-badge.review { background: #fef3c7; color: #b45309; } /* Orange: Review Needed */
+
+
+        /* ===== Details Panel (No Change) ===== */
+        .details-panel {
+            background: var(--bg-primary);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow-xl);
+            margin-top: 2rem;
+            display: none;
+            border: 1px solid var(--border-color);
+        }
+        .details-panel h2 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .details-content {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .complaint-info, .analysis-info {
+            flex: 1 1 45%; 
+        }
+        .complaint-info p {
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+        .complaint-info strong {
+            color: var(--text-primary);
+        }
+        .analysis-info h3 {
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.15rem;
+        }
+        .analysis-info pre {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            padding: 1rem;
+            border-radius: 8px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid var(--border-color);
+            font-size: 0.85rem;
+        }
+        #evidence-list {
+            list-style: disc;
+            margin-left: 1.5rem;
+            padding-left: 0;
+            color: var(--text-secondary);
+        }
+
+        /* ===== Update Section Controls (No Change) ===== */
+        .update-section {
+            padding-top: 1.5rem;
+            border-top: 1px dashed var(--border-color);
+            margin-top: 2rem;
+        }
+        .update-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .status-dropdown, .admin-notes {
+            padding: 0.75rem;
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            width: 100%;
+            margin-bottom: 1rem;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+        .status-dropdown:focus, .admin-notes:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+        }
+        .admin-notes {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .btn-group {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+        .btn { /* Base button style applied globally in this CSS */
+            padding: 0.75rem 1.5rem; 
+            border-radius: 6px; 
+            font-weight: 600; 
+            cursor: pointer; 
+            transition: all 0.3s;
+            display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-primary { 
+            background: linear-gradient(135deg, var(--primary-color), #3b82f6);
+            color: white; 
+            flex: 1;
+        }
+        .btn-close {
+            background: var(--secondary-color);
+            color: white;
+            flex: 1;
+        }
+        .btn-close:hover {
+            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.3);
+            transform: translateY(-2px);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        .loading-spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Footer Styles (No Change) */
+        .main-footer { 
+            background: var(--bg-primary); 
+            border-top: 3px solid var(--primary-color); 
+            margin-top: auto; 
+            padding: 1.5rem 0; 
+            text-align: center;
+            color: var(--text-secondary);
+        }
+        .footer-container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; font-size: 0.875rem; }
+
+        /* Responsive Adjustments (No Change) */
+        @media (max-width: 768px) {
+            .header-container, .nav-container, .govt-bar-container { flex-direction: column; gap: 1rem; text-align: center; }
+            .details-content, .btn-group { flex-direction: column; }
+            .complaint-info, .analysis-info { flex: 1 1 100%; }
+            .main-content { padding: 1rem; }
+        }
+    </style>
+    </head>
+<body>
+    <div class="govt-bar">
+        <div class="govt-bar-container">
+            <div class="govt-info">
+                <span class="govt-text">Government of India</span>
+                <span class="divider">|</span>
+                <span class="ministry-text">Ministry of Home Affairs</span>
+            </div>
+            <div class="accessibility-links">
+                <a href="#" class="acc-link">हिंदी</a>
+                <a href="#" class="acc-link">A+</a>
+                <a href="#" class="acc-link">A-</a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-adjust"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-left">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="Emblem of India" class="emblem" style="height: 70px;" onerror="this.style.display='none'">
+                <div class="header-titles">
+                    <h1 class="portal-title">Admin Dashboard</h1>
+                    <p class="portal-subtitle">Cyber Crime Division | Complaint Management</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="emergency-number">
+                    <i class="fas fa-user-shield"></i>
+                    <div class="emergency-info">
+                        <span class="helpline-label">Admin Access</span>
+                        <span class="helpline-number">SECURE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="/"><i class="fas fa-home"></i> User Portal</a></li>
+                <li><a href="/trackcomplaint"><i class="fas fa-search"></i> Track Complaint</a></li>
+                <li><a href="#" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="main-content">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1>Complaint Management System</h1>
+                <p>Review and manage all cybersecurity complaints submitted to the portal.</p>
+            </div>
+            
+            <div class="category-tabs">
+                <div class="category-tab active" data-category="all" onclick="filterComplaints('all')">
+                    <i class="fas fa-list-ul"></i> All Complaints
+                </div>
+                <div class="category-tab" data-category="ai" onclick="filterComplaints('ai')">
+                    <i class="fas fa-robot"></i> AI Handled (Low Risk)
+                </div>
+                <div class="category-tab" data-category="review" onclick="filterComplaints('review')">
+                    <i class="fas fa-eye"></i> Review Recommended (Medium Risk)
+                </div>
+                <div class="category-tab" data-category="human" onclick="filterComplaints('human')">
+                    <i class="fas fa-user-shield"></i> Human Intervention (High Risk)
+                </div>
+            </div>
+
+            <div class="complaints-table-container">
+                <p id="loading-message">Loading complaints...</p>
+                <table id="complaints-table" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Attack Type</th>
+                            <th>AI Summary (Core Issue)</th>
+                            <th>Risk / Intervention</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="complaints-list">
+                        </tbody>
+                </table>
+            </div>
+
+            <div id="complaint-details-panel" class="details-panel">
+                <button onclick="hideDetailsPanel()" style="background: var(--secondary-color); border: none; padding: 0.5rem 1rem; border-radius: 5px; color: white; cursor: pointer; float: right; font-weight: 500;">
+                    <i class="fas fa-times"></i> Close
+                </button>
+                <h2 id="details-header">Complaint Details - <span id="details-id"></span></h2>
+                
+                <div class="details-content">
+                    <div class="complaint-info">
+                        <p><strong>Status:</strong> <span id="details-status" class="status-badge"></span></p>
+                        <p><strong>Risk Level:</strong> <span id="details-risk" class="risk-badge"></span></p>
+                        <p><strong>User:</strong> <span id="details-user"></span></p>
+                        <p><strong>Email:</strong> <span id="details-email"></span></p>
+                        <p><strong>Phone:</strong> <span id="details-phone"></span></p>
+                        <p><strong>Incident Type:</strong> <span id="details-type"></span></p>
+                        <p><strong>Scenario:</strong> <span id="details-scenario"></span></p>
+                        <p><strong>Additional Info:</strong> <span id="details-additional-info"></span></p>
+                        <div id="details-evidence-list">
+                            <h4>Evidence Files:</h4>
+                            <ul id="evidence-list"></ul>
+                        </div>
+                    </div>
+                    
+                    <div class="analysis-info">
+                        <h3>Analysis Results</h3>
+                        <pre id="details-analysis-results">No automated analysis data available.</pre>
+                        <h3>AI Assistant Guidance (Step-by-Step)</h3>
+                        <pre id="details-ai-guidance">AI system notes on recommended user actions.</pre>
+                        <p><strong>AI Summary (Dashboard):</strong> <span id="details-ai-summary">N/A</span></p>
+                    </div>
+                </div>
+                
+                <div class="update-section">
+                    <h3>Update Complaint Status</h3>
+                    <select id="status-update-select" class="status-dropdown">
+                        <option value="pending">Pending</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="closed">Closed</option>
+                    </select>
+                    <textarea id="admin-notes-textarea" class="admin-notes" rows="3" placeholder="Add administrative notes here..."></textarea>
+                    <div class="btn-group">
+                        <button class="btn btn-primary" onclick="updateComplaintStatus(event)">
+                            <i class="fas fa-sync-alt"></i> Update Status
+                        </button>
+                        <button class="btn btn-close" onclick="closeCase(event)">
+                            <i class="fas fa-check-circle"></i> Close Case
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Government of India. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', fetchComplaints);
+        document.getElementById('themeToggle').addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+        });
+
+        let complaintsData = [];
+        let currentFilter = 'all';
+
+        // API Endpoints (Updated to reflect MongoDB changes)
+        const API_FETCH_COMPLAINTS = '/api/admin/complaints';
+        const API_UPDATE_STATUS = '/api/admin/update_status';
+        const API_GET_COMPLAINT_DETAILS = '/api/get_complaint'; // Use this for full details
+
+        async function fetchComplaints() {
+            try {
+                const response = await fetch(API_FETCH_COMPLAINTS);
+                const data = await response.json();
+                
+                document.getElementById('loading-message').style.display = 'none';
+
+                if (data.success && data.complaints && data.complaints.length > 0) {
+                    complaintsData = data.complaints;
+                    renderComplaints(complaintsData);
+                } else {
+                    document.getElementById('complaints-table').style.display = 'none';
+                    document.getElementById('loading-message').textContent = 'No complaints found.';
+                    document.getElementById('loading-message').style.display = 'block';
+                }
+            } catch (error) {
+                console.error('Error fetching complaints:', error);
+                document.getElementById('loading-message').textContent = 'Error loading data. Please check the backend server.';
+                document.getElementById('loading-message').style.display = 'block';
+            }
+        }
+
+        // NEW: Function to determine intervention level
+        function getInterventionLevel(riskLevel, status) {
+            if (status.toLowerCase() === 'closed') {
+                return { level: 'closed', text: 'Closed' };
+            }
+            if (riskLevel === 'high') {
+                return { level: 'human', text: 'Human Needed' };
+            }
+            if (riskLevel === 'medium') {
+                return { level: 'review', text: 'Review Recommended' };
+            }
+            return { level: 'ai', text: 'AI Handled' };
+        }
+
+        function filterComplaints(category) {
+            currentFilter = category;
+            
+            // Update tab styles
+            document.querySelectorAll('.category-tab').forEach(tab => {
+                if (tab.getAttribute('data-category') === category) {
+                    tab.classList.add('active');
+                } else {
+                    tab.classList.remove('active');
+                }
+            });
+
+            const filtered = complaintsData.filter(complaint => {
+                const intervention = getInterventionLevel(complaint.risk_level, complaint.status).level;
+                if (category === 'all') return true;
+                if (category === 'human' && intervention === 'human') return true;
+                if (category === 'review' && intervention === 'review') return true;
+                if (category === 'ai' && intervention === 'ai') return true;
+                return false;
+            });
+
+            renderTableBody(filtered);
+        }
+
+        function renderComplaints(complaints) {
+            // Initial render uses the current filter
+            filterComplaints(currentFilter);
+            document.getElementById('complaints-table').style.display = 'table';
+        }
+        
+        function renderTableBody(complaints) {
+            const tableBody = document.getElementById('complaints-list');
+            tableBody.innerHTML = '';
+
+            if (complaints.length === 0) {
+                tableBody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--text-secondary);">No complaints match the current filter.</td></tr>`;
+                return;
+            }
+
+            complaints.forEach(complaint => {
+                const row = document.createElement('tr');
+                // Use a separate function for fetching *full* details to keep initial load fast
+                row.onclick = () => showDetails(complaint.complaint_id);
+                
+                // Sanitize status and risk for CSS class names
+                const statusClass = (complaint.status || 'pending').toLowerCase().replace(/\s+/g, '-');
+                const riskClass = (complaint.risk_level || 'medium').toLowerCase();
+                const intervention = getInterventionLevel(complaint.risk_level, complaint.status);
+
+                const attackType = complaint.attack_type ? complaint.attack_type.toUpperCase() : 'N/A';
+                const date = complaint.created_at ? new Date(complaint.created_at).toLocaleDateString() : 'N/A';
+                const aiSummary = complaint.ai_summary || 'N/A';
+
+                row.innerHTML = `
+                    <td>${complaint.complaint_id}</td>
+                    <td>${attackType}</td>
+                    <td><i class="fas fa-sticky-note" style="color: var(--info-color); margin-right: 5px;"></i> ${aiSummary}</td>
+                    <td>
+                        <span class="risk-badge ${riskClass}">${complaint.risk_level.toUpperCase()}</span>
+                        <span class="intervention-badge ${intervention.level}">${intervention.text}</span>
+                    </td>
+                    <td><span class="status-badge ${statusClass}">${complaint.status.toUpperCase()}</span></td>
+                    <td>${date}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        async function showDetails(complaintId) {
+             const panel = document.getElementById('complaint-details-panel');
+             panel.style.display = 'none'; // Hide temporarily while loading
+
+             try {
+                const response = await fetch(`${API_GET_COMPLAINT_DETAILS}/${complaintId}`);
+                const data = await response.json();
+
+                if (!data.success) {
+                    alert('Error loading complaint details: ' + (data.error || 'Unknown error'));
+                    return;
+                }
+                const complaint = data.complaint;
+
+                // Set complaint ID and header
+                document.getElementById('details-id').textContent = complaint.complaint_id;
+                
+                // Set badges
+                const statusClass = (complaint.status || 'pending').toLowerCase().replace(/\s+/g, '-');
+                const riskClass = (complaint.risk_level || 'medium').toLowerCase();
+
+                document.getElementById('details-status').textContent = complaint.status.toUpperCase();
+                document.getElementById('details-status').className = `status-badge ${statusClass}`;
+                document.getElementById('details-risk').textContent = complaint.risk_level.toUpperCase();
+                document.getElementById('details-risk').className = `risk-badge ${riskClass}`;
+
+                // Set user/incident details
+                const userInfo = complaint.user_info || {};
+                document.getElementById('details-user').textContent = userInfo.name || 'N/A';
+                document.getElementById('details-email').textContent = userInfo.email || 'N/A';
+                document.getElementById('details-phone').textContent = userInfo.phone || 'N/A';
+                document.getElementById('details-type').textContent = (complaint.attack_type || 'N/A').toUpperCase();
+                document.getElementById('details-scenario').textContent = complaint.scenario || 'N/A';
+                document.getElementById('details-additional-info').textContent = complaint.additional_info || 'N/A';
+                
+                // Set analysis results
+                document.getElementById('details-analysis-results').textContent = JSON.stringify(complaint.analysis_results || {}, null, 2);
+                document.getElementById('details-ai-guidance').textContent = complaint.ai_assistance || 'No AI guidance provided.';
+                document.getElementById('details-ai-summary').textContent = complaint.ai_summary || 'N/A';
+                
+                // Set initial value for update form
+                document.getElementById('status-update-select').value = complaint.status;
+                document.getElementById('admin-notes-textarea').value = complaint.admin_notes || '';
+
+                // Render evidence list
+                const evidenceList = document.getElementById('evidence-list');
+                evidenceList.innerHTML = '';
+                if (complaint.evidence_files && complaint.evidence_files.length > 0) {
+                    complaint.evidence_files.forEach(file => {
+                        const li = document.createElement('li');
+                        // IMPORTANT: For security, a separate download route is needed, this is just a filename display.
+                        li.innerHTML = `<i class="fas fa-file-download" style="color: var(--info-color); margin-right: 5px;"></i> ${file.filename}`;
+                        evidenceList.appendChild(li);
+                    });
+                } else {
+                    evidenceList.innerHTML = '<li>No evidence files submitted.</li>';
+                }
+
+                panel.style.display = 'block';
+                panel.scrollIntoView({ behavior: 'smooth' });
+
+            } catch (error) {
+                console.error('Error fetching complaint details:', error);
+                alert('An error occurred while fetching complaint details.');
+            }
+        }
+
+        function hideDetailsPanel() {
+            document.getElementById('complaint-details-panel').style.display = 'none';
+        }
+
+        async function updateComplaintStatus(event) {
+            // The event target is the button itself
+            const updateButton = event.currentTarget;
+            const originalHtml = updateButton.innerHTML;
+            
+            const complaintId = document.getElementById('details-id').textContent;
+            const newStatus = document.getElementById('status-update-select').value;
+            const adminNotes = document.getElementById('admin-notes-textarea').value;
+            
+            // Show loading state
+            updateButton.innerHTML = '<span class="loading-spinner" style="border-top-color: white;"></span> Updating...';
+            updateButton.disabled = true;
+
+            try {
+                const response = await fetch(API_UPDATE_STATUS, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        complaint_id: complaintId,
+                        status: newStatus,
+                        admin_notes: adminNotes
+                    })
+                });
+                const result = await response.json();
+                if (result.success) {
+                    alert('Complaint status updated successfully!');
+                    hideDetailsPanel();
+                    fetchComplaints(); // Reload data
+                } else {
+                    alert('Failed to update status: ' + (result.error || 'Server error.'));
+                }
+            } catch (error) {
+                console.error('Error updating status:', error);
+                alert('Network error. Failed to update status.');
+            } finally {
+                updateButton.innerHTML = originalHtml;
+                updateButton.disabled = false;
+            }
+        }
+        
+        async function closeCase(event) {
+            const closeButton = event.currentTarget;
+            const originalHtml = closeButton.innerHTML;
+            
+            const complaintId = document.getElementById('details-id').textContent;
+            const adminNotes = document.getElementById('admin-notes-textarea').value;
+            
+            if (confirm(`Are you sure you want to close Case ${complaintId}? This status cannot be reversed easily.`)) {
+                
+                closeButton.innerHTML = '<span class="loading-spinner" style="border-top-color: white;"></span> Closing...';
+                closeButton.disabled = true;
+                
+                try {
+                    const response = await fetch(API_UPDATE_STATUS, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            complaint_id: complaintId,
+                            status: 'closed', // Force status to 'closed'
+                            admin_notes: adminNotes || 'Case closed by admin.'
+                        })
+                    });
+                    const result = await response.json();
+                    if (result.success) {
+                        alert(`Case ${complaintId} has been closed successfully.`);
+                        hideDetailsPanel();
+                        fetchComplaints();
+                    } else {
+                        alert('Failed to close case: ' + (result.error || 'Server error.'));
+                    }
+                } catch (error) {
+                    console.error('Error closing case:', error);
+                    alert('Network error. Failed to close case.');
+                } finally {
+                    closeButton.innerHTML = originalHtml;
+                    closeButton.disabled = false;
+                }
+            }
+        }
+    </script>
+    </body>
+</html>

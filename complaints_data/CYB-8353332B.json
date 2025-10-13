@@ -1,0 +1,53 @@
+{
+    "complaint_id": "CYB-8353332B",
+    "user_info": {
+        "name": "Free Fire",
+        "email": "statusday439@gmail.com",
+        "phone": "+918489843737",
+        "address": "ponnamaravathy\r\nponnamaravathy"
+    },
+    "attack_type": "phishing",
+    "scenario": "hh",
+    "additional_info": "",
+    "evidence_files": [],
+    "analysis_results": {
+        "url_analysis": {
+            "url": "https://nexonlogistics.com/",
+            "domain_analysis": {
+                "Domain": "nexonlogistics.com",
+                "Uses IP": false,
+                "Has SSL": true,
+                "Domain Age (days)": 1213,
+                "DNS Records": {
+                    "A": [
+                        "172.67.194.193",
+                        "104.21.20.233"
+                    ],
+                    "MX": [
+                        "mx2.hostinger.com.",
+                        "mx1.hostinger.com."
+                    ],
+                    "TXT": [
+                        "\"google-site-verification=kdXFyFre7h1e0jinkqpDrDqY8SBBLrffG4nrbJ1CHnE\"",
+                        "\"v=spf1 include:spf.mailjet.com include:_spf.mail.hostinger.com ~all\"",
+                        "\"google-site-verification=8Przl4yBO-qZ6lads3vjLg6ca9QCnd1AV1zXw3MTXkM\""
+                    ]
+                },
+                "Page Info": {
+                    "Title": "Nexon Logistics - Professional Virtual Trucking Company",
+                    "Forms": 0,
+                    "iFrames": 0
+                },
+                "Pass Domain Check": true
+            },
+            "ml_prediction_raw": "phishing",
+            "final_verdict": "phishing",
+            "confidence": 0.5773807447057447
+        }
+    },
+    "ai_assistance": "If you encounter a URL or document that contains malicious or phishing links, it's crucial to take immediate action to protect your information. Here\u2019s a step-by-step guide to help you handle such a situation effectively:\n\n### Step-by-Step Guide\n\n#### Step 1: **Do Not Click on or Visit the Detected URLs**\n- If you see any malicious links, avoid clicking on them. Instead, close the page or document and do not engage with them in any way.\n\n#### Step 2: **Change Passwords for Any Accounts Accessed**\n- If you have already clicked on a link and entered your login information:\n  1. Navigate to the website of the accounts you may have accessed (e.g., email, bank, social media).\n  2. Use a different device if possible to ensure security.\n  3. Go to the login page and select the option for \"Forgot Password\" or \"Change Password.\"\n  4. Follow the steps provided to create a new password. Ensure that your new password is strong, using a mix of letters, numbers, and special characters.\n\n#### Step 3: **Run a Full Security Scan on Your Device**\n- Use a reputable antivirus or anti-malware program:\n  1. Open your antivirus software.\n  2. Look for the option to run a \u201cFull Scan\u201d or \u201cComplete Scan.\u201d\n  3. Follow the prompts to scan your system for any malware or threats.\n  4. Quarantine or remove any detected issues as instructed.\n\n#### Step 4: **How to Identify Phishing Links in the Future**\n- **Check the Domain Name Closely:**\n  - Look for misspellings or variations of legitimate company URLs (e.g., www.bankname.com versus www.b4nkname.com).\n- **Look for Generic Messages:**\n  - Be wary of messages that use generic salutations like \u201cDear Customer\u201d instead of your name.\n  - Watch out for urgent language that pressures you to take quick action.\n- **Hover Over Links:** \n  - Hover your mouse over links (without clicking) to see the actual URL in the status bar at the bottom of your browser to verify if it matches what's displayed.\n- **Check for Secure Connections:**\n  - Make sure the website URL starts with \"https://\" (the 's' stands for secure); while this doesn\u2019t guarantee a site is safe, it\u2019s an important indicator.\n\n#### Step 5: **Report the",
+    "risk_level": "high",
+    "status": "pending",
+    "created_at": "2025-10-06T19:29:12.541049",
+    "last_updated": "2025-10-06T19:29:12.541049"
+}

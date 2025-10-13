@@ -1,0 +1,53 @@
+{
+    "complaint_id": "CYB-5C7C5DA0",
+    "user_info": {
+        "name": "Free Fire",
+        "email": "abubakkarsiddiq123as@gmail.com",
+        "phone": "+918489843737",
+        "address": "ponnamaravathy\r\nponnamaravathy"
+    },
+    "attack_type": "phishing",
+    "scenario": "   ;kk",
+    "additional_info": "",
+    "evidence_files": [],
+    "analysis_results": {
+        "url_analysis": {
+            "url": "https://nexonlogistics.com/",
+            "domain_analysis": {
+                "Domain": "nexonlogistics.com",
+                "Uses IP": false,
+                "Has SSL": true,
+                "Domain Age (days)": 1213,
+                "DNS Records": {
+                    "A": [
+                        "172.67.194.193",
+                        "104.21.20.233"
+                    ],
+                    "MX": [
+                        "mx1.hostinger.com.",
+                        "mx2.hostinger.com."
+                    ],
+                    "TXT": [
+                        "\"v=spf1 include:spf.mailjet.com include:_spf.mail.hostinger.com ~all\"",
+                        "\"google-site-verification=8Przl4yBO-qZ6lads3vjLg6ca9QCnd1AV1zXw3MTXkM\"",
+                        "\"google-site-verification=kdXFyFre7h1e0jinkqpDrDqY8SBBLrffG4nrbJ1CHnE\""
+                    ]
+                },
+                "Page Info": {
+                    "Title": "Nexon Logistics - Professional Virtual Trucking Company",
+                    "Forms": 0,
+                    "iFrames": 0
+                },
+                "Pass Domain Check": true
+            },
+            "ml_prediction_raw": "phishing",
+            "final_verdict": "phishing",
+            "confidence": 0.5773807447057447
+        }
+    },
+    "ai_assistance": "If you encounter a situation where malicious or high-risk phishing links have been detected, it's important to follow these steps carefully to protect your personal information and maintain the security of your devices:\n\n### Step-by-Step Guide\n\n#### 1. **Avoid Visiting Detected Links**\n   - **Do Not Click**: If you come across the detected URLs, do not click on them. Ensure you do not attempt to visit these links or enter any information related to your accounts on them.\n\n#### 2. **Immediate Password Change**\n   - **Assess Your Accounts**: If you think you may have already clicked on a phishing link, act fast.\n   - **Change Passwords**: \n     - Go to each online account you accessed after clicking the link.\n     - Navigate to the security settings or account settings of each account.\n     - Use a strong, unique password for each account. Consider using a password manager to help generate and store secure passwords.\n\n#### 3. **Run a Full Security Scan**\n   - **Update Your Security Software**: Ensure your antivirus or antimalware software is up to date.\n   - **Conduct a Full Scan**: \n     - Open your security software and initiate a full system scan.\n     - Follow the software\u2019s instructions to quarantine or remove any malicious software detected.\n\n#### 4. **Identifying Phishing Links in the Future**\n   - **Check the Domain Name**: Always look closely at the web address (URL). Phishing sites often use URLs that closely resemble legitimate sites but include slight changes, such as misspellings (e.g., \"g00gle.com\" instead of \"google.com\").\n   - **Look for Generic Messages**: Be cautious with emails or messages that are overly generic, such as \u201cDear Customer\u201d instead of addressing you by name. Legitimate companies typically use your name in communication.\n   - **Inspect URL Formatting**: Be wary of URLs that have complex structures, extra characters, or unexpected prefixes (like \u201chttp://\u201d instead of the usual \u201chttps://\u201d).\n   - **Hover Over Links**: Before clicking, hover your mouse over any links to see the actual URL destination. This will help you verify if the link directs to a legitimate site.\n\n#### 5. **Reporting Phishing Attempts**\n   - **Report to Authorities**: You can report phishing attempts to various authorities, including:\n     - **Google Safe Browsing**: Visit [Google Safe Browsing](https://saf",
+    "risk_level": "high",
+    "status": "pending",
+    "created_at": "2025-10-06T18:06:56.091371",
+    "last_updated": "2025-10-06T18:06:56.091371"
+}

@@ -1,0 +1,53 @@
+{
+    "complaint_id": "CYB-6A354B5A",
+    "user_info": {
+        "name": "Free Fire",
+        "email": "abubakkarsiddiq123as@gmail.com",
+        "phone": "+918489843737",
+        "address": "ponnamaravathy\r\nponnamaravathy"
+    },
+    "attack_type": "phishing",
+    "scenario": "nnn",
+    "additional_info": "",
+    "evidence_files": [],
+    "analysis_results": {
+        "url_analysis": {
+            "url": "https://nexonlogistics.com/",
+            "domain_analysis": {
+                "Domain": "nexonlogistics.com",
+                "Uses IP": false,
+                "Has SSL": true,
+                "Domain Age (days)": 1213,
+                "DNS Records": {
+                    "A": [
+                        "104.21.20.233",
+                        "172.67.194.193"
+                    ],
+                    "MX": [
+                        "mx1.hostinger.com.",
+                        "mx2.hostinger.com."
+                    ],
+                    "TXT": [
+                        "\"google-site-verification=8Przl4yBO-qZ6lads3vjLg6ca9QCnd1AV1zXw3MTXkM\"",
+                        "\"v=spf1 include:spf.mailjet.com include:_spf.mail.hostinger.com ~all\"",
+                        "\"google-site-verification=kdXFyFre7h1e0jinkqpDrDqY8SBBLrffG4nrbJ1CHnE\""
+                    ]
+                },
+                "Page Info": {
+                    "Title": "Nexon Logistics - Professional Virtual Trucking Company",
+                    "Forms": 0,
+                    "iFrames": 0
+                },
+                "Pass Domain Check": true
+            },
+            "ml_prediction_raw": "phishing",
+            "final_verdict": "phishing",
+            "confidence": 0.5773807447057447
+        }
+    },
+    "ai_assistance": "Here\u2019s a clear, step-by-step guide on how to handle situations involving malicious or high-risk phishing links:\n\n### 1. **Avoid Clicking on Detected URLs**\n   - **Visual Confirmation**: If the link appears in an email, message, or document, do not click on it.\n   - **Close the Window**: If you have the link open, immediately close your web browser or the application in which the link was presented to avoid accidental clicks.\n   - **Delete the Message**: If the link was in an email or message, delete it to prevent future accidental clicks.\n\n### 2. **Change Passwords Immediately if You\u2019ve Clicked the Link**\n   - **Identify Accounts**: Recall any accounts you might have accessed after clicking the link.\n   - **Password Update**:\n     1. Navigate to the login page of each affected account.\n     2. Click on the \"Forgot Password?\" link if you can\u2019t log in.\n     3. Follow the password reset process to create a strong, new password.\n   - **Enable Two-Factor Authentication**: If available, enable two-factor authentication for added security.\n\n### 3. **Run a Full Security Scan on Your Device**\n   - **Install Antivirus Software**: Make sure you have reputable antivirus software installed.\n   - **Initiate a Full Scan**:\n     1. Open your antivirus program.\n     2. Select the option for a full system scan.\n     3. Start the scan and allow it to complete. Follow any recommendations to remove detected threats.\n   - **Update Your Security Software**: After scanning, ensure your antivirus is updated to the latest version to protect against new threats.\n\n### 4. **Identify Phishing Links in the Future**\n   - **Check the Domain Name**: Always verify the URL closely. Look for minor misspellings or unusual domain suffixes (e.g., \".net\" instead of \".com\").\n   - **Hover Over Links**: Before clicking, hover your mouse cursor over the link (without clicking) to see the actual URL in the bottom corner of your browser.\n   - **Look for Red Flags**: Phishing attempts often contain generic greetings (like \u201cDear Customer\u201d) and create a sense of urgency (e.g., \u201cYour account will be suspended\u201d).\n   - **Verify Suspicious Communications**: If you receive messages from what seems to be a legitimate source, contact them directly using verified contact information",
+    "risk_level": "high",
+    "status": "pending",
+    "created_at": "2025-10-06T19:32:58.937498",
+    "last_updated": "2025-10-06T19:32:58.937498"
+}

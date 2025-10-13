@@ -1,0 +1,55 @@
+{
+    "complaint_id": "CYB-C9DE3C1E",
+    "user_info": {
+        "name": "Gowdish S",
+        "email": "gowdish2005@gmail.com",
+        "phone": "8489616411",
+        "address": "bn"
+    },
+    "attack_type": "phishing",
+    "scenario": "jhhj",
+    "additional_info": "",
+    "evidence_files": [],
+    "analysis_results": {
+        "url_analysis": {
+            "url": "https://kongunadu.ac.in/center-of-excellence/",
+            "domain_analysis": {
+                "Domain": "kongunadu.ac.in",
+                "Uses IP": false,
+                "Has SSL": true,
+                "Domain Age (days)": 3797,
+                "DNS Records": {
+                    "A": [
+                        "104.21.73.165",
+                        "172.67.146.71"
+                    ],
+                    "MX": [
+                        "alt3.aspmx.l.google.com.",
+                        "alt4.aspmx.l.google.com.",
+                        "alt1.aspmx.l.google.com.",
+                        "alt2.aspmx.l.google.com.",
+                        "aspmx.l.google.com."
+                    ],
+                    "TXT": [
+                        "\"v=spf1 +a +mx +ip4:122.185.252.19 ~all\"",
+                        "\"MS=7011055AEE3BE31C37EEB58FD57DACF954B1A3D9\""
+                    ]
+                },
+                "Page Info": {
+                    "Title": "Center of Excellence - KONGUNADU COLLEGE OF ENGINEERING AND TECHNOLOGY",
+                    "Forms": 0,
+                    "iFrames": 0
+                },
+                "Pass Domain Check": true
+            },
+            "ml_prediction_raw": "phishing",
+            "final_verdict": "phishing",
+            "confidence": 0.5505375878625878
+        }
+    },
+    "ai_assistance": "Certainly! Here's a clear, step-by-step guide on how to handle malicious or high-risk phishing links:\n\n### Step-by-Step Guide\n\n#### Step 1: Avoid Clicking on Known Malicious Links\n- **Do not click on the detected URLs**: This is the most critical step. Avoid visiting any links you know to be malicious, as this can lead to malware installation or data theft.\n\n#### Step 2: Change Passwords\n- **Immediately change passwords**: If you have already clicked on a link and entered any sensitive information (like passwords or financial details), change the passwords for those accounts right away. \n  - Go to each website directly (not through the phishing link) and use the \"Forgot Password?\" feature if you can't remember them. \n  - Create strong, unique passwords for each account.\n\n#### Step 3: Run a Security Scan\n- **Perform a full security scan** on your device:\n  - Use reliable antivirus software to perform a complete scan of your computer. Follow these steps:\n    1. Ensure your antivirus software is up to date.\n    2. Open the software and select the option for a full system scan.\n    3. Allow the scan to remove any detected threats.\n  - Additionally, consider using anti-malware tools for a thorough check.\n\n#### Step 4: Identifying Phishing Links in the Future\n- **Learn to spot phishing attempts**:\n  - **Check the domain name closely**: Look for minor misspellings or extra characters in the URL. For example, \"g00gle.com\" instead of \"google.com\".\n  - **Look for generic messages**: Phishing emails often use generic greetings (e.g., \"Dear Customer\") instead of your name. Be wary of any messages that create a sense of urgency or fear.\n  - **Hover before you click**: If you mouse over a link, it will show the actual URL. Check if it looks suspicious.\n  - **Examine the sender\u2019s email**: Phishing attempts often come from email addresses that mimic legitimate ones but have slight variations.\n\n#### Step 5: Reporting the Phishing Attempt\n- **Report the phishing attempt**:\n  - **To your email provider**: Most email services have a way to report phishing emails. Look for \"Report Phishing\" options.\n  - **To the websites being impersonated**: If the phishing email is pretending to be from a legitimate company, report it to",
+    "risk_level": "high",
+    "status": "pending",
+    "created_at": "2025-10-05T09:02:26.714060",
+    "last_updated": "2025-10-05T09:02:26.714060"
+}

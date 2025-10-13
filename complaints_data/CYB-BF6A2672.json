@@ -1,0 +1,139 @@
+{
+    "complaint_id": "CYB-BF6A2672",
+    "user_info": {
+        "name": "Gowdish 2005",
+        "email": "gowdish2005@gmail.com",
+        "phone": "08489616411",
+        "address": "Pedari Amman Kovil Kadu\r\n1/295"
+    },
+    "attack_type": "phishing",
+    "scenario": "rfbjf",
+    "additional_info": "",
+    "evidence_files": [
+        {
+            "filename": "test_gmail.pdf",
+            "file_path": "uploads\\test_gmail.pdf"
+        }
+    ],
+    "analysis_results": {
+        "phishing_document": {
+            "extracted_text": "Nomination of your innovation for The India Pitch\n2 messages\nYUKTI - National Innovation Repository <iic.mhrd@aicte-india.org> Tue, Jul 8, 2025 at 5:22 PM\nTo: gowdish2005@gmail.com\nYUKTI Innovation Repository\nDear Innovator,\nYour institute has nominated your Innovation submitted under YUKTI\nInnovation Repository to participate in the Yukti Innovation Challenge\n2025.\nYou need to login into YUKTI portal at https://yukti.mic.gov.in/login and\nupdate the innovation details if required.\nFor more details, please refer to the link: https://yukti.mic.gov.in/\nYIC2025 .\nThanks and Regards,\nYUKTI Implementation Team\nMinistry of Education's Innovation Cell, Govt. of India\nNote: This is an auto generated email, please don't reply to this\nemail id.\nTo know about YIR, please visit https://yukti.mic.gov.in/.\n\u00a9 2022 Institution's Innovation Council, Ministry of Education's\nInnovation Cell, All rights reserved.\nGowdish 2005 <gowdish2005@gmail.com> Tue, Jul 8, 2025 at 5:27 PM\nTo: HARIHARAN <tm07hariharan2122@gmail.com>\n[Quoted text hidden]",
+            "found_urls": [
+                "https://yukti.mic.gov.in/login",
+                "https://yukti.mic.gov.in/",
+                "https://yukti.mic.gov.in/."
+            ],
+            "url_reports": [
+                {
+                    "url": "https://yukti.mic.gov.in/login",
+                    "domain_analysis": {
+                        "Domain": "yukti.mic.gov.in",
+                        "Uses IP": false,
+                        "Has SSL": true,
+                        "Domain Age (days)": 2531,
+                        "DNS Records": {
+                            "A": [
+                                "20.204.13.165"
+                            ],
+                            "MX": [],
+                            "TXT": []
+                        },
+                        "Page Info": {
+                            "Title": "403 Forbidden",
+                            "Forms": 0,
+                            "iFrames": 0
+                        },
+                        "Pass Domain Check": true
+                    },
+                    "ml_prediction_raw": "Bypassed ML",
+                    "final_verdict": "legitimate",
+                    "confidence": 0.95
+                },
+                {
+                    "url": "https://yukti.mic.gov.in/",
+                    "domain_analysis": {
+                        "Domain": "yukti.mic.gov.in",
+                        "Uses IP": false,
+                        "Has SSL": true,
+                        "Domain Age (days)": 2531,
+                        "DNS Records": {
+                            "A": [
+                                "20.204.13.165"
+                            ],
+                            "MX": [],
+                            "TXT": []
+                        },
+                        "Page Info": {
+                            "Title": "403 Forbidden",
+                            "Forms": 0,
+                            "iFrames": 0
+                        },
+                        "Pass Domain Check": true
+                    },
+                    "ml_prediction_raw": "Bypassed ML",
+                    "final_verdict": "legitimate",
+                    "confidence": 0.95
+                },
+                {
+                    "url": "https://yukti.mic.gov.in/.",
+                    "domain_analysis": {
+                        "Domain": "yukti.mic.gov.in",
+                        "Uses IP": false,
+                        "Has SSL": true,
+                        "Domain Age (days)": 2531,
+                        "DNS Records": {
+                            "A": [
+                                "20.204.13.165"
+                            ],
+                            "MX": [],
+                            "TXT": []
+                        },
+                        "Page Info": {
+                            "Title": "403 Forbidden",
+                            "Forms": 0,
+                            "iFrames": 0
+                        },
+                        "Pass Domain Check": true
+                    },
+                    "ml_prediction_raw": "Bypassed ML",
+                    "final_verdict": "legitimate",
+                    "confidence": 0.95
+                }
+            ],
+            "risk_level": "low"
+        },
+        "url_analysis": {
+            "url": "https://code.jquery.com/jquery-1.12.4.min.js",
+            "domain_analysis": {
+                "Domain": "code.jquery.com",
+                "Uses IP": false,
+                "Has SSL": true,
+                "Domain Age (days)": 7229,
+                "DNS Records": {
+                    "A": [
+                        "151.101.66.137",
+                        "151.101.194.137",
+                        "151.101.2.137",
+                        "151.101.130.137"
+                    ],
+                    "MX": [],
+                    "TXT": []
+                },
+                "Page Info": {
+                    "Title": "No Title",
+                    "Forms": 0,
+                    "iFrames": 0
+                },
+                "Pass Domain Check": true
+            },
+            "ml_prediction_raw": "phishing",
+            "final_verdict": "phishing",
+            "confidence": 0.5065062025812026
+        }
+    },
+    "ai_assistance": "Certainly! Here\u2019s a clear, step-by-step guide on how to handle a potential phishing situation, along with tips for future prevention:\n\n### Step 1: Do Not Click on or Visit the Detected URLs\n- **Awareness:** Recognize that the links identified as phishing may lead to websites designed to steal personal information.\n- **Avoid Interaction:** If you receive a notification of a phishing link, refrain from visiting or clicking on it. Simply close the alert or message.\n\n### Step 2: Change Passwords for Any Accounts Accessed\n- **Immediate Action:** If you have clicked on a phishing link or entered your credentials, assume your information might be compromised.\n- **Password Changes:**\n   1. Go to the website of the account you've accessed (e.g., email, banking).\n   2. Use the official method to change your password (often found under 'Settings' or 'Account').\n   3. Create a strong password; combine uppercase and lowercase letters, numbers, and symbols.\n\n### Step 3: Run a Security Scan on Your Device\n- **Use Antivirus Software:**\n   1. Open your antivirus software.\n   2. Run a full scan of your device to detect and remove any possible malware that may have been installed.\n- **Update Software:** Ensure your antivirus and all software are updated to the latest versions to protect against vulnerabilities.\n- **Use Anti-malware Tools:** If available, consider using additional anti-malware tools to run a thorough check of your device.\n\n### Step 4: Identifying Phishing Links in the Future\n- **Check the URL:**\n   - Look for unusual domain names, such as misspellings or extra characters (e.g., \"example.com\" vs. \"examp1e.com\").\n   - Legitimate companies usually use their official domains and subdomains.\n  \n- **Look for HTTPS:**\n   - Secure sites typically start with \"https://\" rather than \"http://\". However, the presence of HTTPS alone is not a guarantee of safety.\n  \n- **Examine Email and Message Sources:**\n   - Be cautious of unsolicited messages or emails that urge immediate action.\n   - Hover over links to see where they truly lead before clicking; this can often be done without clicking the link itself.\n\n- **Beware of Urgency and Threats:** \n   - Phishing messages often create a sense of urgency or fear to prompt immediate action.\n   - Take your time to assess",
+    "risk_level": "high",
+    "status": "pending",
+    "created_at": "2025-09-26T15:42:51.177262",
+    "last_updated": "2025-09-26T15:42:51.177262"
+}

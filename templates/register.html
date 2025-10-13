@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Cyber Crime Portal</title>
+  <link rel="stylesheet" href="./styles/register.css">
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <div class="register-container">
+    <h2>🛡️ Cyber Defence Portal Registration</h2>
+
+    <!-- Role Selection -->
+    <div class="role-select">
+      <label for="role">Register as:</label>
+      <select id="role" onchange="toggleForms()">
+        <option value="">-- Select Role --</option>
+        <option value="user">User</option>
+        <option value="police">Police Station</option>
+      </select>
+    </div>
+
+    <!-- USER Registration Form -->
+    <form id="userForm" class="hidden">
+      <h3>User Registration</h3>
+      <input type="text" placeholder="Full Name" required>
+      <input type="date" placeholder="Date of Birth" required>
+      <select required>
+        <option value="">Select Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+      <input type="text" placeholder="Aadhaar / Govt. ID" required>
+      <input type="tel" placeholder="Mobile Number" required>
+      <input type="email" placeholder="Email Address" required>
+      <textarea placeholder="Residential Address" rows="3" required></textarea>
+      <input type="text" placeholder="Username / Email for Login" required>
+      <input type="password" placeholder="Password" required>
+      <input type="password" placeholder="Confirm Password" required>
+      <select required>
+        <option value="">Security Question</option>
+        <option>Mother's maiden name</option>
+        <option>First pet's name</option>
+        <option>Favourite teacher</option>
+      </select>
+      <input type="text" placeholder="Answer" required>
+      <button type="submit">Register</button>
+    </form>
+
+    <!-- POLICE Registration Form -->
+    <form id="policeForm" class="hidden">
+      <h3>Police Station Registration</h3>
+      <input type="text" placeholder="Police Station Name" required>
+      <input type="text" placeholder="Police Station Code" required>
+      <input type="text" placeholder="District" required>
+      <input type="text" placeholder="State" required>
+      <input type="email" placeholder="Official Email" required>
+      <input type="tel" placeholder="Official Landline Number" required>
+      <input type="text" placeholder="Station Head Name (SHO)" required>
+      <input type="text" placeholder="Designation (Inspector / SI)" required>
+      <input type="text" placeholder="Service ID Number" required>
+      <input type="text" placeholder="Official Username" required>
+      <input type="password" placeholder="Password" required>
+      <input type="password" placeholder="Confirm Password" required>
+      <label class="upload-label">Upload Verification Document</label>
+      <input type="file" accept=".pdf,.jpg,.png" required>
+      <button type="submit">Register</button>
+    </form>
+
+    <p>Already have an account? <a href="login.html">Login here</a></p>
+  </div>
+
+  <script>
+    function toggleForms() {
+      const role = document.getElementById("role").value;
+      document.getElementById("userForm").classList.add("hidden");
+      document.getElementById("policeForm").classList.add("hidden");
+
+      if (role === "user") {
+        document.getElementById("userForm").classList.remove("hidden");
+      } else if (role === "police") {
+        document.getElementById("policeForm").classList.remove("hidden");
+      }
+    }
+  </script>
+</body>
+</html>

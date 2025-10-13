@@ -1,0 +1,32 @@
+{
+    "complaint_id": "CYB-1766C19A",
+    "user_info": {
+        "name": "Gowdish S",
+        "email": "gowdish2005@gmail.com",
+        "phone": "8489616411",
+        "address": "1/295 pedari amman street Konappampatti Musiri Trichy"
+    },
+    "attack_type": "phishing",
+    "scenario": "asdasc",
+    "additional_info": "wddw",
+    "evidence_files": [
+        {
+            "filename": "Ragul.pdf",
+            "file_path": "uploads\\Ragul.pdf"
+        }
+    ],
+    "analysis_results": {
+        "phishing_document": {
+            "extracted_text": "DEPARTMENTOFINFORMATIONTECHNOLOGY\nSEMINAR\nNameoftheStudent:RAGULGR\nReg.No :621322205038\nBatch :2022-2026\nAcademicYear :2024-2025\nYear/Semester/Sec:IV/VII\nDate/Hour :12.09.2025\nNEUROMORPHICCOMPUTING\nRISC-V(pronounced\"risk-five\")isatransformativeopen-sourceinstructionsetarchitecture\n(ISA)thatisrevolutionizingtheworldofcomputingbydemocratizingprocessordesignand\nfosteringinnovationacrossindustries.UnliketraditionalproprietaryISAssuchasx86andARM,\nwhicharecontrolledbysinglecorporationsandoftencomewithlicensingfeesandrestrictions,\nRISC-Viscompletelyopenandroyalty-free.DevelopedattheUniversityofCalifornia,\nBerkeleyin2010,itwasdesignedfromthegrounduptobesimple,modular,extensible,and\nefficient\u2014makingitidealforavastrangeofapplications,fromultra-low-powerembedded\nsystemsandInternetofThings(IoT)devicestohigh-performancecomputinganddatacenters.\nTheopennessofRISC-Vallowsresearchers,startups,andlargeenterprisesaliketocustomize\nprocessorswithoutlegalorfinancialbarriers,enablingrapidprototyping,academicexploration,\nanddomain-specificoptimization.Itsmodulardesignsupportsoptionalextensionsforinteger,\nfloating-point,vector,cryptographic,andmachinelearningoperations,allowingdesignersto\ntailorthearchitecturepreciselytotheirneeds.Thisflexibilityhasledtowidespreadadoptionin\nacademiaandindustry,withcompanieslikeSiFive,NVIDIA,Google,Intel,andAlibaba\ninvestingheavilyinRISC-V-basedsolutions.Moreover,theglobalRISC-VInternationalfoundationnowgovernsitsdevelopment,ensuringcollaborativestandardizationandlong-term\nsustainability.Bybreakingthemonopolyofproprietaryarchitecturesandencouraging\ntransparent,community-driveninnovation,RISC-Visnotonlyreshapingthesemiconductor\nlandscapebutalsopavingthewayforamoreinclusive,secure,andadaptablefuturein\ncomputing\u2014fromedgeAIandautonomoussystemstonext-generationsupercomputers.\nGEOTAGPHOTO:\nPO&PSOMAPPING\nPOs\n&PS\nOs\nPO1\nPO2\nPO3\nPO4\nPO5\nPO6\nPO7\nPO8\nPO9\nPO10\nPO11\nPO12\nPSO1\nPSO2\nSeminar323---------3-\nFacultyIn-charge",
+            "found_urls": [],
+            "url_reports": [],
+            "risk_level": "low"
+        }
+    },
+    "ai_assistance": "### Actionable Safety Guidance for Phishing Attack\n\n#### 1. Immediate Actions to Take\n- **Do Not Interact**: If you suspect a phishing attack, do not click on any links or download any attachments from the suspected email or document.\n- **Report the Incident**: Inform your organization's IT support or cybersecurity team of the phishing attempt. Provide them with any relevant details, such as the email or document.\n- **Delete Suspicious Emails/Files**: Remove any emails or files related to the phishing attempt from your inbox and your device.\n\n#### 2. How to Secure Affected Accounts/Devices\n- **Change Passwords**: If you have interacted with the phishing document or email, change passwords for any accounts that may have been compromised, prioritizing sensitive accounts such as email, banking, and work-related accounts.\n- **Enable Two-Factor Authentication (2FA)**: Implement 2FA on all accounts that support it. This adds an additional layer of security requiring a second form of identification.\n- **Update Security Software**: Ensure that antivirus and anti-malware programs are up to date and run a full system scan to check for any infections.\n- **Monitor Account Activity**: Regularly review account statements and activity for unauthorized transactions or changes.\n\n#### 3. Prevention Tips for the Future\n- **Be Cautious with Emails and Documents**: Always verify the sender's email address and be skeptical of unexpected emails requesting sensitive information or containing unsolicited attachments.\n- **Educate and Train Staff**: Conduct regular training on how to recognize phishing attempts and proper cyber hygiene practices.\n- **Use Spam Filters**: Make use of email filtering tools to reduce the likelihood of phishing emails reaching your inbox.\n- **Keep Software Updated**: Regularly update your operating system, browsers, and applications to protect against vulnerabilities that may be exploited in phishing attempts.\n- **Review Security Policies**: Regularly review and update security practices and protocols in your organization to address evolving threats.\n\nBy following these guidelines, you can minimize the risks associated with phishing attacks and enhance your overall cybersecurity posture.",
+    "risk_level": "low",
+    "status": "closed",
+    "created_at": "2025-09-23T17:15:14.775632",
+    "last_updated": "2025-09-23T17:35:02.826958",
+    "admin_notes": ""
+}

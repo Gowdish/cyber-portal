@@ -1,0 +1,146 @@
+{
+    "complaint_id": "CYB-D0C24B20",
+    "user_info": {
+        "name": "Gowdish 2005",
+        "email": "saniya@gmail.com",
+        "phone": "08489616411",
+        "address": "Pedari Amman Kovil Kadu\r\n1/295"
+    },
+    "attack_type": "phishing",
+    "scenario": "fvdf",
+    "additional_info": "",
+    "evidence_files": [
+        {
+            "filename": "test_gmail.pdf",
+            "file_path": "uploads\\test_gmail.pdf"
+        }
+    ],
+    "analysis_results": {
+        "phishing_document": {
+            "extracted_text": "Nomination of your innovation for The India Pitch\n2 messages\nYUKTI - National Innovation Repository <iic.mhrd@aicte-india.org> Tue, Jul 8, 2025 at 5:22 PM\nTo: gowdish2005@gmail.com\nYUKTI Innovation Repository\nDear Innovator,\nYour institute has nominated your Innovation submitted under YUKTI\nInnovation Repository to participate in the Yukti Innovation Challenge\n2025.\nYou need to login into YUKTI portal at https://yukti.mic.gov.in/login and\nupdate the innovation details if required.\nFor more details, please refer to the link: https://yukti.mic.gov.in/\nYIC2025 .\nThanks and Regards,\nYUKTI Implementation Team\nMinistry of Education's Innovation Cell, Govt. of India\nNote: This is an auto generated email, please don't reply to this\nemail id.\nTo know about YIR, please visit https://yukti.mic.gov.in/.\n\u00a9 2022 Institution's Innovation Council, Ministry of Education's\nInnovation Cell, All rights reserved.\nGowdish 2005 <gowdish2005@gmail.com> Tue, Jul 8, 2025 at 5:27 PM\nTo: HARIHARAN <tm07hariharan2122@gmail.com>\n[Quoted text hidden]",
+            "found_urls": [
+                "https://yukti.mic.gov.in/login",
+                "https://yukti.mic.gov.in/",
+                "https://yukti.mic.gov.in/."
+            ],
+            "url_reports": [
+                {
+                    "url": "https://yukti.mic.gov.in/login",
+                    "domain_analysis": {
+                        "Domain": "yukti.mic.gov.in",
+                        "Uses IP": false,
+                        "Has SSL": true,
+                        "Domain Age (days)": 2529,
+                        "DNS Records": {
+                            "A": [
+                                "20.204.13.165"
+                            ],
+                            "MX": [],
+                            "TXT": []
+                        },
+                        "Page Info": {
+                            "Title": "403 Forbidden",
+                            "Forms": 0,
+                            "iFrames": 0
+                        },
+                        "Pass Domain Check": true
+                    },
+                    "final_verdict": "legitimate",
+                    "confidence": 0.95,
+                    "ml_prediction": "Bypassed ML"
+                },
+                {
+                    "url": "https://yukti.mic.gov.in/",
+                    "domain_analysis": {
+                        "Domain": "yukti.mic.gov.in",
+                        "Uses IP": false,
+                        "Has SSL": true,
+                        "Domain Age (days)": 2529,
+                        "DNS Records": {
+                            "A": [
+                                "20.204.13.165"
+                            ],
+                            "MX": [],
+                            "TXT": []
+                        },
+                        "Page Info": {
+                            "Title": "403 Forbidden",
+                            "Forms": 0,
+                            "iFrames": 0
+                        },
+                        "Pass Domain Check": true
+                    },
+                    "final_verdict": "legitimate",
+                    "confidence": 0.95,
+                    "ml_prediction": "Bypassed ML"
+                },
+                {
+                    "url": "https://yukti.mic.gov.in/.",
+                    "domain_analysis": {
+                        "Domain": "yukti.mic.gov.in",
+                        "Uses IP": false,
+                        "Has SSL": true,
+                        "Domain Age (days)": 2529,
+                        "DNS Records": {
+                            "A": [
+                                "20.204.13.165"
+                            ],
+                            "MX": [],
+                            "TXT": []
+                        },
+                        "Page Info": {
+                            "Title": "403 Forbidden",
+                            "Forms": 0,
+                            "iFrames": 0
+                        },
+                        "Pass Domain Check": true
+                    },
+                    "final_verdict": "legitimate",
+                    "confidence": 0.95,
+                    "ml_prediction": "Bypassed ML"
+                }
+            ],
+            "risk_level": "low"
+        },
+        "url_analysis": {
+            "url": "https://kongunadu.ac.in/",
+            "domain_analysis": {
+                "Domain": "kongunadu.ac.in",
+                "Uses IP": false,
+                "Has SSL": true,
+                "Domain Age (days)": 3786,
+                "DNS Records": {
+                    "A": [
+                        "104.21.73.165",
+                        "172.67.146.71"
+                    ],
+                    "MX": [
+                        "alt2.aspmx.l.google.com.",
+                        "alt1.aspmx.l.google.com.",
+                        "alt4.aspmx.l.google.com.",
+                        "aspmx.l.google.com.",
+                        "alt3.aspmx.l.google.com."
+                    ],
+                    "TXT": [
+                        "\"MS=7011055AEE3BE31C37EEB58FD57DACF954B1A3D9\"",
+                        "\"v=spf1 +a +mx +ip4:122.185.252.19 ~all\""
+                    ]
+                },
+                "Page Info": {
+                    "Title": "Kongunadu College of Engineering and Technology - KONGUNADU COLLEGE OF ENGINEERING AND TECHNOLOGY",
+                    "Forms": 0,
+                    "iFrames": 0
+                },
+                "Pass Domain Check": true
+            },
+            "final_verdict": "phishing",
+            "confidence": 0.5128662654742844,
+            "ml_prediction": "phishing"
+        }
+    },
+    "ai_assistance": "### Immediate Action Steps for Mitigating the Phishing Attack\n\n1. **Disconnect from the Internet**:\n   - If you suspect that your device has been compromised, disconnect it from the internet immediately. This helps prevent any potential data theft or further intrusion.\n\n2. **Change Passwords**:\n   - Change your passwords for all critical accounts (email, banking, social media) using a secure device. If you used the same password for multiple accounts, ensure you change those as well.\n   - Use complex passwords that combine letters, numbers, and symbols, and consider using a password manager for better security.\n\n3. **Enable Two-Factor Authentication (2FA)**:\n   - If available, enable 2FA on all important accounts. This adds an extra layer of security and makes it harder for attackers to access your accounts.\n\n### Overcoming the Current Problem\n\n1. **Scan for Malware**:\n   - Run a full system scan using trusted antivirus or anti-malware software to check for malware. Remove any threats detected.\n\n2. **Report the Incident**:\n   - Report the phishing email to your email service provider by using their built-in reporting features (usually found in email settings). \n   - If you provided any personal information or login credentials, report this to your bank or any other relevant institution.\n\n3. **Monitor for Unusual Activity**:\n   - Keep an eye on your accounts for any unauthorized transactions or unusual login attempts. If you notice anything suspicious, report it immediately.\n\n### Future Prevention Measures\n\n1. **Be Cautious with Emails**:\n   - Always verify the sender\u2019s email address and never click on links unless you are sure of their legitimacy. Look for red flags such as poor grammar, urgent language, or strange requests.\n\n2. **Educate Yourself**:\n   - Familiarize yourself with common phishing tactics. Learning how to identify phishing attempts can help you avoid falling victim to similar attacks in the future.\n\n3. **Use Security Software**:\n   - Ensure that you have reliable antivirus and anti-malware software installed and kept up to date. Consider using browser extensions that help identify malicious websites.\n\n4. **Regularly Update Software**:\n   - Keep all your software (operating systems, applications, browsers) updated to protect against known vulnerabilities.\n\n5. **Backup Your Data**:\n   - Regularly back up your data to a secure location. This ensures you can recover your information in case of an attack or data loss.\n\n###",
+    "risk_level": "high",
+    "status": "pending",
+    "created_at": "2025-09-24T16:58:12.150050",
+    "last_updated": "2025-09-24T16:58:12.150050"
+}

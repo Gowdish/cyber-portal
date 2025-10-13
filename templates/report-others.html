@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Other Incident</title>
+    <link rel="stylesheet" href="./styles/others.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">CyberSecure Portal</div>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="others-report.html" class="active">Report Others</a>
+            <a href="#">Learning</a>
+            <a href="#">Contact</a>
+            <a href="#">Login</a>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+        <h1>Report Other Incident</h1>
+        <p>Submit details about any suspicious activity or cyber abuse not covered in predefined categories.</p>
+    </section>
+
+    <!-- Form Section -->
+    <main class="main-container">
+        <section class="report-section">
+            <h2>Submit Incident</h2>
+            <form id="othersForm">
+                <div class="form-group">
+                    <label for="otherName">Your Name (optional)</label>
+                    <input type="text" id="otherName" name="otherName" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="otherEmail">Email / Contact</label>
+                    <input type="email" id="otherEmail" name="otherEmail" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="otherDescription">Describe the Incident</label>
+                    <textarea id="otherDescription" name="otherDescription" placeholder="Provide details"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="otherEvidence">Upload Evidence (Any type)</label>
+                    <input type="file" id="otherEvidence" name="otherEvidence" multiple>
+                </div>
+                <button type="submit">Submit Report</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 CyberSecure Portal. All rights reserved.</p>
+    </footer>
+</body>
+</html>
