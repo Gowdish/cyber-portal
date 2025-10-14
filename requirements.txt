@@ -19,3 +19,4 @@ androguard
 tldextract
 pymongo
 scikit-learn
+gunicorn
