@@ -18,5 +18,5 @@ pickle-mixin
 androguard
 tldextract
 pymongo
-scikit-learn
+scikit-learn==1.6.1
 gunicorn
