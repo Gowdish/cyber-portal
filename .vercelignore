@@ -1,9 +1,10 @@
 # Ignore common Python environment/cache/build folders
-.git
+# CRITICAL: Exclude common cache and build folders
+.vercel/
+.cache/
 .venv
 env/
+venv/
 __pycache__/
 build/
 dist/
-
-.cache/
