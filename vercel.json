@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "lid.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "lid.py"
+    }
+  ]
+}
