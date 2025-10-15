@@ -10,5 +10,8 @@
       "src": "/(.*)",
       "dest": "lid.py"
     }
-  ]
+  ],
+  "env": {
+    "TRANSFORMERS_CACHE": "/tmp/transformers_cache"
+  }
 }
